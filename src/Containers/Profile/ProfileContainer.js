@@ -1,9 +1,15 @@
 import React from 'react'
 import { Route, Switch, withRouter} from 'react-router-dom'
+import BreadcrumbNav from '../../Components/BreadcrumbNav'
+import ProfileControls from '../../Components/ProfileControls'
+
 
 function ProfileContainer(props) {
   return <div className="borders">
+    <BreadcrumbNav />
+    <ProfileControls />
     <h3>Component: ProfileContainer.js</h3>
+
     <Switch>
       <Route exact path={`/${props.username}`} render={() => {
         // TODO if real username render page
@@ -21,4 +27,4 @@ function ProfileContainer(props) {
   </div>
 }
 
-export default ProfileContainer 
+export default withRouter(ProfileContainer)

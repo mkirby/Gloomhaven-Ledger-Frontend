@@ -7,7 +7,7 @@ function NavBar() {
   const [activeItem, handleItemClick] = useState("")
 
   return <header className="borders">
-    <Menu>
+    <Menu borderless>
       <Menu.Item>
         <NavLink to="/"><h1 className="heading">Gloomhaven Ledger</h1></NavLink>
       </Menu.Item>
@@ -35,14 +35,7 @@ function NavBar() {
           <NavLink to="/signup">Sign Up</NavLink>
         </Menu.Item>
 
-        <Menu.Item
-          position='right'
-          name='user'
-          active={activeItem === 'user'}
-          onClick={() => handleItemClick("user")}
-        >
-          <ProfileMenu />
-        </Menu.Item>
+        <ProfileMenu />
 
       </Menu.Menu>
 
