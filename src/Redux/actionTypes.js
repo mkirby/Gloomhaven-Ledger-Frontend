@@ -1,0 +1,1 @@
+export const FETCH_CHARACTER = "FETCH_CHARACTER"
