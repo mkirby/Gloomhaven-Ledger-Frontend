@@ -1,8 +1,9 @@
 import React from 'react'
 import { Route, Switch, withRouter} from 'react-router-dom'
-import BreadcrumbNav from '../../Components/BreadcrumbNav'
+import BreadcrumbNav from '../Components/BreadcrumbNav'
 import ProfileControls from '../Components/ProfileControls'
 import ProfilePage from '../Components/ProfilePage'
+import CampaignsContainer from './CampaignsContainer'
 
 
 function ProfileContainer(props) {
@@ -14,7 +15,7 @@ function ProfileContainer(props) {
         return <ProfilePage username={match.params.username}/>
       }}/>
       <Route path={`/:username/campaigns/:id`} render={() => {return <p>Campaign Show</p>}}/>
-      <Route path={`/:username/campaigns`} render={() => {return <p>Campaign Index</p>}}/>
+      <Route path={`/:username/campaigns`} component={CampaignsContainer}/>
       <Route path={`/:username/parties/:id`} render={() => {return <p>Party Show</p>}}/>
       <Route path={`/:username/parties`} render={() => {return <p>Parties Index</p>}}/>
       <Route path={`/:username/characters/:id`} render={() => {return <p>Character Show</p>}}/>

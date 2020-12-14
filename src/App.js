@@ -37,9 +37,9 @@ class App extends React.Component {
             </>
           }}/>
           <Route exact path="/signup" render={ () => {return <h3>Component: SignupContainer.js</h3>} } />
-          <Route exact path="/login" render={LoginContainer} />
+          <Route exact path="/login" component={LoginContainer} />
           {/* FIXME this could be a pain point trying to make sure usernames are accurate. might be easier if url is /profile/:username */}
-          <Route path="/:username" render={ProfileContainer}/>
+          <Route path="/:username" component={ProfileContainer}/>
         </Switch>
         <FooterContainer />
       </Router>
