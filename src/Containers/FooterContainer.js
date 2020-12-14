@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Footer() {
+function FooterContainer() {
   return <footer className="borders">
     <h3>Component: Footer.js</h3>
   </footer>
 }
 
-export default Footer 
+export default FooterContainer

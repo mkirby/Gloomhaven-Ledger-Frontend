@@ -1,3 +1,57 @@
 .borders {
   border: 2px red solid
 }
+
+.auth-container {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "auth-image auth-form";
+  width: 100%;
+}
+
+.auth-image {
+  grid-area: auth-image;
+}
+
+.auth-form {
+  grid-area: auth-form;
+}
+
+.navbar-header {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "nav-logo nav-image";
+  width: 100%;
+}
+
+.navbar-header-logo {
+  grid-area: nav-logo;
+  padding-left: 3%;
+  margin: auto 0;
+}
+
+.navbar-header-menu {
+  grid-area: nav-image;
+  border: 2px solid blue;
+}
+
+header {
+  background-color: #833820;
+  color: #E4CEAD;
+}
+
+header a {
+  color: #E4CEAD;
+}
+
+header a:hover {
+  text-decoration: underline;
+  color: #E4CEAD;
+}
+
+footer {
+  background-color: #833820;
+  color: #552619;
+}

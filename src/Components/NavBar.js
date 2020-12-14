@@ -1,47 +1,53 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 import ProfileMenu from './ProfileMenu'
 import { Menu } from 'semantic-ui-react'
 
-function NavBar() {
+function NavBar(props) {
   const [activeItem, handleItemClick] = useState("")
 
-  return <header className="borders">
-    <Menu borderless>
-      <Menu.Item>
-        <NavLink to="/"><h1 className="heading">Gloomhaven Ledger</h1></NavLink>
-      </Menu.Item>
+  return (
+    <header className="navbar-header" style={{height: "100%"}}>
+      <div className="navbar-header-logo">
+        <h1 className="heading">Gloomhaven Ledger</h1>
+      </div>
+      
+      <Menu secondary size='large'  style={{margin: 'auto 0'}}>
+        {!props.loggedIn && <Menu.Menu position='right'>
+          <Menu.Item
+            as={NavLink}
+            to="/login"
+            name='login'
+            active={activeItem === 'login'}
+            onClick={() => handleItemClick("login")}
+          >
+            Login
+          </Menu.Item>
+          <Menu.Item
+            as={NavLink}
+            to='/signup'
+            position='right'
+            name='signup'
+            active={activeItem === 'signup'}
+            onClick={() => handleItemClick("signup")}
+          >
+            Sign Up
+          </Menu.Item>
+        </Menu.Menu>}
 
-      {/* FIXME delete once created and styled */}
-      <Menu.Item position='right'>
-      <h3>Component: NavBar.js</h3>
-      </Menu.Item>
-
-      <Menu.Menu position='right'>
-        <Menu.Item
-          name='login'
-          active={activeItem === 'login'}
-          onClick={() => handleItemClick("login")}
-        >
-          <NavLink to="/login">Login</NavLink>
-        </Menu.Item>
-
-        <Menu.Item
-          position='right'
-          name='signup'
-          active={activeItem === 'signup'}
-          onClick={() => handleItemClick("signup")}
-        >
-          <NavLink to="/signup">Sign Up</NavLink>
-        </Menu.Item>
-
-        <ProfileMenu />
-
-      </Menu.Menu>
+        {props.loggedIn && <Menu.Menu position='right'><ProfileMenu /></Menu.Menu>}
 
       </Menu>
 
-  </header>
+    </header>
+  )
 }
 
-export default NavBar
+function mapStateToProps(state) {
+  const { user, loggedIn } = state.authentication
+  return { user, loggedIn }
+}
+
+export default connect(mapStateToProps, null)(NavBar)
