@@ -11,7 +11,7 @@ function NavBar(props) {
   return (
     <header className="navbar-header" style={{height: "100%"}}>
       <div className="navbar-header-logo">
-        <h1 className="heading">Gloomhaven Ledger</h1>
+        <NavLink to="/"><h1 className="heading">Gloomhaven Ledger</h1></NavLink>
       </div>
       
       <Menu secondary size='large'  style={{margin: 'auto 0'}}>
