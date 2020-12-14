@@ -7,7 +7,7 @@ import { history } from './_helpers/history'
 import NavBar from './Components/NavBar'
 import LedgerControls from './Components/LedgerControls'
 import LedgerContainer from './Containers/LedgerContainer'
-import ProfileContainer from './Containers/Profile/ProfileContainer'
+import ProfileContainer from './UserProfile/Containers/ProfileContainer'
 import FooterContainer from './Containers/FooterContainer'
 import LoginContainer from './Containers/UserAuth/LoginContainer';
 import { alertActions } from './_actions/alertActions';
@@ -39,10 +39,7 @@ class App extends React.Component {
           <Route exact path="/signup" render={ () => {return <h3>Component: SignupContainer.js</h3>} } />
           <Route exact path="/login" render={LoginContainer} />
           {/* FIXME this could be a pain point trying to make sure usernames are accurate. might be easier if url is /profile/:username */}
-          <Route path="/:username" render={({match}) => {
-            let username = match.params.username
-            return <ProfileContainer username={username}/>
-          }}/>
+          <Route path="/:username" render={ProfileContainer}/>
         </Switch>
         <FooterContainer />
       </Router>

@@ -55,3 +55,13 @@ footer {
   background-color: #833820;
   color: #552619;
 }
+
+.profile-page {
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-page div {
+  margin: auto;
+}
