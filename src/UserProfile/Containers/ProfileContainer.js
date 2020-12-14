@@ -10,7 +10,9 @@ function ProfileContainer(props) {
     <BreadcrumbNav />
     <ProfileControls />
     <Switch>
-      <Route exact path={`/:username`} render={ProfilePage}/>
+      <Route exact path={`/:username`} render={({match}) => {
+        return <ProfilePage username={match.params.username}/>
+      }}/>
       <Route path={`/:username/campaigns/:id`} render={() => {return <p>Campaign Show</p>}}/>
       <Route path={`/:username/campaigns`} render={() => {return <p>Campaign Index</p>}}/>
       <Route path={`/:username/parties/:id`} render={() => {return <p>Party Show</p>}}/>

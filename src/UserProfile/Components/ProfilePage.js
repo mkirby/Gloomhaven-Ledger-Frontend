@@ -1,33 +1,37 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { Button, Menu, Placeholder } from 'semantic-ui-react'
 
 
-function ProfilePage() {
+function ProfilePage(props) {
   return (
     <div className="profile-page">
       <Placeholder style={{height: 300, width: 300}}>
         <Placeholder.Image />
       </Placeholder>
-      {/* <Placeholder>
-        <Placeholder.Header>
-          <Placeholder.Line length='full'/>
-        </Placeholder.Header>
-      </Placeholder> */}
       <h3>USERNAME</h3>
       <Menu
         widths={3}
         fluid
-        // borderless
         stackable
       >
-        <Menu.Item 
+        <Menu.Item
+          link
           name='Campaigns'
+          as={NavLink}
+          to={`/${props.username}/campaigns`}
         />
-        <Menu.Item 
+        <Menu.Item
+          link
           name='Parties'
+          as={NavLink}
+          to={`/${props.username}/parties`}
         />
-        <Menu.Item 
+        <Menu.Item
+          link
           name='Characters'
+          as={NavLink}
+          to={`/${props.username}/characters`}
         />
       </Menu>
     </div>
