@@ -23,14 +23,36 @@ function ProfileMenu(props) {
   return (
     <Dropdown floating item trigger={trigger}> 
       <Dropdown.Menu>
-        <Dropdown.Header content='ProfileMenu.js' />
+        <Dropdown.Item
+          style={{textAlign: "right"}}
+          content={`${usernameUppercased} Profile`}
+          as={NavLink}
+          to={`/${username}`}/>
         <Dropdown.Divider />
-        {/* i think these need to be "as" NavLink passing props */}
-        <Dropdown.Item style={{textAlign: "right"}}><NavLink to={`/${username}`}>Profile</NavLink></Dropdown.Item>
-        <Dropdown.Item style={{textAlign: "right"}}><NavLink to={`/${username}/characters`}>My Characters</NavLink></Dropdown.Item>
-        <Dropdown.Item style={{textAlign: "right"}}><NavLink to={`/${username}/parties`}>My Parties</NavLink></Dropdown.Item>
-        <Dropdown.Item style={{textAlign: "right"}}><NavLink to={`/${username}/campaigns`}>My Campaigns</NavLink></Dropdown.Item>
-        <Dropdown.Item style={{textAlign: "right"}}><NavLink to="/login" onClick={props.logout}>Log Out</NavLink></Dropdown.Item>
+        <Dropdown.Item
+          style={{textAlign: "right"}}
+          content='My Characters'
+          as={NavLink}
+          to={`/${username}/characters`}/>
+        <Dropdown.Item
+          style={{textAlign: "right"}}
+          content='My Parties'
+          as={NavLink}
+          to={`/${username}/parties`}
+        />
+        <Dropdown.Item
+          style={{textAlign: "right"}}
+          content='My Campaigns'
+          as={NavLink}
+          to={`/${username}/campaigns`}
+        />
+        <Dropdown.Item
+          style={{textAlign: "right"}}
+          content='Log Out'
+          as={NavLink}
+          to="/login"
+          onClick={props.logout}
+        />
       </Dropdown.Menu>
     </Dropdown>
   )

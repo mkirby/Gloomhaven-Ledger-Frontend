@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Button, Menu, Placeholder } from 'semantic-ui-react'
-
+import { Menu, Placeholder } from 'semantic-ui-react'
 
 function ProfilePage(props) {
   return (
