@@ -3,17 +3,15 @@ import { connect } from 'react-redux'
 import CampaignCard from '../Components/CampaignCard'
 
 function CampaignsContainer(props) {
-  console.log("campaigns container", props)
   return (
-    <div className="campaigns-container">
-      {props.user.campaigns.length > 0 ? renderCampaignCards(props.user) : <h4>No Campaigns to Display</h4>}
+    <div className="index-container">
+      {props.user.campaigns.length > 0 ? renderCampaignCards(props.user) : <h3>No Campaigns to Display</h3>}
     </div>
   )
 }
 
 function renderCampaignCards(user) {
-  // add in the campaign card
-  return user.campaigns.map(campaign => <CampaignCard campaign={campaign} userCampaigns={user.user_campaigns}/>)
+  return user.user_campaigns.map((user_campaign) => <CampaignCard key={user_campaign.id} user_campaign={user_campaign}/>)
 }
 
 function mapStateToProps(state) {
