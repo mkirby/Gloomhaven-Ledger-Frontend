@@ -8,7 +8,7 @@ import CampaignPage from './CampaignPage'
 import CharactersContainer from './CharactersContainer'
 import PartiesContainer from './PartiesContainer'
 import PartyPage from './PartyPage'
-
+import CharacterPage from './CharacterPage'
 
 function ProfileContainer(props) {
   return <div className="borders">
@@ -22,7 +22,7 @@ function ProfileContainer(props) {
       <Route path={`/:username/campaigns`} component={CampaignsContainer}/>
       <Route path={`/:username/parties/:id`} component={PartyPage}/>
       <Route path={`/:username/parties`} component={PartiesContainer}/>
-      <Route path={`/:username/characters/:id`} render={() => {return <p>Character Show</p>}}/>
+      <Route path={`/:username/characters/:id`} component={CharacterPage}/>
       <Route path={`/:username/characters`} component={CharactersContainer}/>
     </Switch>
     
