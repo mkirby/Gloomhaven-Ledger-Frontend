@@ -26,7 +26,6 @@ export function authentication (state = initialState, action) {
       console.log("AuthReduc - LOGOUT")
       return {};
     default:
-      console.log("AuthReduc - default")
       return state
   }
 }

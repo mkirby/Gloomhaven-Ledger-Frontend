@@ -115,3 +115,47 @@ footer {
   grid-area: char-controls;
   width: 100%;
 }
+
+.campaign-show {
+  display: grid;
+  grid-template-areas:
+  "cp-parties cp-players"
+  "cp-retired cp-players";
+  grid-template-columns: auto 250px;
+  padding: 10px;
+}
+
+.campaign-parties-div {
+  grid-area: cp-parties;
+}
+
+.campaign-retired-char-div {
+  grid-area: cp-retired;
+}
+
+.campaign-players-div {
+  grid-area: cp-players;
+  border: 2px solid #837372;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  padding: 10px;
+}
+
+.campaign-player-div {
+  display: grid;
+  grid-template-areas: 
+  "cp-image cp-name";
+  grid-template-columns: 50px auto;
+  margin-top: 10px;
+  margin: 10px auto;
+}
+
+.campaign-player-image {
+  grid-area: cp-image;
+}
+
+.campaign-player-username {
+  grid-area: cp-name;
+  text-align: left;
+  margin: auto 10px;
+}

@@ -4,6 +4,7 @@ import BreadcrumbNav from '../Components/BreadcrumbNav'
 import ProfileControls from '../Components/ProfileControls'
 import ProfilePage from '../Components/ProfilePage'
 import CampaignsContainer from './CampaignsContainer'
+import CampaignPage from './CampaignPage'
 import CharactersContainer from './CharactersContainer'
 import PartiesContainer from './PartiesContainer'
 
@@ -16,7 +17,7 @@ function ProfileContainer(props) {
       <Route exact path={`/:username`} render={({match}) => {
         return <ProfilePage username={match.params.username}/>
       }}/>
-      <Route path={`/:username/campaigns/:id`} render={() => {return <p>Campaign Show</p>}}/>
+      <Route path={`/:username/campaigns/:id`} component={CampaignPage}/>
       <Route path={`/:username/campaigns`} component={CampaignsContainer}/>
       <Route path={`/:username/parties/:id`} render={() => {return <p>Party Show</p>}}/>
       <Route path={`/:username/parties`} component={PartiesContainer}/>

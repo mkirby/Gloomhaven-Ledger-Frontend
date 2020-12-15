@@ -2,7 +2,6 @@ import React from 'react'
 import { Menu, Placeholder } from 'semantic-ui-react';
 
 function PartyCard({party}) {
-  console.log("party", party)
   return (
     <div className='index-card party-card'>
       <h3>{party.name}</h3>
@@ -29,10 +28,11 @@ function PartyCard({party}) {
 function renderCharacterImages(characters) {
   return characters.map((character) => {
     if (character.active){
-      return <Placeholder style={{ width: 40, height: 40, float: 'left', marginRight: 5, marginTop: 0}}>
+      return <Placeholder key={character.id} style={{ width: 40, height: 40, float: 'left', marginRight: 5, marginTop: 0}}>
       <Placeholder.Image />
     </Placeholder>
     }
+    return null
   })
 }
 

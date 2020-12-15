@@ -2,7 +2,6 @@ import React from 'react'
 import { Menu, Placeholder } from 'semantic-ui-react';
 
 function CharacterCard({character}) {
-  console.log("character", character)
   return (
     <div className='index-card character-card'>
 
