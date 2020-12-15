@@ -2,6 +2,10 @@
   border: 1px red solid
 }
 
+body {
+  background-color: #F9F7F2;
+}
+
 .auth-container {
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
@@ -34,26 +38,25 @@
 
 .navbar-header-menu {
   grid-area: nav-image;
-  border: 2px solid blue;
 }
 
 header {
-  background-color: #833820;
-  color: #E4CEAD;
+  background-color: #D4964E;
+  color: #291C1A;
 }
 
 header a {
-  color: #E4CEAD;
+  color: #291C1A;
 }
 
 header a:hover {
   text-decoration: underline;
-  color: #E4CEAD;
+  color: #291C1A;
 }
 
 footer {
-  background-color: #833820;
-  color: #552619;
+  background-color: #D4964E;
+  color: #F9F7F2;
 }
 
 .profile-page {
@@ -64,4 +67,51 @@ footer {
 
 .profile-page div {
   margin: auto;
+}
+
+.index-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: space-around;
+  padding: 10px
+}
+
+.index-card {
+  width: 400px;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #837372;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.character-card {
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-areas:
+  "char-image char-stats"
+  "char-party char-party"
+  "char-controls char-controls";
+}
+
+.character-card-image {
+  grid-area: char-image;
+}
+
+.character-card-stats {
+  grid-area: char-stats;
+  margin-left: 10px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.character-card-party {
+  grid-area: char-party;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.character-card-controls {
+  grid-area: char-controls;
+  width: 100%;
 }

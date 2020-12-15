@@ -4,7 +4,7 @@ import { Menu } from 'semantic-ui-react';
 
 function CampaignCard({user_campaign}) {
   return (
-    <div className='index-card'>
+    <div className='index-card campaign-card'>
       <h3>{user_campaign.campaign.name}</h3>
       <p>Campaign Started: {dateFormat(user_campaign.campaign.created_at, "m/d/yy")}</p>
       <p>Role: {user_campaign.owner ? "Owner" : "Player"}</p>

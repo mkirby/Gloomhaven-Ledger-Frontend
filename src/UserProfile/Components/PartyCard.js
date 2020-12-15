@@ -4,12 +4,12 @@ import { Menu, Placeholder } from 'semantic-ui-react';
 function PartyCard({party}) {
   console.log("party", party)
   return (
-    <div className='index-card'>
+    <div className='index-card party-card'>
       <h3>{party.name}</h3>
       <div>
         {renderCharacterImages(party.characters)}
       </div>
-      <br></br>
+      <br/>
       <h5>Current Location: Coming Soon</h5>
       <Menu widths={3} fluid>
         <Menu.Item link>

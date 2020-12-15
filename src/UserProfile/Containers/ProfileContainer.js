@@ -4,6 +4,7 @@ import BreadcrumbNav from '../Components/BreadcrumbNav'
 import ProfileControls from '../Components/ProfileControls'
 import ProfilePage from '../Components/ProfilePage'
 import CampaignsContainer from './CampaignsContainer'
+import CharactersContainer from './CharactersContainer'
 import PartiesContainer from './PartiesContainer'
 
 
@@ -20,7 +21,7 @@ function ProfileContainer(props) {
       <Route path={`/:username/parties/:id`} render={() => {return <p>Party Show</p>}}/>
       <Route path={`/:username/parties`} component={PartiesContainer}/>
       <Route path={`/:username/characters/:id`} render={() => {return <p>Character Show</p>}}/>
-      <Route path={`/:username/characters`} render={() => {return <p>Characters Index</p>}}/>
+      <Route path={`/:username/characters`} component={CharactersContainer}/>
     </Switch>
     
   </div>

@@ -5,7 +5,7 @@ import PartyCard from '../Components/PartyCard'
 function PartiesContainer(props) {
   console.log("props",props)
   return (
-    <div>
+    <div className="index-container">
       {props.user.parties.length > 0 ? renderPartyCards(props.user) : <h3>No Parties to Display</h3>}
     </div>
   )
