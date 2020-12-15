@@ -14,7 +14,7 @@ class PartyPage extends React.Component {
     })
     .then(response => response.json())
     .then(data => {
-      this.setState({party: data.party, loaded: true}, () => console.log(this.state))
+      this.setState({party: data.party, loaded: true})
     })
   }
   

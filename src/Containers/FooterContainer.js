@@ -1,8 +1,8 @@
 import React from 'react'
 
 function FooterContainer() {
-  return <footer className="borders">
-    <h3>Component: Footer.js</h3>
+  return <footer className="footer-container">
+    <h2>Component: Footer.js</h2>
   </footer>
 }
 

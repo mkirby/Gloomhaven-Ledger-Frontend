@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { Menu, Placeholder } from 'semantic-ui-react'
 import { authHeader } from '../../_helpers/authHeader'
 
@@ -14,12 +16,13 @@ class CharacterPage extends React.Component {
     })
     .then(response => response.json())
     .then(data => {
-      this.setState({character: data.character, loaded: true}, () => console.log(this.state))
+      this.setState({character: data.character, loaded: true})
     })
   }
   
   render() {
     const { character } = this.state
+    const { username } = this.props.user
     return (
       <div className="character-page">
 
@@ -33,7 +36,8 @@ class CharacterPage extends React.Component {
           {this.state.loaded && renderCharacterHeader(character)}
           {this.state.loaded && renderCharacterStats(character)}
           <div className="character-page-party">
-            {this.state.loaded ? <h3>Party: {character.party.name}</h3> : <h3>Party: (Need to Render)</h3>}
+            {this.state.loaded ? <h3>Party: <NavLink to={`/${username}/parties/${character.party.id}`}>{character.party.name}</NavLink> </h3> : <h3>Party: (Loading...)</h3>}
+            {this.state.loaded ? <h3>Campaign: <NavLink to={`/${username}/campaigns/${character.campaign.id}`}>{character.campaign.name}</NavLink></h3> : <h3>Campaign: (Loading...)</h3>}
           </div>
           
           <div className="character-page-backstory">
@@ -108,4 +112,13 @@ function renderCharacterBackstory(character) {
   )
 }
 
-export default CharacterPage
+function mapStateToProps(state) {
+  const { user } = state.authentication
+  return { user }
+}
+
+const actionCreators = {
+  // add dispatch actions as needed
+}
+
+export default connect(mapStateToProps, actionCreators)(CharacterPage)

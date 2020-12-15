@@ -14,7 +14,7 @@ import CharacterPage from './CharacterPage'
 
 function ProfileContainer(props) {
   const { username } = props.user
-  return <div className="borders">
+  return <div className="profile-container">
     <BreadcrumbNav />
     <ProfileControls />
     <Switch>
