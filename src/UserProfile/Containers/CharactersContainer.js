@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import CharacterCard from '../Components/CharacterCard'
 
 function CharactersContainer(props) {
-  console.log("props",props)
   return (
     <div className="index-container">
       {/* TODO verify that these conditionals are accurate over all containers */}

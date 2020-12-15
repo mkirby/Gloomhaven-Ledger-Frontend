@@ -1,7 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { Menu, Placeholder } from 'semantic-ui-react';
 
-function PartyCard({party}) {
+function PartyCard(props) {
+  const { party } = props
+  const { username } = props.user
+  const { id } = props.party
   return (
     <div className='index-card party-card'>
       <h3>{party.name}</h3>
@@ -11,9 +16,12 @@ function PartyCard({party}) {
       <br/>
       <h5>Current Location: Coming Soon</h5>
       <Menu widths={3} fluid>
-        <Menu.Item link>
-          View
-        </Menu.Item>
+        <Menu.Item
+          link
+          name='View'
+          as={NavLink}
+          to={`/${username}/parties/${id}`}
+        />
         <Menu.Item link>
           Edit
         </Menu.Item>
@@ -36,6 +44,13 @@ function renderCharacterImages(characters) {
   })
 }
 
-// connect to Redux to access dispatch actions
+function mapStateToProps(state) {
+  const { user } = state.authentication
+  return { user }
+}
 
-export default PartyCard
+const actionCreators = {
+  // add dispatch actions as needed
+}
+
+export default connect(mapStateToProps, actionCreators)(PartyCard) 

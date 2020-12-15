@@ -1,9 +1,14 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { Menu, Placeholder } from 'semantic-ui-react';
 
-function CharacterCard({character}) {
-  console.log("character", character)
+function CharacterCard(props) {
+  const { character } = props
+  const { username } = props.user
+  const characterId = props.character.id
+  const partyId = props.character.party.id
+  const campaignId = props.character.campaign.id
   return (
     <div className='index-card character-card'>
 
@@ -29,7 +34,8 @@ function CharacterCard({character}) {
       </div>
 
       <div className="character-card-party">
-        <h5>Party: {character.party.name}</h5>
+        <h5>Party: <NavLink to={`/${username}/parties/${partyId}`}>{character.party.name}</NavLink></h5>
+        <h5>Campaign: <NavLink to={`/${username}/campaigns/${campaignId}`}>{character.campaign.name}</NavLink></h5>
       </div>
 
       <div className="character-card-controls">
@@ -38,7 +44,7 @@ function CharacterCard({character}) {
             link
             name="View"
             as={NavLink}
-            to={`/`}
+            to={`/${username}/characters/${characterId}`}
           />
           <Menu.Item
             link
@@ -55,6 +61,13 @@ function CharacterCard({character}) {
   )
 }
 
-// connect to Redux to access dispatch actions
+function mapStateToProps(state) {
+  const { user } = state.authentication
+  return { user }
+}
 
-export default CharacterCard
+const actionCreators = {
+  // add dispatch actions as needed
+}
+
+export default connect(mapStateToProps, actionCreators)(CharacterCard) 
