@@ -36,7 +36,7 @@ function logout() {
     // localStorage.removeItem('token')
 }
 
-function getById(id) {
+function getByUsername(username) {
     const requestOptions = {
         method: 'GET',
         headers: authHeader()
@@ -45,7 +45,7 @@ function getById(id) {
     return fetch(`${apiUrl}/find_user_by_username?username=${username}`, requestOptions).then(handleResponse);
 }
 
-function getByUsername(username) {
+function getById(id) {
     const requestOptions = {
         method: 'GET',
         headers: authHeader()
