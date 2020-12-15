@@ -1,6 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { Menu, Placeholder } from 'semantic-ui-react'
+
+import { userActions } from '../../_actions/userActions'
 
 function ProfilePage(props) {
   return (
@@ -37,4 +40,8 @@ function ProfilePage(props) {
   )
 }
 
-export default ProfilePage
+const actionCreators = {
+  getByUsername: userActions.getByUsername
+}
+
+export default connect(null, actionCreators)(ProfilePage)

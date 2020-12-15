@@ -22,7 +22,7 @@ class App extends React.Component {
 
   render() {
     const { alert } = this.props
-    console.log("Redux Store: ",this.props.state)
+    console.log('Redux Store: ',this.props.state)
     return (
       <Router history={history}>
         <NavBar />
@@ -30,16 +30,16 @@ class App extends React.Component {
           <div className={`alert ${alert.type}`}>{alert.message}</div>
         }
         <Switch>
-          <Route exact path="/" render={() => {
+          <Route exact path='/' render={() => {
             return <>
               <LedgerControls />
               <LedgerContainer />
             </>
           }}/>
-          <Route exact path="/signup" render={ () => {return <h3>Component: SignupContainer.js</h3>} } />
-          <Route exact path="/login" component={LoginContainer} />
-          {/* FIXME this could be a pain point trying to make sure usernames are accurate. might be easier if url is /profile/:username */}
-          <Route path="/:username" component={ProfileContainer}/>
+          <Route exact path='/signup' render={ () => {return <h3>Component: SignupContainer.js</h3>} } />
+          <Route exact path='/login' component={LoginContainer} />
+          {this.props.loggedIn && <Route path={`/${this.props.user.username}`} component={ProfileContainer}/>}
+          <Route path='*' render={ () => { return <h1>404 Not Found</h1>}}/>
         </Switch>
         <FooterContainer />
       </Router>
@@ -49,7 +49,8 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   const { alert } = state
-  return { alert, state }
+  const { user, loggedIn } = state.authentication
+  return { alert, user, loggedIn, state }
 }
 
 const actionCreators = {
