@@ -1,7 +1,9 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { Menu, Placeholder } from 'semantic-ui-react';
 
 function CharacterCard({character}) {
+  console.log("character", character)
   return (
     <div className='index-card character-card'>
 
@@ -31,16 +33,21 @@ function CharacterCard({character}) {
       </div>
 
       <div className="character-card-controls">
-        <Menu widths={3} fluid>
-          <Menu.Item link>
-            View
-          </Menu.Item>
-          <Menu.Item link>
-            Edit
-          </Menu.Item>
-          <Menu.Item link>
-            Delete
-          </Menu.Item>
+        <Menu widths={3} fluid stackable >
+          <Menu.Item
+            link
+            name="View"
+            as={NavLink}
+            to={`/`}
+          />
+          <Menu.Item
+            link
+            name="Edit"
+          />
+          <Menu.Item
+            link
+            name="Delete"
+          />
         </Menu>
       </div>
 
