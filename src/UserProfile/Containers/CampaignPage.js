@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom';
 import { Button, Placeholder } from 'semantic-ui-react'
 import { authHeader } from '../../_helpers/authHeader'
 import CharacterCard from '../Components/CharacterCard'
@@ -42,7 +43,7 @@ class CampaignPage extends React.Component {
         <div className="campaign-players-div">
           <h2>Players</h2>
           {this.state.loaded && currentUserIsOwner(this.state.campaign.id, this.props.user) && <Button>Manage Players</Button>}
-          {this.state.loaded && renderCampaignPlayer(this.state.campaign.players)}
+          {this.state.loaded && renderCampaignPlayers(this.state.campaign.players)}
         </div>
       </div>
     )
@@ -62,7 +63,7 @@ function renderRetiredCharacterCards(characters) {
   })
 }
 
-function renderCampaignPlayer(players) {
+function renderCampaignPlayers(players) {
   return players.map(player => {
     return (
       <div key={player.id} className="campaign-player-div">
@@ -72,7 +73,7 @@ function renderCampaignPlayer(players) {
           </Placeholder>
         </div>
         <div className="campaign-player-username">
-          <h3>{player.username}</h3>
+          <h3><NavLink to={`/${player.username}`}>{player.username}</NavLink></h3>
         </div>
       </div>
     )
