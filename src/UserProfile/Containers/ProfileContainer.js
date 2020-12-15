@@ -15,9 +15,7 @@ function ProfileContainer(props) {
     <BreadcrumbNav />
     <ProfileControls />
     <Switch>
-      <Route exact path={`/:username`} render={({match}) => {
-        return <ProfilePage username={match.params.username}/>
-      }}/>
+      <Route exact path={`/:username`} component={ProfilePage}/>
       <Route path={`/:username/campaigns/:id`} component={CampaignPage}/>
       <Route path={`/:username/campaigns`} component={CampaignsContainer}/>
       <Route path={`/:username/parties/:id`} component={PartyPage}/>

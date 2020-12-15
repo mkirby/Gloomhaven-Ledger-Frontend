@@ -18,19 +18,19 @@ function ProfilePage(props) {
           link
           name='Campaigns'
           as={NavLink}
-          to={`/${props.username}/campaigns`}
+          to={`/${props.match.params.username}/campaigns`}
         />
         <Menu.Item
           link
           name='Parties'
           as={NavLink}
-          to={`/${props.username}/parties`}
+          to={`/${props.match.params.username}/parties`}
         />
         <Menu.Item
           link
           name='Characters'
           as={NavLink}
-          to={`/${props.username}/characters`}
+          to={`/${props.match.params.username}/characters`}
         />
       </Menu>
     </div>

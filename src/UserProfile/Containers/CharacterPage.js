@@ -20,66 +20,44 @@ class CharacterPage extends React.Component {
   
   render() {
     const { character } = this.state
-
-    // RENDER EACH COMPONENT OUT IN A FUNCTION
-
     return (
       <div className="character-page">
 
-        <div>
+        <div className="character-page-image">
           <Placeholder style={{height: 400, width: 300}}>
             <Placeholder.Image />
           </Placeholder>
         </div>
 
         <div>
-
-          <div>
-          <Placeholder style={{height: 50, width: 50}}>
-            <Placeholder.Image />
-          </Placeholder>
-          <h3>{character.name}</h3>
+          {this.state.loaded && renderCharacterHeader(character)}
+          {this.state.loaded && renderCharacterStats(character)}
+          <div className="character-page-party">
+            {this.state.loaded ? <h3>Party: {character.party.name}</h3> : <h3>Party: (Need to Render)</h3>}
           </div>
-
-          <Menu widths={4} fluid>
-            <Menu.Item link>
-              XP: {character.experience}
-            </Menu.Item>
-            <Menu.Item link>
-              Level: {character.level}
-            </Menu.Item>
-            <Menu.Item link>
-              Health (hardcode): 12
-            </Menu.Item>
-            <Menu.Item link>
-              Gold: {character.gold}
-            </Menu.Item>
-          </Menu>
-
-          <h4>Party: (Need to Render)</h4>
-
-          <div>
+          
+          <div className="character-page-backstory">
             <h3>Backstory</h3>
-            <p>lorum lopsum ipsum </p>
+            {this.state.loaded ? renderCharacterBackstory(character) : <p>lorum lopsum ipsum </p>}
           </div>
         </div>
 
-        <div>
+        <div className="character-page-perks">
           <h3>Perks</h3>
           <p>Coming Soon</p>
         </div>
 
-        <div>
+        <div className="character-page-items">
           <h3>Items</h3>
           <p>(Stretch Goal)</p>
         </div>
 
-        <div>
+        <div className="character-page-checks">
           <h3>Checks</h3>
-          <p>Coming Soon</p>
+          {this.state.loaded ? <p>{character.checkmarks}</p>: <p>Coming Soon</p>}
         </div>
 
-        <div>
+        <div className="character-page-notes">
           <h3>Notes</h3>
           <p>lorum lopsum ipsum </p>
         </div>
@@ -87,6 +65,47 @@ class CharacterPage extends React.Component {
       </div>
     )
   }
+}
+
+function renderCharacterHeader(character) {
+  return (
+    <div className="character-page-header">
+      <div className="character-page-icon">
+        <Placeholder style={{height: 50, width: 50}}>
+          <Placeholder.Image />
+        </Placeholder>
+      </div>
+      <div className="character-page-name">
+        <h3>{character.name}</h3>
+      </div>
+    </div>)
+}
+
+function renderCharacterStats(character) {
+  return (
+    <div className="character-page-stats">
+      <Menu widths={4} fluid>
+        <Menu.Item link>
+          XP: {character.experience}
+        </Menu.Item>
+        <Menu.Item link>
+          Level: {character.level}
+        </Menu.Item>
+        <Menu.Item link>
+          Health (hardcode): 12
+        </Menu.Item>
+        <Menu.Item link>
+          Gold: {character.gold}
+        </Menu.Item>
+      </Menu>
+    </div>
+  )
+}
+
+function renderCharacterBackstory(character) {
+  return (
+      <p>lorum lopsum ipsum LOADED</p>
+  )
 }
 
 export default CharacterPage
