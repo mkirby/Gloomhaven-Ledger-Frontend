@@ -23,18 +23,18 @@ class CampaignPage extends React.Component {
   
   render() {
     return (
-      <div className="campaign-show">
+      <div className="campaign-page">
 
         <div className="campaign-parties-div">
           <h2>Parties</h2>
-          <div>
+          <div className="index-container">
             {this.state.loaded && renderPartyCards(this.state.campaign.parties)}
           </div>
         </div>
   
         <div className="campaign-retired-char-div">
           <h2>Retired Characters</h2>
-          <div>
+          <div className="index-container">
             {this.state.loaded && renderRetiredCharacterCards(this.state.campaign.characters)}
           </div>
         </div>

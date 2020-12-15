@@ -7,6 +7,7 @@ import CampaignsContainer from './CampaignsContainer'
 import CampaignPage from './CampaignPage'
 import CharactersContainer from './CharactersContainer'
 import PartiesContainer from './PartiesContainer'
+import PartyPage from './PartyPage'
 
 
 function ProfileContainer(props) {
@@ -19,7 +20,7 @@ function ProfileContainer(props) {
       }}/>
       <Route path={`/:username/campaigns/:id`} component={CampaignPage}/>
       <Route path={`/:username/campaigns`} component={CampaignsContainer}/>
-      <Route path={`/:username/parties/:id`} render={() => {return <p>Party Show</p>}}/>
+      <Route path={`/:username/parties/:id`} component={PartyPage}/>
       <Route path={`/:username/parties`} component={PartiesContainer}/>
       <Route path={`/:username/characters/:id`} render={() => {return <p>Character Show</p>}}/>
       <Route path={`/:username/characters`} component={CharactersContainer}/>

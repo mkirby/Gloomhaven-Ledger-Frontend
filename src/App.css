@@ -116,13 +116,13 @@ footer {
   width: 100%;
 }
 
-.campaign-show {
+.campaign-page {
   display: grid;
   grid-template-areas:
   "cp-parties cp-players"
   "cp-retired cp-players";
   grid-template-columns: auto 250px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .campaign-parties-div {
@@ -158,4 +158,8 @@ footer {
   grid-area: cp-name;
   text-align: left;
   margin: auto 10px;
+}
+
+.party-page {
+  padding: 20px;
 }
