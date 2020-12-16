@@ -9,7 +9,7 @@ export const userService = {
     register,
     getById,
     getByUsername,
-    update
+    getProfile
 };
 
 function login(username, password) {
@@ -32,8 +32,6 @@ function login(username, password) {
 
 function logout() {
     localStorage.clear();
-    // localStorage.removeItem('user');
-    // localStorage.removeItem('token')
 }
 
 function getByUsername(username) {
@@ -54,6 +52,20 @@ function getById(id) {
     return fetch(`${apiUrl}/users/${id}`, requestOptions).then(handleResponse);
 }
 
+function getProfile() {
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch(`${apiUrl}/profile/`, requestOptions).then(handleResponse)
+    .then(data => {
+        localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem('token', data.jwt);
+        return data;
+    });
+}
+
 function register(user) {
     const requestOptions = {
         method: 'POST',
@@ -62,16 +74,6 @@ function register(user) {
     };
 
     return fetch(`${apiUrl}/users`, requestOptions).then(handleResponse);
-}
-
-function update(user) {
-    const requestOptions = {
-        method: 'PATCH',
-        headers: { ...authHeader(), 'Content-Type': 'application/json' },
-        body: JSON.stringify(user)
-    };
-
-    return fetch(`${apiUrl}/users/${user.id}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {

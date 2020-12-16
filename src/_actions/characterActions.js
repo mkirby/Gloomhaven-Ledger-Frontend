@@ -1,5 +1,6 @@
 import { characterConstants } from '../_constants/characterConstants';
 import { characterService } from '../_services/characterServices';
+import { userActions } from '../_actions/userActions'
 import { alertActions } from './alertActions';
 // import { history } from '../_helpers/history';
 // add back if I want to redirect/ push etc
