@@ -24,7 +24,6 @@ export function authentication (state = initialState, action) {
     case userConstants.REFRESH_REQUEST:
       return {...state};
     case userConstants.REFRESH_SUCCESS:
-      debugger
       return {
         ...state,
         user: action.user,

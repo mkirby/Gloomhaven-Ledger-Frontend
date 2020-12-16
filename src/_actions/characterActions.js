@@ -19,6 +19,7 @@ function postCharacter(character) {
     .then(
       characterData => { 
         dispatch(success(characterData.character));
+        dispatch(alertActions.success('Character creation successful'));
       },
       error => {
         dispatch(failure(error.toString()));
@@ -42,6 +43,7 @@ function updateCharacter(character) {
     .then(
       characterData => { 
         dispatch(success(characterData.character));
+        dispatch(alertActions.success('Character update successful'));
       },
       error => {
         dispatch(failure(error.toString()));

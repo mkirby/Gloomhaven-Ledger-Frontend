@@ -69,7 +69,8 @@ function refresh() {
             .then(
                 userData => { 
                     dispatch(success(userData.user));
-                    dispatch(alertActions.success('Refresh successful'));
+                    // currently overrides the notifications from CRUD actions
+                    // dispatch(alertActions.success('Refresh successful'));
                 },
                 error => {
                     dispatch(failure(error.toString()));
