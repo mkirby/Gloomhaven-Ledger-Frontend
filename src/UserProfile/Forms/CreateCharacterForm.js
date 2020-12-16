@@ -7,22 +7,22 @@ import { userActions } from '../../_actions/userActions'
 
 class EditCharacterForm extends React.Component{
   state = {
-    "user_id": this.props.user.id,
-    "party_id": "",
-    "name": "",
-    "level": "",
-    "experience": "",
-    "gold": "",
-    "checkmarks": "",
-    "active": false,
-    "retired": false
+    'user_id': this.props.user.id,
+    'party_id': '',
+    'name': '',
+    'level': '',
+    'experience': '',
+    'gold': '',
+    'checkmarks': '',
+    'active': false,
+    'retired': false
   }
 
-  changeHandler = ({ name, value }) => { this.setState({ [name]: value }) }
+  changeHandler = ({ name, value }) => this.setState({ [name]: value })
 
-  changeDropdownHandler = (e, { value }) => { this.setState({ party_id: value }) }
+  changeDropdownHandler = (e, { value }) => this.setState({ party_id: value })
 
-  toggleHandler = (key) => { this.setState((prevState) => ({ [key]: !prevState[key] })) }
+  toggleHandler = (key) => this.setState((prevState) => ({ [key]: !prevState[key] }))
 
   submitHandler = (e) => {
     e.preventDefault()
@@ -36,61 +36,62 @@ class EditCharacterForm extends React.Component{
     return (
     <>
       <Form>
-        <Form.Field>
-          <label>Character Name</label>
-          <input type='text' name='name' placeholder='Character Name' value={character.name} onChange={(e) => this.changeHandler(e.target)}/>
-        </Form.Field>
+        <Form.Group widths='equal'>
+          <Form.Field>
+            <label>Character Name</label>
+            <input type='text' name='name' placeholder='Character Name' value={character.name} onChange={(e) => this.changeHandler(e.target)}/>
+          </Form.Field>
+          <Form.Field>
+            <label>Party</label>
+            <Dropdown
+              placeholder='Select Party'
+              selection
+              options={renderPartyOptions(this.props.user)}
+              value={this.state.party_id}
+              onChange={this.changeDropdownHandler}
+            />
+          </Form.Field>
+        </Form.Group>
 
         <Form.Group widths='equal'>
           <Form.Field>
             <label>Level</label>
-            <input type='number' name='level' placeholder='Level' value={character.level} onChange={(e) => this.changeHandler(e.target)} min="1" max="9"/>
+            <input type='number' name='level' placeholder='Level' value={character.level} onChange={(e) => this.changeHandler(e.target)} min='1' max='9'/>
           </Form.Field>
           <Form.Field>
             <label>Experience</label>
-            <input type='number' name='experience' placeholder='Experience' value={character.experience} onChange={(e) => this.changeHandler(e.target)} min="0"/>
+            <input type='number' name='experience' placeholder='Experience' value={character.experience} onChange={(e) => this.changeHandler(e.target)} min='0'/>
           </Form.Field>
         </Form.Group>
 
         <Form.Group widths='equal'>
           <Form.Field>
             <label>Gold</label>
-            <input type='number' name='gold' placeholder='Gold' value={character.gold} onChange={(e) => this.changeHandler(e.target)} min="0"/>
+            <input type='number' name='gold' placeholder='Gold' value={character.gold} onChange={(e) => this.changeHandler(e.target)} min='0'/>
           </Form.Field>
           <Form.Field>
             <label>Checkmarks</label>
-            <input type='number' name='checkmarks' placeholder='Checkmarks' value={character.checkmarks} onChange={(e) => this.changeHandler(e.target)} min="0"/>
+            <input type='number' name='checkmarks' placeholder='Checkmarks' value={character.checkmarks} onChange={(e) => this.changeHandler(e.target)} min='0'/>
           </Form.Field>
         </Form.Group>
 
-        <Form.Field>
-          <label>Party</label>
-          <Dropdown
-            placeholder='Select Party'
-            selection
-            options={renderPartyOptions(this.props.user)}
-            value={this.state.party_id}
-            onChange={this.changeDropdownHandler}
-          />
-        </Form.Field>
-        
         <Form.Group widths='equal'>
           <Form.Field>
             <Radio
-              label="Active"
+              label='Active'
               toggle
               type='checkbox'
               checked={character.active}
-              onChange={() => this.toggleHandler("active")}
+              onChange={() => this.toggleHandler('active')}
             />
           </Form.Field>
           <Form.Field>
             <Radio
-              label="Retired"
+              label='Retired'
               toggle
               type='checkbox'
               checked={character.retired}
-              onChange={() => this.toggleHandler("retired")}
+              onChange={() => this.toggleHandler('retired')}
             />
           </Form.Field>
         </Form.Group>
@@ -98,18 +99,22 @@ class EditCharacterForm extends React.Component{
       </Form>
       <br/>
       <div>
-        <Button color='black' onClick={this.props.handleClose}>
-          Cancel
-        </Button>
         <Button
-          content="Create"
+          positive
+          content='Create'
           labelPosition='right'
           icon='checkmark'
           onClick={(e) => {
             this.props.handleClose()
             this.submitHandler(e)
           }}
-          positive
+        />
+        <Button
+          content='Cancel'
+          color='black'
+          labelPosition='right'
+          icon='close'
+          onClick={this.props.handleClose}
         />
       </div>
     </>
