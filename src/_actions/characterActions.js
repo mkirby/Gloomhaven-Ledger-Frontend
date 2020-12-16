@@ -64,7 +64,8 @@ function deleteCharacter(character) {
     characterService.deleteCharacter(character)
     .then(
       characterData => { 
-        dispatch(success(characterData.character));
+        dispatch(success(character));
+        dispatch(alertActions.success('Character deleted successful'));
       },
       error => {
         dispatch(failure(error.toString()));

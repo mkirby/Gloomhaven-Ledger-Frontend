@@ -31,8 +31,7 @@ function updateCharacter(character) {
 function deleteCharacter(character) {
   const requestOptions = {
     method: 'DELETE',
-    headers: { ...authHeader(), 'Content-Type': 'application/json' },
-    body: JSON.stringify({character})
+    headers: { ...authHeader(), 'Content-Type': 'application/json' }
   };
   return fetch(`${apiUrl}/characters/${character.id}`, requestOptions).then(handleResponse);
 }
