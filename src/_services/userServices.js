@@ -71,7 +71,7 @@ function update(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${apiUrl}/users/${user.id}`, requestOptions).then(handleResponse);;
+    return fetch(`${apiUrl}/users/${user.id}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {

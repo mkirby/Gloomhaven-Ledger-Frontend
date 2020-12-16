@@ -1,7 +1,7 @@
 import { userConstants } from '../_constants/userConstants';
 import { userService } from '../_services/userServices';
 import { alertActions } from './alertActions';
-import { history } from '../_helpers/history'
+import { history } from '../_helpers/history';
 
 export const userActions = {
     login,
@@ -10,21 +10,20 @@ export const userActions = {
 };
 
 function login(username, password) {
-    console.log("UserActions: Login")
     return dispatch => {
         dispatch(request({ username }));
 
         userService.login(username, password)
-            .then(
-                userData => { 
-                    dispatch(success(userData.user));
-                    history.push("/")
-                },
-                error => {
-                    dispatch(failure(error.toString()));
-                    dispatch(alertActions.error(error.toString()));
-                }
-            );
+        .then(
+            userData => { 
+                dispatch(success(userData.user));
+                history.push("/")
+            },
+            error => {
+                dispatch(failure(error.toString()));
+                dispatch(alertActions.error(error.toString()));
+            }
+        );
     };
 
     function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }

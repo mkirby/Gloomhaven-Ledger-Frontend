@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
-import { Menu, Placeholder } from 'semantic-ui-react';
+import { Button, Menu, Placeholder } from 'semantic-ui-react';
+import EditModal from './EditModal';
 
 function CharacterCard(props) {
   const { character } = props
@@ -46,16 +47,15 @@ function CharacterCard(props) {
             as={NavLink}
             to={`/${username}/characters/${characterId}`}
           />
-          <Menu.Item
-            link
-            name="Edit"
-          />
+          <EditModal model='character' character={character}/>
           <Menu.Item
             link
             name="Delete"
           />
         </Menu>
       </div>
+
+      
 
     </div>
   )
