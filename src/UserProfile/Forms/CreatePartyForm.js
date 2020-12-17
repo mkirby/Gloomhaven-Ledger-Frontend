@@ -99,7 +99,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  // post: characterAction.postCharacter,
+  // post: partyAction.postParty,
   refresh: userActions.refresh
 }
 
