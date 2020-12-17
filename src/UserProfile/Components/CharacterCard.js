@@ -49,7 +49,7 @@ function CharacterCard(props) {
             as={NavLink}
             to={`/${username}/characters/${characterId}`}
           />
-          <EditModal model='character' character={character}/>
+          <EditModal model='character' trigger='menu' character={character}/>
           <Menu.Item
             link
             name="Delete"
@@ -60,8 +60,6 @@ function CharacterCard(props) {
           />
         </Menu>
       </div>
-
-      
 
     </div>
   )

@@ -5,17 +5,17 @@ import { Form, Radio, Button, Dropdown } from 'semantic-ui-react'
 import { characterAction } from '../../_actions/characterActions'
 import { userActions } from '../../_actions/userActions'
 
-class EditCharacterForm extends React.Component{
+class CreateCharacterForm extends React.Component{
   state = {
-    'user_id': this.props.user.id,
-    'party_id': '',
-    'name': '',
-    'level': '',
-    'experience': '',
-    'gold': '',
-    'checkmarks': '',
-    'active': false,
-    'retired': false
+    user_id: this.props.user.id,
+    party_id: '',
+    name: '',
+    level: '',
+    experience: '',
+    gold: '',
+    checkmarks: '',
+    active: false,
+    retired: false
   }
 
   changeHandler = ({ name, value }) => this.setState({ [name]: value })
@@ -37,11 +37,11 @@ class EditCharacterForm extends React.Component{
     <>
       <Form>
         <Form.Group widths='equal'>
-          <Form.Field>
+          <Form.Field required>
             <label>Character Name</label>
             <input type='text' name='name' placeholder='Character Name' value={character.name} onChange={(e) => this.changeHandler(e.target)}/>
           </Form.Field>
-          <Form.Field>
+          <Form.Field required>
             <label>Party</label>
             <Dropdown
               placeholder='Select Party'
@@ -54,22 +54,22 @@ class EditCharacterForm extends React.Component{
         </Form.Group>
 
         <Form.Group widths='equal'>
-          <Form.Field>
+          <Form.Field required>
             <label>Level</label>
             <input type='number' name='level' placeholder='Level' value={character.level} onChange={(e) => this.changeHandler(e.target)} min='1' max='9'/>
           </Form.Field>
-          <Form.Field>
+          <Form.Field required>
             <label>Experience</label>
             <input type='number' name='experience' placeholder='Experience' value={character.experience} onChange={(e) => this.changeHandler(e.target)} min='0'/>
           </Form.Field>
         </Form.Group>
 
         <Form.Group widths='equal'>
-          <Form.Field>
+          <Form.Field required>
             <label>Gold</label>
             <input type='number' name='gold' placeholder='Gold' value={character.gold} onChange={(e) => this.changeHandler(e.target)} min='0'/>
           </Form.Field>
-          <Form.Field>
+          <Form.Field required>
             <label>Checkmarks</label>
             <input type='number' name='checkmarks' placeholder='Checkmarks' value={character.checkmarks} onChange={(e) => this.changeHandler(e.target)} min='0'/>
           </Form.Field>
@@ -143,4 +143,4 @@ const actionCreators = {
   refresh: userActions.refresh
 }
 
-export default connect(mapStateToProps, actionCreators)(EditCharacterForm) 
+export default connect(mapStateToProps, actionCreators)(CreateCharacterForm) 

@@ -1,12 +1,19 @@
 import React from 'react'
-import { Header, Modal, Menu } from 'semantic-ui-react'
+import { Header, Modal, Menu, Button } from 'semantic-ui-react'
 import EditCharacterForm from '../Forms/EditCharacterForm'
 
 function EditModal(props) {
   const [open, setOpen] = React.useState(false)
 
-  // what model is being edited? 'character', 'party', 'campaign'
-  const { model } = props
+  // required props
+  const { model } = props // what model is being edited? 'character', 'party', 'campaign'
+  const {trigger} = props // what element triggers the modal? 'button', 'menu'
+
+  // required props depending on model
+    // character
+    // party
+    // campaign
+  
   const uppercasedModel = model.charAt(0).toUpperCase() + model.slice(1)
 
   const handleClose = () => setOpen(false)
@@ -17,7 +24,7 @@ function EditModal(props) {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Menu.Item link name="Edit"/>}
+      trigger={modalTriggerOptions(trigger, uppercasedModel)}
       size='tiny'
       centered={false}
     >
@@ -38,6 +45,16 @@ function EditModal(props) {
 
     </Modal>
   )
+}
+
+function modalTriggerOptions(trigger, model) {
+  if (trigger === 'button') {
+    return <Button>Edit {model}</Button>
+  } else if (trigger === 'menu') {
+    return (<Menu.Item link name="Edit"/>)
+  } else {
+    console.log("Unsupported Modal Trigger")
+  }
 }
 
 export default EditModal

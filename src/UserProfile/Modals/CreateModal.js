@@ -1,12 +1,16 @@
 import React from 'react'
 import { Header, Modal, Button } from 'semantic-ui-react'
+import CreateCampaignForm from '../Forms/CreateCampaignForm'
 import CreateCharacterForm from '../Forms/CreateCharacterForm'
+import CreatePartyForm from '../Forms/CreatePartyForm'
 
 function CreateModal(props) {
   const [open, setOpen] = React.useState(false)
 
-  // what model is being created? 'character', 'party', 'campaign'
-  const { model } = props
+  // required props
+  const { model } = props // what model is being edited? 'character', 'party', 'campaign'
+  const {trigger} = props // what element triggers the modal? 'button', 'menu'
+
   const uppercasedModel = model.charAt(0).toUpperCase() + model.slice(1)
 
   const handleClose = () => setOpen(false)
@@ -17,7 +21,7 @@ function CreateModal(props) {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Button>Create {uppercasedModel}</Button>}
+      trigger={modalTriggerOptions(trigger, uppercasedModel)}
       size='tiny'
       centered={false}
     >
@@ -26,8 +30,9 @@ function CreateModal(props) {
       <Modal.Content>
         <Modal.Description>
           <Header>Render Different Forms Depending on Model</Header>
-
-          {model === "character" && <CreateCharacterForm handleClose={handleClose} />}
+          {model === 'campaign' && <CreateCampaignForm handleClose={handleClose} />}
+          {model === 'party' && <CreatePartyForm handleClose={handleClose} />}
+          {model === 'character' && <CreateCharacterForm handleClose={handleClose} />}
         </Modal.Description>
       </Modal.Content>
 
@@ -37,6 +42,16 @@ function CreateModal(props) {
 
     </Modal>
   )
+}
+
+function modalTriggerOptions(trigger, model) {
+  if (trigger === 'button') {
+    return <Button>Create {model}</Button>
+  } else if (trigger === 'menu') {
+    return (<Menu.Item link name="Create"/>)
+  } else {
+    console.log("Unsupported Modal Trigger")
+  }
 }
 
 export default CreateModal
