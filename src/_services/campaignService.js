@@ -1,6 +1,6 @@
 import { authHeader } from '../_helpers/authHeader';
 import { history } from '../_helpers/history';
-import { userService } from './userServices'
+import { userService } from './userService'
 
 const apiUrl = 'http://localhost:3000/api/v1'
 

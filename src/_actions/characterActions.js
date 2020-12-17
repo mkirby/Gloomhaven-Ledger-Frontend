@@ -1,5 +1,5 @@
 import { characterConstants } from '../_constants/characterConstants';
-import { characterService } from '../_services/characterServices';
+import { characterService } from '../_services/characterService';
 // import { userActions } from '../_actions/userActions'
 // add back if I want the user refresh func
 import { alertActions } from './alertActions';
