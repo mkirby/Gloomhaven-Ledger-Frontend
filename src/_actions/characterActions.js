@@ -35,8 +35,6 @@ function postCharacter(character) {
 }
 
 function updateCharacter(character) {
-  console.log('character actions - character', character)
-  
   return dispatch => {
     dispatch(request(character));
 
