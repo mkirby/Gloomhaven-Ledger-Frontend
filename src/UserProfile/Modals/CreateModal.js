@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Modal, Button } from 'semantic-ui-react'
+import { Header, Modal, Button, Menu } from 'semantic-ui-react'
 import CreateCampaignForm from '../Forms/CreateCampaignForm'
 import CreateCharacterForm from '../Forms/CreateCharacterForm'
 import CreatePartyForm from '../Forms/CreatePartyForm'

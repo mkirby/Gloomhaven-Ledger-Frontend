@@ -6,12 +6,15 @@ import { Menu, Placeholder } from 'semantic-ui-react'
 import { userActions } from '../../_actions/userActions'
 
 function ProfilePage(props) {
+  const { username } = props.user
+  const usernameUppercased = username.charAt(0).toUpperCase() + username.slice(1)
+
   return (
     <div className="profile-page">
       <Placeholder style={{height: 300, width: 300}}>
         <Placeholder.Image />
       </Placeholder>
-      <h3>USERNAME</h3>
+      {props.loggedIn && <h3>{usernameUppercased}</h3>}
       <Menu
         widths={3}
         fluid
@@ -21,27 +24,32 @@ function ProfilePage(props) {
           link
           name='Campaigns'
           as={NavLink}
-          to={`/${props.match.params.username}/campaigns`}
+          to={`/${username}/campaigns`}
         />
         <Menu.Item
           link
           name='Parties'
           as={NavLink}
-          to={`/${props.match.params.username}/parties`}
+          to={`/${username}/parties`}
         />
         <Menu.Item
           link
           name='Characters'
           as={NavLink}
-          to={`/${props.match.params.username}/characters`}
+          to={`/${username}/characters`}
         />
       </Menu>
     </div>
   )
 }
 
+function mapStateToProps(state) {
+  const { user, loggedIn } = state.authentication
+  return { user, loggedIn }
+}
+
 const actionCreators = {
   getByUsername: userActions.getByUsername
 }
 
-export default connect(null, actionCreators)(ProfilePage)
+export default connect(mapStateToProps, actionCreators)(ProfilePage)

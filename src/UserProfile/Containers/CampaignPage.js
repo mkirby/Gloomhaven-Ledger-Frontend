@@ -65,6 +65,8 @@ function renderRetiredCharacterCards(characters) {
 
 function renderCampaignPlayers(players) {
   return players.map(player => {
+    const { username } = player
+    const usernameUppercased = username.charAt(0).toUpperCase() + username.slice(1)
     return (
       <div key={player.id} className="campaign-player-div">
         <div className="campaign-player-image">
@@ -73,7 +75,7 @@ function renderCampaignPlayers(players) {
           </Placeholder>
         </div>
         <div className="campaign-player-username">
-          <h3><NavLink to={`/${player.username}`}>{player.username}</NavLink></h3>
+          <h3><NavLink to={`/${username}`}>{usernameUppercased}</NavLink></h3>
         </div>
       </div>
     )
