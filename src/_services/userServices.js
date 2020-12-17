@@ -13,7 +13,6 @@ export const userService = {
 };
 
 function login(username, password) {
-    console.log("UserServices: Login")
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -22,10 +21,8 @@ function login(username, password) {
     return fetch(`${apiUrl}/login`, requestOptions)
         .then(handleResponse)
         .then(data => {
-            console.log("UserServices: Login fetched data: ", data)
             localStorage.setItem('user', JSON.stringify(data.user));
             localStorage.setItem('token', data.jwt);
-            console.log("UserServices: localStorage after set: ", localStorage)
             return data;
         });
 }
