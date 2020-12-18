@@ -1,7 +1,5 @@
 import { campaignConstants } from '../_constants/campaignConstants';
 import { campaignService } from '../_services/campaignService';
-// import { userActions } from '../_actions/userActions'
-// add back if I want the user refresh func
 import { alertActions } from './alertActions';
 // import { history } from '../_helpers/history';
 // add back if I want to redirect/ push etc

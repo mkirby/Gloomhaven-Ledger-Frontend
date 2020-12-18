@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Form, Button, Dropdown } from 'semantic-ui-react'
 
 import { characterAction } from '../../_actions/characterActions'
-import { userActions } from '../../_actions/userActions'
 
 class CreatePartyForm extends React.Component{
   state = {
@@ -20,7 +19,6 @@ class CreatePartyForm extends React.Component{
   submitHandler = (e) => {
     e.preventDefault()
     // this.props.post(this.state)
-    // this.props.refresh()
   }
 
   render() {
@@ -99,8 +97,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  // post: partyAction.postParty,
-  refresh: userActions.refresh
+  // post: partyAction.postParty
 }
 
 export default connect(mapStateToProps, actionCreators)(CreatePartyForm) 

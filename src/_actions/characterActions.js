@@ -1,7 +1,5 @@
 import { characterConstants } from '../_constants/characterConstants';
 import { characterService } from '../_services/characterService';
-// import { userActions } from '../_actions/userActions'
-// add back if I want the user refresh func
 import { alertActions } from './alertActions';
 // import { history } from '../_helpers/history';
 // add back if I want to redirect/ push etc
@@ -40,7 +38,7 @@ function updateCharacter(character) {
 
     characterService.updateCharacter(character)
     .then(
-      characterData => { 
+      characterData => {
         dispatch(success(characterData.character));
         dispatch(alertActions.success('Character update successful'));
       },

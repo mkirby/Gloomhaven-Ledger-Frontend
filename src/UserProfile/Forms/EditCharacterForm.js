@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Form, Radio, Button, Dropdown } from 'semantic-ui-react'
 
 import { characterAction } from '../../_actions/characterActions'
-import { userActions } from '../../_actions/userActions'
 
 class EditCharacterForm extends React.Component{
   state = {
@@ -27,7 +26,6 @@ class EditCharacterForm extends React.Component{
   submitHandler = (e) => {
     e.preventDefault()
     this.props.updateCharacter(this.state)
-    this.props.refresh()
   }
 
   render() {
@@ -139,8 +137,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  updateCharacter: characterAction.updateCharacter,
-  refresh: userActions.refresh
+  updateCharacter: characterAction.updateCharacter
 }
 
 export default connect(mapStateToProps, actionCreators)(EditCharacterForm) 
