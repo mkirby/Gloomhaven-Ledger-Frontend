@@ -2,8 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Form, Button } from 'semantic-ui-react'
 
-import { characterAction } from '../../_actions/characterActions'
-import { userActions } from '../../_actions/userActions'
+import { campaignAction } from '../../_actions/campaignActions'
 
 class CreateCampaignForm extends React.Component{
   state = {
@@ -15,8 +14,7 @@ class CreateCampaignForm extends React.Component{
 
   submitHandler = (e) => {
     e.preventDefault()
-    // this.props.post(this.state)
-    // this.props.refresh()
+    this.props.post(this.state)
   }
 
   render() {
@@ -61,8 +59,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  // post: campaignAction.postCampaign,
-  refresh: userActions.refresh
+  post: campaignAction.postCampaign
 }
 
 export default connect(mapStateToProps, actionCreators)(CreateCampaignForm) 

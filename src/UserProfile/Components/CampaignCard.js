@@ -4,7 +4,11 @@ import { Menu } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { campaignAction } from '../../_actions/campaignActions'
+import EditModal from '../Modals/EditModal'
+
 function CampaignCard(props) {
+  console.log("campaign card props", props)
   const { user_campaign } = props
   const { username } = props.user
   const { id } = user_campaign.campaign
@@ -21,12 +25,14 @@ function CampaignCard(props) {
             as={NavLink}
             to={`/${username}/campaigns/${id}`}
           />
-          <Menu.Item link>
-            Edit
-          </Menu.Item>
-          <Menu.Item link>
-            Delete
-          </Menu.Item>
+          <EditModal model='campaign' trigger='menu' campaign={user_campaign.campaign}/>
+          <Menu.Item
+            link
+            name="Delete"
+            onClick={() => {
+              props.delete(user_campaign.campaign)
+            }}
+          />
         </Menu>}
       {!user_campaign.owner &&
         <Menu widths={3} fluid>
@@ -47,7 +53,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  // add dispatch actions as needed
+  delete: campaignAction.deleteCampaign
 }
 
 export default connect(mapStateToProps, actionCreators)(CampaignCard)

@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Menu, Placeholder } from 'semantic-ui-react';
 
+import { partyAction } from '../../_actions/partyActions'
+import EditModal from '../Modals/EditModal'
+
 function PartyCard(props) {
   const { party } = props
   const { username } = props.user
@@ -22,12 +25,14 @@ function PartyCard(props) {
           as={NavLink}
           to={`/${username}/parties/${id}`}
         />
-        <Menu.Item link>
-          Edit
-        </Menu.Item>
-        <Menu.Item link>
-          Delete
-        </Menu.Item>
+        <EditModal model='party' trigger='menu' party={party}/>
+        <Menu.Item
+          link
+          name='Delete'
+          onClick={() => {
+            props.delete(party)
+          }}
+        />
       </Menu>
     </div>
   )
@@ -50,7 +55,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  // add dispatch actions as needed
+  delete: partyAction.deleteParty
 }
 
 export default connect(mapStateToProps, actionCreators)(PartyCard) 

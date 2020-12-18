@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Form, Button, Dropdown } from 'semantic-ui-react'
 
-import { characterAction } from '../../_actions/characterActions'
+import { partyAction } from '../../_actions/partyActions'
 
 class CreatePartyForm extends React.Component{
   state = {
@@ -18,7 +18,7 @@ class CreatePartyForm extends React.Component{
 
   submitHandler = (e) => {
     e.preventDefault()
-    // this.props.post(this.state)
+    this.props.post(this.state)
   }
 
   render() {
@@ -97,7 +97,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  // post: partyAction.postParty
+  post: partyAction.postParty
 }
 
 export default connect(mapStateToProps, actionCreators)(CreatePartyForm) 
