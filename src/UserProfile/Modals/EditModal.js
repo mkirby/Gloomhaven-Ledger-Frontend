@@ -1,6 +1,9 @@
 import React from 'react'
 import { Header, Modal, Menu, Button } from 'semantic-ui-react'
+
 import EditCharacterForm from '../Forms/EditCharacterForm'
+import EditPartyForm from '../Forms/EditPartyForm'
+import EditCampaignForm from '../Forms/EditCampaignForm'
 
 function EditModal(props) {
   const [open, setOpen] = React.useState(false)
@@ -34,8 +37,9 @@ function EditModal(props) {
         <Modal.Description>
           <Header>Render Different Forms</Header>
           <p>Depending on Model</p>
-
           {model === "character" && <EditCharacterForm character={props.character} handleClose={handleClose} />}
+          {model === "party" && <EditPartyForm party={props.party} handleClose={handleClose} />}
+          {model === "campaign" && <EditCampaignForm campaign={props.campaign} handleClose={handleClose} />}
         </Modal.Description>
       </Modal.Content>
 

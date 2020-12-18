@@ -4,12 +4,13 @@ import { Form, Button, Dropdown } from 'semantic-ui-react'
 
 import { partyAction } from '../../_actions/partyActions'
 
-class CreatePartyForm extends React.Component{
+class EditPartyForm extends React.Component{
   state = {
-    name: '',
-    campaign_id: '',
-    reputation: '',
-    notes: ''
+    id: this.props.party.id,
+    name: this.props.party.name,
+    campaign_id: this.props.party.campaign.id,
+    reputation: this.props.party.reputation,
+    notes: this.props.party.notes
   }
 
   changeHandler = ({ name, value }) => this.setState({ [name]: value })
@@ -18,12 +19,12 @@ class CreatePartyForm extends React.Component{
 
   submitHandler = (e) => {
     e.preventDefault()
-    this.props.post(this.state)
+    this.props.update(this.state)
   }
 
   render() {
     const party = this.state
-
+    console.log("party form props", this.props)
     return (
     <>
       <Form>
@@ -97,7 +98,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  post: partyAction.postParty
+  update: partyAction.updateParty
 }
 
-export default connect(mapStateToProps, actionCreators)(CreatePartyForm) 
+export default connect(mapStateToProps, actionCreators)(EditPartyForm) 
