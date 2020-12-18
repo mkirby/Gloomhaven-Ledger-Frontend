@@ -11,7 +11,7 @@ function CampaignsContainer(props) {
 }
 
 function renderCampaignCards(user) {
-  return user.user_campaigns.map((user_campaign) => <CampaignCard key={user_campaign.id} user_campaign={user_campaign}/>)
+  return user.campaigns.map((campaign) => <CampaignCard key={campaign.id} campaign={campaign}/>)
 }
 
 function mapStateToProps(state) {

@@ -8,16 +8,17 @@ import { campaignAction } from '../../_actions/campaignActions'
 import EditModal from '../Modals/EditModal'
 
 function CampaignCard(props) {
-  console.log("campaign card props", props)
-  const { user_campaign } = props
+  const { campaign } = props
   const { username } = props.user
-  const { id } = user_campaign.campaign
+  const { id } = campaign
+  const isOwner = campaign.owner.id === props.user.id
+
   return (
     <div className='index-card campaign-card'>
-      <h3>{user_campaign.campaign.name}</h3>
-      <p>Campaign Started: {dateFormat(user_campaign.campaign.created_at, "m/d/yy")}</p>
-      <p>Role: {user_campaign.owner ? "Owner" : "Player"}</p>
-      {user_campaign.owner && 
+      <h3>{campaign.name}</h3>
+      <p>Campaign Started: {dateFormat(campaign.created_at, "m/d/yy")}</p>
+      <p>Role: {isOwner ? "Owner" : "Player"}</p>
+      {isOwner && 
         <Menu widths={3} fluid>
           <Menu.Item
             link
@@ -25,16 +26,16 @@ function CampaignCard(props) {
             as={NavLink}
             to={`/${username}/campaigns/${id}`}
           />
-          <EditModal model='campaign' trigger='menu' campaign={user_campaign.campaign}/>
+          <EditModal model='campaign' trigger='menu' campaign={campaign}/>
           <Menu.Item
             link
             name="Delete"
             onClick={() => {
-              props.delete(user_campaign.campaign)
+              props.delete(campaign)
             }}
           />
         </Menu>}
-      {!user_campaign.owner &&
+      {!isOwner &&
         <Menu widths={3} fluid>
           <Menu.Item
             link
