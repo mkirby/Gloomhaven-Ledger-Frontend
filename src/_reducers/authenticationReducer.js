@@ -27,6 +27,7 @@ export function authentication (state = initialState, action) {
     case userConstants.REFRESH_FAILURE:
       return {...state};
     case characterConstants.CREATE_SUCCESS:
+      localStorage.setItem('user', JSON.stringify({ ...state.user, characters: [...state.user.characters, action.character]}))
       return Object.assign({}, state, { user: { ...state.user,
         characters: [...state.user.characters, action.character]
       }});
@@ -34,6 +35,7 @@ export function authentication (state = initialState, action) {
       newCharacters = [...state.user.characters]
       index = newCharacters.findIndex(character => character.id === action.character.id)
       newCharacters.splice(index, 1, action.character )
+      localStorage.setItem('user', JSON.stringify({ ...state.user, characters: newCharacters }))
       return Object.assign({}, state, { user: { ...state.user,
         characters: newCharacters
       }});
@@ -41,10 +43,12 @@ export function authentication (state = initialState, action) {
       newCharacters = [...state.user.characters]
       index = newCharacters.findIndex(character => character.id === action.character.id)
       newCharacters.splice( index, 1 )
+      localStorage.setItem('user', JSON.stringify({ ...state.user, characters: newCharacters }))
       return Object.assign({}, state, { user: { ...state.user,
         characters: newCharacters
       }});
     case partyConstants.CREATE_SUCCESS:
+      localStorage.setItem('user', JSON.stringify({ ...state.user, parties: [...state.user.parties, action.party] }))
       return Object.assign({}, state, { user: { ...state.user,
         parties: [...state.user.parties, action.party]
       }});
@@ -52,6 +56,7 @@ export function authentication (state = initialState, action) {
       newParties = [...state.user.parties]
       index = newParties.findIndex(party => party.id === action.party.id)
       newParties.splice(index, 1, action.party )
+      localStorage.setItem('user', JSON.stringify({ ...state.user, parties: newParties }))
       return Object.assign({}, state, { user: { ...state.user,
         parties: newParties
       }});
@@ -59,10 +64,12 @@ export function authentication (state = initialState, action) {
       newParties = [...state.user.parties]
       index = newParties.findIndex(party => party.id === action.party.id)
       newParties.splice( index, 1 )
+      localStorage.setItem('user', JSON.stringify({ ...state.user, parties: newParties }))
       return Object.assign({}, state, { user: { ...state.user,
         parties: newParties
       }});
       case campaignConstants.CREATE_SUCCESS:
+        localStorage.setItem('user', JSON.stringify({ ...state.user, campaigns: [...state.user.campaigns, action.campaign] }))
         return Object.assign({}, state, { user: { ...state.user,
           campaigns: [...state.user.campaigns, action.campaign]
         }});
@@ -70,6 +77,7 @@ export function authentication (state = initialState, action) {
         newCampaigns = [...state.user.campaigns]
         index = newCampaigns.findIndex(campaign => campaign.id === action.campaign.id)
         newCampaigns.splice(index, 1, action.campaign )
+        localStorage.setItem('user', JSON.stringify({ ...state.user, campaigns: newCampaigns }))
         return Object.assign({}, state, { user: { ...state.user,
           campaigns: newCampaigns
         }});
@@ -77,6 +85,7 @@ export function authentication (state = initialState, action) {
         newCampaigns = [...state.user.campaigns]
         index = newCampaigns.findIndex(campaign => campaign.id === action.campaign.id)
         newCampaigns.splice( index, 1 )
+        localStorage.setItem('user', JSON.stringify({ ...state.user, campaigns: newCampaigns }))
         return Object.assign({}, state, { user: { ...state.user,
           campaigns: newCampaigns
         }});

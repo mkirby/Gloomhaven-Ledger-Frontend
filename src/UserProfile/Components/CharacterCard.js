@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { Menu, Placeholder } from 'semantic-ui-react';
 import { characterAction } from '../../_actions/characterActions';
-import { userActions } from '../../_actions/userActions';
 import EditModal from '../Modals/EditModal';
 
 function CharacterCard(props) {
@@ -55,7 +54,6 @@ function CharacterCard(props) {
             name="Delete"
             onClick={() => {
               props.delete(character)
-              props.refresh()
             }}
           />
         </Menu>
@@ -71,8 +69,7 @@ function mapStateToProps(state) {
 }
 
 const actionCreators = {
-  delete: characterAction.deleteCharacter,
-  refresh: userActions.refresh
+  delete: characterAction.deleteCharacter
 }
 
 export default connect(mapStateToProps, actionCreators)(CharacterCard) 
