@@ -5,10 +5,6 @@ import { campaignConstants } from '../_constants/campaignConstants'
 
 let user = JSON.parse(localStorage.getItem('user'))
 const initialState = user ? { loggedIn: true, user } : {}
-let newCharacters
-let newParties
-let newCampaigns
-let index
 
 export function authentication (state = initialState, action) {
   switch (action.type) {
