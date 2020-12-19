@@ -5,21 +5,21 @@ export function party(state = {}, action) {
     case partyConstants.CREATE_REQUEST:
       return { ...state };
     case partyConstants.CREATE_SUCCESS:
-      return { ...state, lastCreated: action.party };
+      return { ...state, lastCreated: action.payload.party };
     case partyConstants.CREATE_FAILURE:
       return { ...state };
 
     case partyConstants.UPDATE_REQUEST:
       return { ...state };
     case partyConstants.UPDATE_SUCCESS:
-      return { ...state, lastUpdated: action.party };
+      return { ...state, lastUpdated: action.payload.party };
     case partyConstants.UPDATE_FAILURE:
       return { ...state };
 
     case partyConstants.DELETE_REQUEST:
       return { ...state };
     case partyConstants.DELETE_SUCCESS:
-      return { ...state, lastDeleted: action.party };
+      return { ...state, lastDeleted: action.payload.party };
     case partyConstants.DELETE_FAILURE:
       return { ...state };
 

@@ -16,8 +16,8 @@ function postParty(party) {
 
     partyService.postParty(party)
     .then(
-      partyData => { 
-        dispatch(success(partyData.party));
+      data => { 
+        dispatch(success({user: data.user, party: data.party}));
         dispatch(alertActions.success('Party creation successful'));
       },
       error => {
@@ -28,7 +28,7 @@ function postParty(party) {
   };
 
   function request(party) { return { type: partyConstants.CREATE_REQUEST, party } }
-  function success(party) { return { type: partyConstants.CREATE_SUCCESS, party } }
+  function success(payload) { return { type: partyConstants.CREATE_SUCCESS, payload } }
   function failure(error) { return { type: partyConstants.CREATE_FAILURE, error } }
 }
 
@@ -38,8 +38,8 @@ function updateParty(party) {
 
     partyService.updateParty(party)
     .then(
-      partyData => { 
-        dispatch(success(partyData.party));
+      data => { 
+        dispatch(success({user: data.user, party: data.party}));
         dispatch(alertActions.success('Party update successful'));
       },
       error => {
@@ -50,7 +50,7 @@ function updateParty(party) {
   };
 
   function request(party) { return { type: partyConstants.UPDATE_REQUEST, party } }
-  function success(party) { return { type: partyConstants.UPDATE_SUCCESS, party } }
+  function success(payload) { return { type: partyConstants.UPDATE_SUCCESS, payload } }
   function failure(error) { return { type: partyConstants.UPDATE_FAILURE, error } }
 }
 
@@ -60,8 +60,8 @@ function deleteParty(party) {
 
     partyService.deleteParty(party)
     .then(
-      partyData => { 
-        dispatch(success(party));
+      data => { 
+        dispatch(success({user: data.user, party: party}));
         dispatch(alertActions.success('Party deleted successful'));
       },
       error => {
@@ -72,6 +72,6 @@ function deleteParty(party) {
   };
 
   function request(party) { return { type: partyConstants.DELETE_REQUEST, party } }
-  function success(party) { return { type: partyConstants.DELETE_SUCCESS, party } }
+  function success(payload) { return { type: partyConstants.DELETE_SUCCESS, payload } }
   function failure(error) { return { type: partyConstants.DELETE_FAILURE, error } }
 }

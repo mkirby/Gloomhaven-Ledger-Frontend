@@ -16,8 +16,8 @@ function postCampaign(campaign) {
 
     campaignService.postCampaign(campaign)
     .then(
-      campaignData => { 
-        dispatch(success(campaignData.campaign));
+      data => { 
+        dispatch(success({user: data.user, campaign: data.campaign}));
         dispatch(alertActions.success('Campaign creation successful'));
       },
       error => {
@@ -28,7 +28,7 @@ function postCampaign(campaign) {
   };
 
   function request(campaign) { return { type: campaignConstants.CREATE_REQUEST, campaign } }
-  function success(campaign) { return { type: campaignConstants.CREATE_SUCCESS, campaign } }
+  function success(payload) { return { type: campaignConstants.CREATE_SUCCESS, payload } }
   function failure(error) { return { type: campaignConstants.CREATE_FAILURE, error } }
 }
 
@@ -38,8 +38,8 @@ function updateCampaign(campaign) {
 
     campaignService.updateCampaign(campaign)
     .then(
-      campaignData => { 
-        dispatch(success(campaignData.campaign));
+      data => { 
+        dispatch(success({user: data.user, campaign: data.campaign}));
         dispatch(alertActions.success('Campaign update successful'));
       },
       error => {
@@ -50,7 +50,7 @@ function updateCampaign(campaign) {
   };
 
   function request(campaign) { return { type: campaignConstants.UPDATE_REQUEST, campaign } }
-  function success(campaign) { return { type: campaignConstants.UPDATE_SUCCESS, campaign } }
+  function success(payload) { return { type: campaignConstants.UPDATE_SUCCESS, payload } }
   function failure(error) { return { type: campaignConstants.UPDATE_FAILURE, error } }
 }
 
@@ -60,8 +60,8 @@ function deleteCampaign(campaign) {
 
     campaignService.deleteCampaign(campaign)
     .then(
-      campaignData => { 
-        dispatch(success(campaign));
+      data => { 
+        dispatch(success({user: data.user, campaign: campaign}));
         dispatch(alertActions.success('Campaign deleted successful'));
       },
       error => {
@@ -72,6 +72,6 @@ function deleteCampaign(campaign) {
   };
 
   function request(campaign) { return { type: campaignConstants.DELETE_REQUEST, campaign } }
-  function success(campaign) { return { type: campaignConstants.DELETE_SUCCESS, campaign } }
+  function success(payload) { return { type: campaignConstants.DELETE_SUCCESS, payload } }
   function failure(error) { return { type: campaignConstants.DELETE_FAILURE, error } }
 }

@@ -16,8 +16,8 @@ function postCharacter(character) {
 
     characterService.postCharacter(character)
     .then(
-      characterData => { 
-        dispatch(success(characterData.character));
+      data => { 
+        dispatch(success({user: data.user, character: data.character}));
         dispatch(alertActions.success('Character creation successful'));
       },
       error => {
@@ -28,7 +28,7 @@ function postCharacter(character) {
   };
 
   function request(character) { return { type: characterConstants.CREATE_REQUEST, character } }
-  function success(character) { return { type: characterConstants.CREATE_SUCCESS, character } }
+  function success(payload) { return { type: characterConstants.CREATE_SUCCESS, payload } }
   function failure(error) { return { type: characterConstants.CREATE_FAILURE, error } }
 }
 
@@ -38,8 +38,8 @@ function updateCharacter(character) {
 
     characterService.updateCharacter(character)
     .then(
-      characterData => {
-        dispatch(success(characterData.character));
+      data => {
+        dispatch(success({user: data.user, character: data.character}));
         dispatch(alertActions.success('Character update successful'));
       },
       error => {
@@ -50,7 +50,7 @@ function updateCharacter(character) {
   };
 
   function request(character) { return { type: characterConstants.UPDATE_REQUEST, character } }
-  function success(character) { return { type: characterConstants.UPDATE_SUCCESS, character } }
+  function success(payload) { return { type: characterConstants.UPDATE_SUCCESS, payload } }
   function failure(error) { return { type: characterConstants.UPDATE_FAILURE, error } }
 }
 
@@ -60,8 +60,8 @@ function deleteCharacter(character) {
 
     characterService.deleteCharacter(character)
     .then(
-      characterData => { 
-        dispatch(success(character));
+      data => { 
+        dispatch(success({user: data.user, character: character}));
         dispatch(alertActions.success('Character deleted successful'));
       },
       error => {
@@ -72,6 +72,6 @@ function deleteCharacter(character) {
   };
 
   function request(character) { return { type: characterConstants.DELETE_REQUEST, character } }
-  function success(character) { return { type: characterConstants.DELETE_SUCCESS, character } }
+  function success(payload) { return { type: characterConstants.DELETE_SUCCESS, payload } }
   function failure(error) { return { type: characterConstants.DELETE_FAILURE, error } }
 }

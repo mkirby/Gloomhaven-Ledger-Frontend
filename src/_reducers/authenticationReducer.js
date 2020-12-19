@@ -26,69 +26,43 @@ export function authentication (state = initialState, action) {
       return { ...state, user: action.user };
     case userConstants.REFRESH_FAILURE:
       return {...state};
+
     case characterConstants.CREATE_SUCCESS:
-      localStorage.setItem('user', JSON.stringify({ ...state.user, characters: [...state.user.characters, action.character]}))
-      return Object.assign({}, state, { user: { ...state.user,
-        characters: [...state.user.characters, action.character]
-      }});
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      return Object.assign({}, state, { user: action.payload.user});
+
     case characterConstants.UPDATE_SUCCESS:
-      newCharacters = [...state.user.characters]
-      index = newCharacters.findIndex(character => character.id === action.character.id)
-      newCharacters.splice(index, 1, action.character )
-      localStorage.setItem('user', JSON.stringify({ ...state.user, characters: newCharacters }))
-      return Object.assign({}, state, { user: { ...state.user,
-        characters: newCharacters
-      }});
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      return Object.assign({}, state, { user: action.payload.user});
+
     case characterConstants.DELETE_SUCCESS:
-      newCharacters = [...state.user.characters]
-      index = newCharacters.findIndex(character => character.id === action.character.id)
-      newCharacters.splice( index, 1 )
-      localStorage.setItem('user', JSON.stringify({ ...state.user, characters: newCharacters }))
-      return Object.assign({}, state, { user: { ...state.user,
-        characters: newCharacters
-      }});
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      return Object.assign({}, state, { user: action.payload.user});
+
     case partyConstants.CREATE_SUCCESS:
-      localStorage.setItem('user', JSON.stringify({ ...state.user, parties: [...state.user.parties, action.party] }))
-      return Object.assign({}, state, { user: { ...state.user,
-        parties: [...state.user.parties, action.party]
-      }});
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      return Object.assign({}, state, { user: action.payload.user});
+
     case partyConstants.UPDATE_SUCCESS:
-      newParties = [...state.user.parties]
-      index = newParties.findIndex(party => party.id === action.party.id)
-      newParties.splice(index, 1, action.party )
-      localStorage.setItem('user', JSON.stringify({ ...state.user, parties: newParties }))
-      return Object.assign({}, state, { user: { ...state.user,
-        parties: newParties
-      }});
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      return Object.assign({}, state, { user: action.payload.user});
+
     case partyConstants.DELETE_SUCCESS:
-      newParties = [...state.user.parties]
-      index = newParties.findIndex(party => party.id === action.party.id)
-      newParties.splice( index, 1 )
-      localStorage.setItem('user', JSON.stringify({ ...state.user, parties: newParties }))
-      return Object.assign({}, state, { user: { ...state.user,
-        parties: newParties
-      }});
-      case campaignConstants.CREATE_SUCCESS:
-        localStorage.setItem('user', JSON.stringify({ ...state.user, campaigns: [...state.user.campaigns, action.campaign] }))
-        return Object.assign({}, state, { user: { ...state.user,
-          campaigns: [...state.user.campaigns, action.campaign]
-        }});
-      case campaignConstants.UPDATE_SUCCESS:
-        newCampaigns = [...state.user.campaigns]
-        index = newCampaigns.findIndex(campaign => campaign.id === action.campaign.id)
-        newCampaigns.splice(index, 1, action.campaign )
-        localStorage.setItem('user', JSON.stringify({ ...state.user, campaigns: newCampaigns }))
-        return Object.assign({}, state, { user: { ...state.user,
-          campaigns: newCampaigns
-        }});
-      case campaignConstants.DELETE_SUCCESS:
-        newCampaigns = [...state.user.campaigns]
-        index = newCampaigns.findIndex(campaign => campaign.id === action.campaign.id)
-        newCampaigns.splice( index, 1 )
-        localStorage.setItem('user', JSON.stringify({ ...state.user, campaigns: newCampaigns }))
-        return Object.assign({}, state, { user: { ...state.user,
-          campaigns: newCampaigns
-        }});
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      return Object.assign({}, state, { user: action.payload.user});
+
+    case campaignConstants.CREATE_SUCCESS:
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      return Object.assign({}, state, { user: action.payload.user});
+
+    case campaignConstants.UPDATE_SUCCESS:
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      return Object.assign({}, state, { user: action.payload.user});
+
+    case campaignConstants.DELETE_SUCCESS:
+      localStorage.setItem('user', JSON.stringify(action.payload.user))
+      return Object.assign({}, state, { user: action.payload.user});
+
     default:
       return state
   }
