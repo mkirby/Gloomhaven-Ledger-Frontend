@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import { Menu, Placeholder } from 'semantic-ui-react';
 import { characterAction } from '../../_actions/characterActions';
+import './CharacterCard.css'
+
 import EditModal from '../Modals/EditModal';
 
 function CharacterCard(props) {

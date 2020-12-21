@@ -1,0 +1,15 @@
+.login {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "auth-image auth-form";
+  width: 100%;
+}
+
+.login__image {
+  grid-area: auth-image;
+}
+
+.login__form {
+  grid-area: auth-form;
+}

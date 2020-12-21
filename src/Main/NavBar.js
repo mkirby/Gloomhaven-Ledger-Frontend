@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { Menu } from 'semantic-ui-react'
+import './NavBar.css'
 
 import ProfileMenu from './ProfileMenu'
-import { Menu } from 'semantic-ui-react'
 
 function NavBar(props) {
   const [activeItem, handleItemClick] = useState("")
 
   return (
-    <header className="navbar-header" style={{height: "100%"}}>
-      <div className="navbar-header-logo">
+    <header className="navbar" style={{height: "100%"}}>
+      <div className="navbar__title">
         <NavLink to="/"><h1 className="heading">Gloomhaven Ledger</h1></NavLink>
       </div>
       
-      <Menu secondary size='large'  style={{margin: 'auto 0'}}>
+      <Menu secondary size='large' classname='navbar__menu' style={{margin: 'auto 0'}}>
         {!props.loggedIn && <Menu.Menu position='right'>
           <Menu.Item
             as={NavLink}

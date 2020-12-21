@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { Menu, Placeholder } from 'semantic-ui-react'
+import './ProfilePage.css'
 
 import { userActions } from '../../_actions/userActions'
 

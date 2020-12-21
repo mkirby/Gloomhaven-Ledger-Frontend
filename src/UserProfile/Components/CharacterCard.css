@@ -1,0 +1,30 @@
+.character-card {
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-areas:
+  "char-image char-stats"
+  "char-party char-party"
+  "char-controls char-controls";
+}
+
+.character-card-image {
+  grid-area: char-image;
+}
+
+.character-card-stats {
+  grid-area: char-stats;
+  margin-left: 10px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.character-card-party {
+  grid-area: char-party;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.character-card-controls {
+  grid-area: char-controls;
+  width: 100%;
+}

@@ -4,13 +4,14 @@ import { Router, Route, Switch, withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { history } from './_helpers/history'
-import NavBar from './Components/NavBar'
-import LedgerControls from './Components/LedgerControls'
-import LedgerContainer from './Containers/LedgerContainer'
-import ProfileContainer from './UserProfile/Containers/ProfileContainer'
-import FooterContainer from './Containers/FooterContainer'
-import LoginContainer from './Containers/UserAuth/LoginContainer';
 import { alertActions } from './_actions/alertActions';
+
+import NavBar from './Main/NavBar'
+import FooterContainer from './Main/FooterContainer'
+import LedgerControls from './LedgerApp/LedgerControls'
+import LedgerContainer from './LedgerApp/LedgerContainer'
+import LoginContainer from './Main/Login/LoginContainer';
+import ProfileContainer from './UserProfile/Containers/ProfileContainer'
 
 class App extends React.Component {
   constructor(props) {

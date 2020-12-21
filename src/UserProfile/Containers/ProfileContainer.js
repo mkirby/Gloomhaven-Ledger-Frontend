@@ -4,17 +4,18 @@ import { connect } from 'react-redux'
 
 import BreadcrumbNav from '../Components/BreadcrumbNav'
 import ProfileControls from '../Components/ProfileControls'
+
 import ProfilePage from '../Components/ProfilePage'
 import CampaignsContainer from './CampaignsContainer'
 import CampaignPage from './CampaignPage'
-import CharactersContainer from './CharactersContainer'
 import PartiesContainer from './PartiesContainer'
 import PartyPage from './PartyPage'
+import CharactersContainer from './CharactersContainer'
 import CharacterPage from './CharacterPage'
 
 function ProfileContainer(props) {
   const { username } = props.user
-  return <div className="profile-container">
+  return <div className="profile">
     <BreadcrumbNav />
     <ProfileControls />
     <Switch>

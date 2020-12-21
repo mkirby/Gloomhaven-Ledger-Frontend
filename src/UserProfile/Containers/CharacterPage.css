@@ -1,0 +1,62 @@
+.character-page {
+  display: grid;
+  grid-template-areas: 
+  "character-image character-header character-perks"
+  "character-image character-stats character-perks"
+  "character-image character-party character-perks"
+  "character-image character-backstory character-perks"
+  "character-items character-items character-checks"
+  "character-items character-items character-notes";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto 1fr 1fr;
+}
+
+.character-page-image {
+  grid-area: character-image;
+}
+
+.character-page-header {
+  grid-area: character-header;
+  display: grid;
+  grid-template-areas: 
+  "character-icon character-name";
+  grid-template-columns: auto 1fr;
+}
+
+.character-page-icon {
+  grid-area: character-icon;
+}
+
+.character-page-name {
+  grid-area: character-name;
+  margin: auto 0;
+  padding: 10px;
+}
+
+.character-page-stats {
+  grid-area: character-stats;
+}
+
+.character-page-party {
+  grid-area: character-party;
+}
+
+.character-page-backstory {
+  grid-area: character-backstory;
+}
+
+.character-page-perks {
+  grid-area: character-perks;
+}
+
+.character-page-items {
+  grid-area: character-items;
+}
+
+.character-page-checks {
+  grid-area: character-checks;
+}
+
+.character-page-notes {
+  grid-area: character-notes;
+}
