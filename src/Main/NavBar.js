@@ -15,7 +15,7 @@ function NavBar(props) {
         <NavLink to="/"><h1 className="heading">Gloomhaven Ledger</h1></NavLink>
       </div>
       
-      <Menu secondary size='large' classname='navbar__menu' style={{margin: 'auto 0'}}>
+      <Menu secondary size='large' className='navbar__menu' style={{margin: 'auto 0'}}>
         {!props.loggedIn && <Menu.Menu position='right'>
           <Menu.Item
             as={NavLink}

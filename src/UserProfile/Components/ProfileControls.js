@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch, withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Button } from 'semantic-ui-react'
+import './ProfileControls.css'
 
 import CreateModal from '../Modals/CreateModal'
 import EditModal from '../Modals/EditModal'
@@ -11,7 +12,7 @@ class ProfileControls extends React.Component {
     const { user } = this.props
     const { username } = user
     return (
-      <div className='profile-controls'>
+      <div className='profile__controls'>
         <Switch>
           <Route exact path={`/${username}`} component={() => this.renderProfilePageButtons()}/>
           <Route path={`/${username}/campaigns/:id`} component={({match}) => this.renderCampaignShowButtons(match.params.id, user)}/>

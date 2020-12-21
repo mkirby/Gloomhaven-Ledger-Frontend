@@ -18,8 +18,8 @@ function ProfileContainer(props) {
   const { username } = props.user
   return (
     <div className="profile">
-      <ProfileControls />
       <BreadcrumbNav />
+      <ProfileControls />
       <Switch>
         <Route exact path={`/${username}`} component={ProfilePage}/>
         <Route path={`/${username}/campaigns/:id`} component={CampaignPage}/>

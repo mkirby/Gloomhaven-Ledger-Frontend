@@ -23,6 +23,7 @@ class App extends React.Component {
 
   render() {
     const { alert } = this.props
+    const { username} = this.props.user
     console.log('Redux Store: ',this.props.state)
     return (
       <div className='app'>
@@ -41,7 +42,7 @@ class App extends React.Component {
               }}/>
               <Route exact path='/signup' render={ () => {return <h3>Component: SignupContainer.js</h3>} } />
               <Route exact path='/login' component={LoginContainer} />
-              {this.props.loggedIn && <Route path={`/${this.props.user.username}`} component={ProfileContainer}/>}
+              {this.props.loggedIn && <Route path={`/${username}`} component={ProfileContainer}/>}
               <Route path='*' render={ () => { return <div className='not-found'><h1>404 Not Found</h1></div>}}/>
             </Switch>
           </div>
