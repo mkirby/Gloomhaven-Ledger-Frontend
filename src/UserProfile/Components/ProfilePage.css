@@ -1,9 +1,9 @@
-.profile-page {
+.profile__page {
   width: 75%;
   margin: 0 auto;
   text-align: center;
 }
 
-.profile-page div {
+.profile__page div {
   margin: auto;
 }

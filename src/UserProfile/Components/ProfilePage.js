@@ -11,7 +11,7 @@ function ProfilePage(props) {
   const usernameUppercased = username.charAt(0).toUpperCase() + username.slice(1)
 
   return (
-    <div className="profile-page">
+    <div className="profile__page">
       <Placeholder style={{height: 300, width: 300}}>
         <Placeholder.Image />
       </Placeholder>

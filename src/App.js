@@ -25,25 +25,29 @@ class App extends React.Component {
     const { alert } = this.props
     console.log('Redux Store: ',this.props.state)
     return (
-      <Router history={history}>
-        <NavBar />
-        {alert.message &&
-          <div className={`alert ${alert.type}`}>{alert.message}</div>
-        }
-        <Switch>
-          <Route exact path='/' render={() => {
-            return <>
-              <LedgerControls />
-              <LedgerContainer />
-            </>
-          }}/>
-          <Route exact path='/signup' render={ () => {return <h3>Component: SignupContainer.js</h3>} } />
-          <Route exact path='/login' component={LoginContainer} />
-          {this.props.loggedIn && <Route path={`/${this.props.user.username}`} component={ProfileContainer}/>}
-          <Route path='*' render={ () => { return <h1>404 Not Found</h1>}}/>
-        </Switch>
-        <FooterContainer />
-      </Router>
+      <div className='app'>
+        <Router history={history}>
+          <NavBar />
+          {alert.message &&
+            <div className={`alert ${alert.type}`}>{alert.message}</div>
+          }
+          <div className='content'>
+            <Switch>
+              <Route exact path='/' render={() => {
+                return <div >
+                  <LedgerControls />
+                  <LedgerContainer />
+                </div>
+              }}/>
+              <Route exact path='/signup' render={ () => {return <h3>Component: SignupContainer.js</h3>} } />
+              <Route exact path='/login' component={LoginContainer} />
+              {this.props.loggedIn && <Route path={`/${this.props.user.username}`} component={ProfileContainer}/>}
+              <Route path='*' render={ () => { return <div className='not-found'><h1>404 Not Found</h1></div>}}/>
+            </Switch>
+          </div>
+          <FooterContainer />
+        </Router>
+      </div>
     );
   }
 }
