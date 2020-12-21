@@ -1,88 +1,97 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { NavLink, Route, withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Breadcrumb } from 'semantic-ui-react'
 import './BreadcrumbNav.css'
 
 function BreadcrumbNav(props) {
-  const { username } = props.user
-  const { pathname } = props.location
+  const { user } = props
+  const { username } = user
+  // const { pathname } = props.location
+  
+  // const pathArray = pathname.split('/')
+  // console.log('pathname Array', pathArray )
 
-  const pathArray = pathname.split('/')
+  // let id = ""
+  // if (pathArray.length === 4) {
+  //   id = pathArray[3]
+  // }
 
-  let id = ""
-  if (pathArray.length === 4) {
-    id = pathArray[3]
-  }
-  // debugger
-
-  const isProfile = pathname.startsWith(`/${username}`)
-  const isCampaignIndex = pathname.startsWith(`/${username}/campaigns`)
-  const isCampaignShow = pathname.startsWith(`/${username}/campaigns/${id}`)
-  const isPartyIndex = pathname.startsWith(`/${username}/parties`)
-  const isPartyShow = pathname.startsWith(`/${username}/parties/${id}`)
-  const isCharacterIndex = pathname.startsWith(`/${username}/characters`)
-  const isCharacterShow = pathname.startsWith(`/${username}/characters/${id}`)
-  // console.log('pathnames', {isProfile, isCampaignIndex, isCampaignShow, isPartyIndex, isPartyShow, isCharacterIndex, isCharacterShow})
+  const crumbRoutes = [
+    { path: `/${username}`, name: `Profile` },
+    { path: `/${username}/campaigns`, name:`Campaigns` },
+    { path: `/${username}/campaigns/:id`, name: `Campaign`},
+    { path: `/${username}/parties`, name:`Parties` },
+    { path: `/${username}/parties/:id`, name: 'Party' },
+    { path: `/${username}/characters`, name:`Characters` },
+    { path: `/${username}/characters/:id`, name: 'Character' }
+  ]
 
   return (
     <div className="breadcrumb">
       <Breadcrumb size='huge'>
-        {isProfile && <Breadcrumb.Section>Profile</Breadcrumb.Section>}
-        {isCampaignIndex && 
-          <>
-            <Breadcrumb.Divider icon='right chevron' />
-            <Breadcrumb.Section>Campaigns</Breadcrumb.Section>
-          </>
-        }
-        {isCampaignShow && 
-          <>
-            <Breadcrumb.Divider icon='right chevron' />
-            <Breadcrumb.Section>{renderCampaignName(id, props.user)}</Breadcrumb.Section>
-          </>
-        }
-        {isPartyIndex && 
-          <>
-            <Breadcrumb.Divider icon='right chevron' />
-            <Breadcrumb.Section>Parties</Breadcrumb.Section>
-          </>
-        }
-        {isPartyShow && 
-          <>
-            <Breadcrumb.Divider icon='right chevron' />
-            <Breadcrumb.Section>{renderPartyName(id, props.user)}</Breadcrumb.Section>
-          </>
-        }
-        {isCharacterIndex && 
-          <>
-            <Breadcrumb.Divider icon='right chevron' />
-            <Breadcrumb.Section>Characters</Breadcrumb.Section>
-          </>
-        }
-        {isCharacterShow && 
-          <>
-            <Breadcrumb.Divider icon='right chevron' />
-            <Breadcrumb.Section>{renderCharacterName(id, props.user)}</Breadcrumb.Section>
-          </>
-        }
+        {crumbRoutes.map(({ path, name }, key) => (
+          <Route exact path={path} key={key} render={props => {
+              const crumbs = crumbRoutes
+                // Get all routes that contain the current one.
+                .filter(({ path }) => props.match.path.includes(path))
+                // Swap out any dynamic routes with their param values
+                // and Swap the route name if on a show page
+                .map(({ path, name, ...rest }) => ({
+                  path: (Object.keys(props.match.params).length)
+                      ? Object.keys(props.match.params).reduce( (path, param) => path.replace( `:${param}`, props.match.params[param] ), path )
+                      : path,
+                  name: (path.split('/').length === 4)
+                      ? renderBreadcrumbName(path.split('/')[2], parseInt(props.match.params.id), user)
+                      : name, ...rest
+                }));
+              // console.log(`Generated crumbs for ${props.match.path}`);
+              // crumbs.map(({ name, path }) => console.log({ name, path }));
+              return (
+                renderBreadcrumbs(crumbs)
+              );
+            }}
+          />
+        ))}
       </Breadcrumb>
     </div>
   )
 }
 
-function renderCharacterName(id, user) {
-  const character = user.characters.find(character => character.id === parseInt(id))
-  return character.name
-}
+function renderBreadcrumbs( crumbs ) {
+  // returns null if breadcrumb is on profile only
+  // if (crumbs.length <= 1) {
+  //   return null;
+  // }
 
-function renderPartyName(id, user) {
-  const party = user.parties.find(party => party.id === parseInt(id))
-  return party.name
-}
+  return (
+    <>
+      {crumbs.map(({ name, path }, key) =>
+        key + 1 === crumbs.length ? (
+          <Breadcrumb.Section key={key} active>{name}</Breadcrumb.Section>
+        ) : (
+          <React.Fragment key={key}>
+            <Breadcrumb.Section><NavLink to={path}>{name}</NavLink></Breadcrumb.Section>
+            <Breadcrumb.Divider icon='right chevron' />
+          </React.Fragment>
+        )
+      )}
+    </>
+  );
 
-function renderCampaignName(id, user) {
-  const campaign = user.campaigns.find(campaign => campaign.id === parseInt(id))
-  return campaign.name
+};
+
+function renderBreadcrumbName(model, id, user) {
+  if (model === 'characters') {
+    const character = user.characters.find(character => character.id === parseInt(id))
+    return character.name
+  } else if (model === 'parties') {
+    const party = user.parties.find(party => party.id === parseInt(id))
+    return party.name
+  } else if (model === 'campaigns') {
+    const campaign = user.campaigns.find(campaign => campaign.id === parseInt(id))
+    return campaign.name
+  }
 }
 
 function mapStateToProps(state) {
