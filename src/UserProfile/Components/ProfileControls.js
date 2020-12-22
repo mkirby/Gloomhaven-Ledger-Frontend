@@ -6,6 +6,9 @@ import './ProfileControls.css'
 
 import CreateModal from '../Modals/CreateModal'
 import EditModal from '../Modals/EditModal'
+import { campaignAction } from '../../_actions/campaignActions'
+import { partyAction } from '../../_actions/partyActions'
+import { characterAction } from '../../_actions/characterActions'
 
 class ProfileControls extends React.Component {
   render() {
@@ -43,8 +46,10 @@ class ProfileControls extends React.Component {
       <>
         <CreateModal model='party' trigger='button'/>
         <EditModal model='campaign' trigger='button' campaign={campaign} />
-        <Button>Delete Campaign (not working)</Button>
-        {/* need to figure out how to pass in the campaign delete action */}
+        <Button onClick={() => {
+            this.props.deleteCampaign(campaign)
+            this.props.history.push(`/${user.username}/campaigns`)
+          }}>Delete Campaign</Button>
       </>
     )
   }
@@ -63,8 +68,10 @@ class ProfileControls extends React.Component {
       <>
         <CreateModal model='character' trigger='button'/>
         <EditModal model='party' trigger='button' party={party} />
-        <Button>Delete Party (not working)</Button>
-        {/* need to figure out how to pass in the party delete action */}
+        <Button onClick={() => {
+            this.props.deleteParty(party)
+            this.props.history.push(`/${user.username}/parties`)
+          }}>Delete Party</Button>
       </>
     )
   }
@@ -82,8 +89,10 @@ class ProfileControls extends React.Component {
     return (
       <>
         <EditModal model='character' trigger='button' character={character} />
-        <Button>Delete Character (not working)</Button>
-        {/* need to figure out how to pass in the character delete action */}
+        <Button onClick={() => {
+            this.props.deleteCharacter(character)
+            this.props.history.push(`/${user.username}/characters`)
+          }}>Delete Character</Button>
       </>
     )
   }
@@ -102,8 +111,10 @@ function mapStateToProps(state) {
   return { user }
 }
 
-const actionCreators = {
-  // deleteCampaign: campaignAction.deleteCampaign
+const actionCreators = { 
+  deleteCampaign: campaignAction.deleteCampaign,
+  deleteParty: partyAction.deleteParty,
+  deleteCharacter: characterAction.deleteCharacter
 }
 
 export default withRouter(connect(mapStateToProps, actionCreators)(ProfileControls))
