@@ -7,52 +7,40 @@ import './BreadcrumbNav.css'
 function BreadcrumbNav(props) {
   const { user } = props
   const { username } = user
-  // const { pathname } = props.location
-  
-  // const pathArray = pathname.split('/')
-  // console.log('pathname Array', pathArray )
-
-  // let id = ""
-  // if (pathArray.length === 4) {
-  //   id = pathArray[3]
-  // }
 
   const crumbRoutes = [
     { path: `/${username}`, name: `Profile` },
     { path: `/${username}/campaigns`, name:`Campaigns` },
-    { path: `/${username}/campaigns/:id`, name: `Campaign`},
+    { path: `/${username}/campaigns/:id`, name: `Campaign Name`},
     { path: `/${username}/parties`, name:`Parties` },
-    { path: `/${username}/parties/:id`, name: 'Party' },
+    { path: `/${username}/parties/:id`, name: `Party Name` },
     { path: `/${username}/characters`, name:`Characters` },
-    { path: `/${username}/characters/:id`, name: 'Character' }
+    { path: `/${username}/characters/:id`, name: `Character Name` }
   ]
 
   return (
     <div className="breadcrumb">
       <Breadcrumb size='huge'>
-        {crumbRoutes.map(({ path, name }, key) => (
+        {crumbRoutes.map(({ path }, key) => (
           <Route exact path={path} key={key} render={props => {
-              const crumbs = crumbRoutes
-                // Get all routes that contain the current one.
-                .filter(({ path }) => props.match.path.includes(path))
-                // Swap out any dynamic routes with their param values
-                // and Swap the route name if on a show page
-                .map(({ path, name, ...rest }) => ({
-                  path: (Object.keys(props.match.params).length)
-                      ? Object.keys(props.match.params).reduce( (path, param) => path.replace( `:${param}`, props.match.params[param] ), path )
-                      : path,
-                  name: (path.split('/').length === 4)
-                      ? renderBreadcrumbName(path.split('/')[2], parseInt(props.match.params.id), user)
-                      : name, ...rest
-                }));
-              // console.log(`Generated crumbs for ${props.match.path}`);
-              // crumbs.map(({ name, path }) => console.log({ name, path }));
-              return (
-                renderBreadcrumbs(crumbs)
-              );
-            }}
-          />
-        ))}
+            const crumbs = crumbRoutes
+            // Get all routes that contain the current one
+            .filter(({ path }) => props.match.path.includes(path))
+            // Swap out any dynamic routes with their param values
+            // and Swap the route name if on a show page
+            .map(({ path, name, ...rest }) => ({
+              path: (Object.keys(props.match.params).length)
+                  ? Object.keys(props.match.params).reduce( (path, param) => path.replace( `:${param}`, props.match.params[param] ), path )
+                  : path,
+              name: (path.split('/').length === 4)
+                  ? renderBreadcrumbName(path.split('/')[2], parseInt(props.match.params.id), user)
+                  : name, ...rest
+            }));
+            // console.log(`Generated crumbs for ${props.match.path}`);
+            // crumbs.map(({ name, path }) => console.log({ name, path }));
+            return renderBreadcrumbs(crumbs);
+          }}/>
+          ))}
       </Breadcrumb>
     </div>
   )
