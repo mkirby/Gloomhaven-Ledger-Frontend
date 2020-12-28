@@ -1,61 +1,70 @@
-import React from 'react'
-import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { Menu, Placeholder } from 'semantic-ui-react';
+import React from "react";
+import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { Menu } from "semantic-ui-react";
+import "./PartyCard.css";
 
-import { partyAction } from '../../_actions/partyActions'
-import EditModal from '../Modals/EditModal'
+import { partyAction } from "../../_actions/partyActions";
+import EditModal from "../Modals/EditModal";
 
 function PartyCard(props) {
-  const { party } = props
-  const { username } = props.user
-  const { id } = props.party
+  const { party } = props;
+  const { username } = props.user;
+  const { id } = props.party;
+
   return (
-    <div className='index-card party-card'>
+    <div className="index-card party-card">
       <h3>{party.name}</h3>
-      <div>
+      <div className="party-card__character-images">
         {renderCharacterImages(party.characters)}
       </div>
-      <br/>
-      <h5>Current Location: Coming Soon</h5>
-      <Menu widths={3} fluid>
+      <br />
+      <p>
+        <b>Current Location: </b>Coming Soon
+      </p>
+      <Menu widths={3} fluid size="mini">
         <Menu.Item
           link
-          name='View'
+          name="View"
           as={NavLink}
           to={`/${username}/parties/${id}`}
         />
-        <EditModal model='party' trigger='menu' party={party}/>
+        <EditModal model="party" trigger="menu" party={party} />
         <Menu.Item
           link
-          name='Delete'
+          name="Delete"
           onClick={() => {
-            props.delete(party)
+            props.delete(party);
           }}
         />
       </Menu>
     </div>
-  )
+  );
 }
 
 function renderCharacterImages(characters) {
   return characters.map((character) => {
-    if (character.active){
-      return <Placeholder key={character.id} style={{ width: 40, height: 40, float: 'left', marginRight: 5, marginTop: 0}}>
-      <Placeholder.Image />
-    </Placeholder>
+    if (character.active) {
+      return (
+        <div className="party-card__character-images__div">
+          <img
+            src={character.character_class.img_portrait}
+            alt={character.character_class.fullname}
+          />
+        </div>
+      );
     }
-    return null
-  })
+    return null;
+  });
 }
 
 function mapStateToProps(state) {
-  const { user } = state.authentication
-  return { user }
+  const { user } = state.authentication;
+  return { user };
 }
 
 const actionCreators = {
-  delete: partyAction.deleteParty
-}
+  delete: partyAction.deleteParty,
+};
 
-export default connect(mapStateToProps, actionCreators)(PartyCard) 
+export default connect(mapStateToProps, actionCreators)(PartyCard);

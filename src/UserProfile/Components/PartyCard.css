@@ -1,0 +1,16 @@
+.party-card__character-images {
+  height: 60px;
+}
+
+.party-card__character-images__div {
+  width: 60px;
+  height: 100%;
+  margin-right: 5px;
+  margin-top: 0;
+  float: left;
+  overflow: hidden;
+}
+
+.party-card__character-images__div img {
+  width: 100%;
+}
