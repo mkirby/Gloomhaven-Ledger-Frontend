@@ -2,20 +2,40 @@
   display: grid;
   grid-template-columns: 100px auto;
   grid-template-areas:
-  "char-image char-stats"
-  "char-party char-party"
-  "char-controls char-controls";
+    "char-image char-stats"
+    "char-party char-party"
+    "char-controls char-controls";
 }
 
 .character-card-image {
   grid-area: char-image;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.character-card-image img {
+  width: 100%;
 }
 
 .character-card-stats {
   grid-area: char-stats;
   margin-left: 10px;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  /* display: grid;
+  grid-template-rows: auto auto auto; */
+  /* border: 2px solid red; */
+}
+
+.character-card-stats h3 {
+  margin: 0px;
+  padding: 0px;
+  /* border: 2px solid red; */
+}
+
+.character-card-stats p {
+  margin: 0px;
+  padding: 0px;
+  /* border: 2px solid red; */
 }
 
 .character-card-party {

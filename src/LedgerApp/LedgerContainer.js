@@ -24,7 +24,7 @@ function LedgerContainer() {
       <Button onClick={clicked}>Click me</Button>
 
       <img
-        src={process.env.PUBLIC_URL + "images/character-mats/beast-tyrant.png"}
+        src={process.env.PUBLIC_URL + "/images/character-mats/beast-tyrant.png"}
         alt="beast tyrant"
       />
     </main>

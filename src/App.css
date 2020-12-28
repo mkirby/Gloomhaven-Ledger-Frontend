@@ -1,9 +1,9 @@
 .borders {
-  border: 1px red solid
+  border: 1px red solid;
 }
 
 body {
-  background-color: #F9F7F2;
+  background-color: #f9f7f2;
 }
 
 .app {
@@ -12,9 +12,9 @@ body {
   display: grid;
   grid-template-rows: 50px auto 50px;
   grid-template-areas:
-  "navbar"
-  "content"
-  "footer";
+    "navbar"
+    "content"
+    "footer";
 }
 
 .content {
@@ -30,10 +30,9 @@ body {
 }
 
 .index-card {
-  width: 400px;
+  width: 300px;
   margin: 0 10px 10px 0;
   padding: 10px;
   border: 2px solid #837372;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
