@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Form, Radio, Button, Dropdown } from "semantic-ui-react";
+import { Form, Radio, Button, Dropdown, Message } from "semantic-ui-react";
 
 import { characterAction } from "../../_actions/characterActions";
 
 class CreateCharacterForm extends React.Component {
   state = {
     user_id: this.props.user.id,
+    character_class_id: "",
     party_id: "",
     name: "",
     level: "",
@@ -19,7 +20,10 @@ class CreateCharacterForm extends React.Component {
 
   changeHandler = ({ name, value }) => this.setState({ [name]: value });
 
-  changeDropdownHandler = (e, { value }) => this.setState({ party_id: value });
+  changePartyHandler = (e, { value }) => this.setState({ party_id: value });
+
+  changeClassHandler = (e, { value }) =>
+    this.setState({ character_class_id: value });
 
   toggleHandler = (key) =>
     this.setState((prevState) => ({ [key]: !prevState[key] }));
@@ -34,7 +38,7 @@ class CreateCharacterForm extends React.Component {
 
     return (
       <>
-        <Form>
+        <Form warning={this.state.party_id === ""}>
           <Form.Group widths="equal">
             <Form.Field required>
               <label>Character Name</label>
@@ -47,16 +51,27 @@ class CreateCharacterForm extends React.Component {
               />
             </Form.Field>
             <Form.Field required>
-              <label>Party</label>
+              <label>Class</label>
               <Dropdown
                 placeholder="Select Party"
                 selection
                 options={renderPartyOptions(this.props.user)}
                 value={this.state.party_id}
-                onChange={this.changeDropdownHandler}
+                onChange={this.changePartyHandler}
               />
             </Form.Field>
           </Form.Group>
+
+          <Form.Field required disabled={this.state.party_id === ""}>
+            <label>Class</label>
+            <Dropdown
+              placeholder="Select Class"
+              selection
+              options={renderClassOptions(this.props.user)}
+              value={this.state.character_class_id}
+              onChange={this.changeClassHandler}
+            />
+          </Form.Field>
 
           <Form.Group widths="equal">
             <Form.Field required>
@@ -129,6 +144,11 @@ class CreateCharacterForm extends React.Component {
               />
             </Form.Field>
           </Form.Group>
+
+          <Message
+            warning
+            header="Select a party to see available character classes"
+          />
         </Form>
         <br />
         <div>
@@ -163,6 +183,18 @@ function renderPartyOptions(user) {
       value: party.id,
     };
   });
+}
+
+function renderClassOptions(user) {
+  // TODO render the correct classes
+  return [
+    {
+      key: 1,
+      text: "brute",
+      value: 1,
+      image: { avatar: true, src: "/images/class-icons/brute.png" },
+    },
+  ];
 }
 
 function mapStateToProps(state) {
