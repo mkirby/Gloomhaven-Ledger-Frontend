@@ -12,6 +12,7 @@ import LedgerControls from "./LedgerApp/LedgerControls";
 import LedgerContainer from "./LedgerApp/LedgerContainer";
 import LoginContainer from "./Main/Login/LoginContainer";
 import ProfileContainer from "./UserProfile/Containers/ProfileContainer";
+import { Message, Icon } from "semantic-ui-react";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,10 +29,26 @@ class App extends React.Component {
       <div className="app">
         <Router history={history}>
           <NavBar />
-          {alert.message && (
-            <div className={`alert ${alert.type}`}>{alert.message}</div>
-          )}
+
           <div className="content">
+            {alert.message && (
+              <Message
+                compact
+                floating
+                error={alert.type === "alert-error"}
+                success={alert.type === "alert-success"}
+                size="mini"
+              >
+                <Message.Content>
+                  {alert.type === "alert-success" ? (
+                    <Icon name="checkmark" />
+                  ) : (
+                    <Icon name="close" />
+                  )}
+                  {alert.message}
+                </Message.Content>
+              </Message>
+            )}
             <Switch>
               <Route
                 exact
