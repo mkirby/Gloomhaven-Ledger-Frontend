@@ -30,7 +30,7 @@ class App extends React.Component {
         <Router history={history}>
           <NavBar />
 
-          <div className="content">
+          <main className="content">
             {alert.message && (
               <Message
                 compact
@@ -87,7 +87,7 @@ class App extends React.Component {
                 }}
               />
             </Switch>
-          </div>
+          </main>
           <FooterContainer />
         </Router>
       </div>
