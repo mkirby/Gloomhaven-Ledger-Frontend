@@ -17,9 +17,10 @@ function LedgerControls(props) {
           <Menu.Item header>Campaign Controls</Menu.Item>
           <Menu.Item>
             <Dropdown
+              disabled={!props.user}
               placeholder="Select Campaign"
               selection
-              options={renderCampaignOptions(props.user)}
+              options={props.user ? renderCampaignOptions(props.user) : []}
               value={campaign_id}
               onChange={handleCampaignChange}
               noResultsMessage="Start a New Campaign"
