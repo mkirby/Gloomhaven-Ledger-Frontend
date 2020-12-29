@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Modal, Menu, Button } from "semantic-ui-react";
+import { Modal, Menu, Button } from "semantic-ui-react";
 
 import EditCharacterForm from "../Forms/EditCharacterForm";
 import EditPartyForm from "../Forms/EditPartyForm";
