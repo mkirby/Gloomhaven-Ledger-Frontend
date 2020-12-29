@@ -20,7 +20,14 @@ function PartyCard(props) {
       </div>
       <br />
       <p>
-        <b>Current Location: </b>Coming Soon
+        <b>
+          Campaign:{" "}
+          <NavLink to={`/${username}/campaigns/${party.campaign.id}`}>
+            {party.campaign.name}
+          </NavLink>
+          <br />
+          Current Location: (Coming Soon)
+        </b>
       </p>
       <Menu widths={3} fluid size="mini">
         <Menu.Item
