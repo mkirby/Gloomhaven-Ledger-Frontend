@@ -54,7 +54,7 @@ function renderCharacterImages(characters) {
   return characters.map((character) => {
     if (character.active) {
       return (
-        <div className="party-card__character-images__image">
+        <div key={character.id} className="party-card__character-images__image">
           <CharacterPopup character={character} />
         </div>
       );
