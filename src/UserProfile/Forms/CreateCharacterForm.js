@@ -23,7 +23,9 @@ class CreateCharacterForm extends React.Component {
   changePartyHandler = (e, { value }) => this.setState({ party_id: value });
 
   changeClassHandler = (e, { value }) =>
-    this.setState({ character_class_id: value });
+    this.setState({ character_class_id: value }, () =>
+      console.log("state", this.state)
+    );
 
   toggleHandler = (key) =>
     this.setState((prevState) => ({ [key]: !prevState[key] }));
@@ -67,7 +69,11 @@ class CreateCharacterForm extends React.Component {
             <Dropdown
               placeholder="Select Class"
               selection
-              options={renderClassOptions(this.props.user)}
+              options={
+                this.state.party_id === ""
+                  ? []
+                  : renderClassOptions(this.props.user, this.state.party_id)
+              }
               value={this.state.character_class_id}
               onChange={this.changeClassHandler}
             />
@@ -185,16 +191,20 @@ function renderPartyOptions(user) {
   });
 }
 
-function renderClassOptions(user) {
-  // TODO render the correct classes
-  return [
-    {
-      key: 1,
-      text: "brute",
-      value: 1,
-      image: { avatar: true, src: "/images/class-icons/brute.png" },
-    },
-  ];
+function renderClassOptions(user, party_id) {
+  const party = user.parties.find((party) => party.id === party_id);
+  const campaign = user.campaigns.find(
+    (campaign) => campaign.id === party.campaign.id
+  );
+  const { character_classes } = campaign;
+  return character_classes.map((character_class) => {
+    return {
+      key: character_class.id,
+      text: character_class.name_hidden,
+      value: character_class.id,
+      image: { avatar: true, src: character_class.img_icon },
+    };
+  });
 }
 
 function mapStateToProps(state) {
