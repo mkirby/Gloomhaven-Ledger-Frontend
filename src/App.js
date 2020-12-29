@@ -55,7 +55,7 @@ class App extends React.Component {
                 path="/"
                 render={() => {
                   return (
-                    <div>
+                    <div className="ledger">
                       <LedgerControls />
                       <LedgerContainer />
                     </div>
