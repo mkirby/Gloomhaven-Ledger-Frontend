@@ -6,6 +6,7 @@ import "./PartyCard.css";
 
 import { partyAction } from "../../_actions/partyActions";
 import EditModal from "../Modals/EditModal";
+import CharacterPopup from "../Popups/CharacterPopup";
 
 function PartyCard(props) {
   const { party } = props;
@@ -53,11 +54,8 @@ function renderCharacterImages(characters) {
   return characters.map((character) => {
     if (character.active) {
       return (
-        <div className="party-card__character-images__div">
-          <img
-            src={character.character_class.img_portrait}
-            alt={character.character_class.fullname}
-          />
+        <div className="party-card__character-images__image">
+          <CharacterPopup character={character} />
         </div>
       );
     }

@@ -2,7 +2,7 @@
   height: 60px;
 }
 
-.party-card__character-images__div {
+.party-card__character-images__image {
   width: 60px;
   height: 100%;
   margin-right: 5px;
@@ -11,6 +11,6 @@
   overflow: hidden;
 }
 
-.party-card__character-images__div img {
+.party-card__character-images__image img {
   width: 100%;
 }
