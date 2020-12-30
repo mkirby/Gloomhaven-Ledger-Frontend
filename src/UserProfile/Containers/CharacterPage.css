@@ -1,25 +1,54 @@
 .character-page {
-  display: grid;
-  grid-template-areas: 
-  "character-image character-header character-perks"
-  "character-image character-stats character-perks"
-  "character-image character-party character-perks"
-  "character-image character-backstory character-perks"
-  "character-items character-items character-checks"
-  "character-items character-items character-notes";
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto auto 1fr 1fr;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
-.character-page-image {
-  grid-area: character-image;
+/* ANCHOR larger screens */
+
+@media (min-width: 768px) {
+  .character-page__image,
+  .character-page__perks,
+  .character-page__alt-stats {
+    width: 25%;
+  }
+
+  .character-page__stats {
+    width: 50%;
+    padding: 0 20px;
+  }
+
+  .character-page__items {
+    width: 75%;
+  }
+  .character-page__backstory {
+    padding: 10px 0;
+  }
 }
+
+/* ANCHOR smallish screens */
+
+@media (max-width: 768px) {
+  .character-page__image {
+    max-width: 400px;
+  }
+
+  .character-page__stats,
+  .character-page__perks,
+  .character-page__items,
+  .character-page__alt-stats,
+  .character-page__backstory {
+    width: 100%;
+    border-top: 1px solid black;
+    padding: 10px 0;
+  }
+}
+
+/* Contained name header css */
 
 .character-page-header {
-  grid-area: character-header;
   display: grid;
-  grid-template-areas: 
-  "character-icon character-name";
+  grid-template-areas: "character-icon character-name";
   grid-template-columns: auto 1fr;
 }
 
@@ -30,33 +59,5 @@
 .character-page-name {
   grid-area: character-name;
   margin: auto 0;
-  padding: 10px;
-}
-
-.character-page-stats {
-  grid-area: character-stats;
-}
-
-.character-page-party {
-  grid-area: character-party;
-}
-
-.character-page-backstory {
-  grid-area: character-backstory;
-}
-
-.character-page-perks {
-  grid-area: character-perks;
-}
-
-.character-page-items {
-  grid-area: character-items;
-}
-
-.character-page-checks {
-  grid-area: character-checks;
-}
-
-.character-page-notes {
-  grid-area: character-notes;
+  padding-left: 20px;
 }
