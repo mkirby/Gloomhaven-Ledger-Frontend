@@ -118,6 +118,7 @@ class EditCharacterForm extends React.Component {
                 value={character.checkmarks}
                 onChange={(e) => this.changeHandler(e.target)}
                 min="0"
+                max="18"
               />
             </Form.Field>
           </Form.Group>
