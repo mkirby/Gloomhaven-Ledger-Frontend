@@ -24,7 +24,7 @@ class App extends React.Component {
 
   render() {
     const { alert } = this.props;
-    console.log("Redux Store: ", this.props.state);
+    // console.log("Redux Store: ", this.props.state);
     return (
       <div className="app">
         <Router history={history}>

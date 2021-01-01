@@ -32,8 +32,6 @@ class EditCharacterForm extends React.Component {
 
   render() {
     const character = this.state;
-    console.log("state", this.state);
-    console.log("character", this.props.character);
     return (
       <>
         <Form>

@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Menu, Segment } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
+import CharacterCheckmarks from "../Components/CharacterCheckmarks";
 import "./CharacterPage.css";
 
 function CharacterPage(props) {
@@ -9,6 +10,8 @@ function CharacterPage(props) {
     (character) => character.id === parseInt(props.match.params.id)
   );
   const { username } = props.user;
+
+  console.log("character details", character);
 
   return (
     <div className="character-page">
@@ -81,11 +84,12 @@ function CharacterPage(props) {
         <h2>Items</h2>
         <p>(Stretch Goal)</p>
       </div>
-      {/* TODO add check boxes that render based on the amount of checks */}
       {/* TODO update character model when checking and unchecking checks */}
       <div className="character-page__alt-stats">
         <h2>Battle Goals</h2>
-        <p>{character.checkmarks} Checkmarks</p>
+        <div className="character-page__alt-stats__checkmarks">
+          <CharacterCheckmarks total={character.checkmarks} />
+        </div>
       </div>
       <div className="character-page__backstory">
         <h2>Backstory</h2>

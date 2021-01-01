@@ -44,6 +44,16 @@
   }
 }
 
+.character-page__alt-stats__checkmarks {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.character-page__alt-stats__checkmarks .grouped {
+  flex: 1 0 30%;
+  min-width: fit-content;
+}
+
 /* Contained name header css */
 
 .character-page-header {
