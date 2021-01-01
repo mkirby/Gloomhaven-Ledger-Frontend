@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { store } from "./_helpers/store";
 import { BrowserRouter } from "react-router-dom";
-import "fomantic-ui-css/semantic.css";
 import "semantic-ui-css/semantic.min.css";
 import "./index.css";
 import App from "./App";
