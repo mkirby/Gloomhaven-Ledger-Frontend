@@ -86,7 +86,7 @@ function CharacterPage(props) {
       </div>
       {/* TODO update character model when checking and unchecking checks */}
       <div className="character-page__alt-stats">
-        <h2>Battle Goals</h2>
+        <h2>Battle Goal Checkmarks</h2>
         <div className="character-page__alt-stats__checkmarks">
           <CharacterCheckmarks total={character.checkmarks} />
         </div>
