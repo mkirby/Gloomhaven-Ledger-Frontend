@@ -1,8 +1,7 @@
 .login {
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-  "auth-image auth-form";
+  grid-template-areas: "auth-image auth-form";
   width: 100%;
 }
 

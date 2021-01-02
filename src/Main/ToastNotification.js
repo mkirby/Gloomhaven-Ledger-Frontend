@@ -1,6 +1,5 @@
 import React from "react";
 import { withToastManager } from "react-toast-notifications";
-import { Message, Icon } from "semantic-ui-react";
 
 class ToastNotification extends React.Component {
   state = { alert: this.props.alert };

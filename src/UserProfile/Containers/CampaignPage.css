@@ -1,9 +1,8 @@
-
 .campaign-page {
   display: grid;
   grid-template-areas:
-  "cp-parties cp-players"
-  "cp-retired cp-players";
+    "cp-parties cp-players"
+    "cp-retired cp-players";
   grid-template-columns: auto 250px;
 }
 
@@ -25,8 +24,7 @@
 
 .campaign-player-div {
   display: grid;
-  grid-template-areas: 
-  "cp-image cp-name";
+  grid-template-areas: "cp-image cp-name";
   grid-template-columns: 50px auto;
   margin-top: 10px;
   margin: 10px auto;

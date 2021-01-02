@@ -2,8 +2,7 @@
   grid-area: navbar;
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-  "nav-logo nav-image";
+  grid-template-areas: "nav-logo nav-image";
   width: 100%;
 }
 
@@ -18,15 +17,15 @@
 }
 
 header {
-  background-color: #D4964E;
-  color: #291C1A;
+  background-color: #d4964e;
+  color: #291c1a;
 }
 
 header a {
-  color: #291C1A;
+  color: #291c1a;
 }
 
 header a:hover {
   text-decoration: underline;
-  color: #291C1A;
+  color: #291c1a;
 }
