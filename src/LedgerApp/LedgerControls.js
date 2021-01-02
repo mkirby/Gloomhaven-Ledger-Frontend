@@ -14,7 +14,6 @@ function LedgerControls(props) {
     <div className="ledger__controls">
       <Menu attached stackable size="tiny">
         <Menu.Menu position="left">
-          <Menu.Item header>Campaign Controls</Menu.Item>
           <Menu.Item>
             <Dropdown
               disabled={!props.user}
