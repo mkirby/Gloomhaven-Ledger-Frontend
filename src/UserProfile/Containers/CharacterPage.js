@@ -11,8 +11,6 @@ function CharacterPage(props) {
   );
   const { username } = props.user;
 
-  console.log("character details", character);
-
   return (
     <div className="character-page">
       {/* character image container */}

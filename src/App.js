@@ -13,6 +13,7 @@ import LedgerContainer from "./LedgerApp/LedgerContainer";
 import LoginContainer from "./Main/Login/LoginContainer";
 import ProfileContainer from "./UserProfile/Containers/ProfileContainer";
 import { Message, Icon } from "semantic-ui-react";
+import ToastNotification from "./Main/ToastNotification";
 
 class App extends React.Component {
   constructor(props) {
@@ -31,24 +32,7 @@ class App extends React.Component {
           <NavBar />
 
           <main className="content">
-            {alert.message && (
-              <Message
-                compact
-                floating
-                error={alert.type === "alert-error"}
-                success={alert.type === "alert-success"}
-                size="mini"
-              >
-                <Message.Content>
-                  {alert.type === "alert-success" ? (
-                    <Icon name="checkmark" />
-                  ) : (
-                    <Icon name="close" />
-                  )}
-                  {alert.message}
-                </Message.Content>
-              </Message>
-            )}
+            <ToastNotification alert={alert} />
             <Switch>
               <Route
                 exact
