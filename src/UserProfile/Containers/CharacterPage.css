@@ -33,7 +33,11 @@
     max-width: 400px;
   }
 
-  .character-page__stats,
+  .character-page__stats {
+    width: 100%;
+    padding: 10px 0;
+  }
+
   .character-page__perks,
   .character-page__items,
   .character-page__alt-stats,
@@ -52,22 +56,4 @@
 .character-page__alt-stats__checkmarks .grouped {
   flex: 1 0 30%;
   min-width: fit-content;
-}
-
-/* Contained name header css */
-
-.character-page-header {
-  display: grid;
-  grid-template-areas: "character-icon character-name";
-  grid-template-columns: auto 1fr;
-}
-
-.character-page-icon {
-  grid-area: character-icon;
-}
-
-.character-page-name {
-  grid-area: character-name;
-  margin: auto 0;
-  padding-left: 20px;
 }

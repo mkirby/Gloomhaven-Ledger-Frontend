@@ -16,6 +16,7 @@ class EditCharacterForm extends React.Component {
     checkmarks: this.props.character.checkmarks,
     active: this.props.character.active,
     retired: this.props.character.retired,
+    notes: this.props.character.notes,
   };
 
   changeHandler = ({ name, value }) => this.setState({ [name]: value });
@@ -143,6 +144,13 @@ class EditCharacterForm extends React.Component {
               />
             </Form.Field>
           </Form.Group>
+          <Form.TextArea
+            label="Notes"
+            name="notes"
+            placeholder="Character Notes"
+            value={character.notes}
+            onChange={(e) => this.changeHandler(e.target)}
+          />
         </Form>
         <br />
         <div>

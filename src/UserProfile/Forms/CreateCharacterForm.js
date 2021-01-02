@@ -16,6 +16,7 @@ class CreateCharacterForm extends React.Component {
     checkmarks: "",
     active: false,
     retired: false,
+    notes: "",
   };
 
   changeHandler = ({ name, value }) => this.setState({ [name]: value });
@@ -70,7 +71,7 @@ class CreateCharacterForm extends React.Component {
                   />
                 </Form.Field>
                 <Form.Field required>
-                  <label>Class</label>
+                  <label>Party</label>
                   <Dropdown
                     placeholder="Select Party"
                     selection
@@ -94,6 +95,10 @@ class CreateCharacterForm extends React.Component {
                   onChange={this.changeClassHandler}
                 />
               </Form.Field>
+              <Message
+                warning
+                header="Select a party to see available character classes"
+              />
               <Form.Group widths="equal">
                 <Form.Field required>
                   <label>Level</label>
@@ -164,9 +169,12 @@ class CreateCharacterForm extends React.Component {
                   />
                 </Form.Field>
               </Form.Group>
-              <Message
-                warning
-                header="Select a party to see available character classes"
+              <Form.TextArea
+                label="Notes"
+                name="notes"
+                placeholder="Character Notes"
+                value={character.notes}
+                onChange={(e) => this.changeHandler(e.target)}
               />
             </Form>
             <br />

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Menu } from "semantic-ui-react";
+import { Menu, Image, Header } from "semantic-ui-react";
 import CharacterCheckmarks from "../Components/CharacterCheckmarks";
 import "./CharacterPage.css";
 
@@ -16,7 +16,7 @@ function CharacterPage(props) {
       {/* character image container */}
       <div className="character-page__image">
         {/* loads character image from public folder */}
-        <img
+        <Image
           src={process.env.PUBLIC_URL + character.character_class.img_portrait}
           alt={character.character_class.fullname}
           style={{ width: "100%" }}
@@ -26,50 +26,49 @@ function CharacterPage(props) {
       <div className="character-page__stats">
         {/* header contains the class icons and the character name */}
         <div className="character-page-header">
-          <div className="character-page-icon">
-            {/* TODO make this a Semantic UI image so I make it's size inline with the character name */}
+          <Header as="h1" block style={{ marginTop: 0 }}>
             {/* loads class icon image from public folder */}
-            <img
+            <Image
               src={process.env.PUBLIC_URL + character.character_class.img_icon}
               alt={`${character.character_class.name} icon`}
-              style={{ height: 50, width: 50 }}
+              style={{ height: 40, width: 40 }}
+              inline
             />
-          </div>
-          {/* div containing character name */}
-          <div className="character-page-name">
-            <h1>{character.name}</h1>
-          </div>
+            <Header.Content>
+              {character.name}
+              <Header.Subheader>
+                {character.character_class.fullname}
+              </Header.Subheader>
+            </Header.Content>
+            {/* all changable character stats live in this menu */}
+            <Menu widths={4} fluid stackable>
+              <Menu.Item link>XP: {character.experience}</Menu.Item>
+              <Menu.Item link>Level: {character.level}</Menu.Item>
+              <Menu.Item link>
+                Health: {character.character_class.health[character.level]}
+              </Menu.Item>
+              <Menu.Item link>Gold: {character.gold}</Menu.Item>
+            </Menu>
+            <Header.Content>
+              {/* contains links to the campaign and party page */}
+              <h3>
+                Party:{" "}
+                <NavLink to={`/${username}/parties/${character.party.id}`}>
+                  {character.party.name}
+                </NavLink>{" "}
+                <br />
+                Campaign:{" "}
+                <NavLink to={`/${username}/campaigns/${character.campaign.id}`}>
+                  {character.campaign.name}
+                </NavLink>
+              </h3>
+            </Header.Content>
+          </Header>
         </div>
-        {/* all changable character stats live in this menu */}
-        <div>
-          <Menu widths={4} fluid stackable>
-            <Menu.Item link>XP: {character.experience}</Menu.Item>
-            <Menu.Item link>Level: {character.level}</Menu.Item>
-            <Menu.Item link>
-              Health: {character.character_class.health[character.level]}
-            </Menu.Item>
-            <Menu.Item link>Gold: {character.gold}</Menu.Item>
-          </Menu>
-        </div>
-        {/* contains links to the campaign and party page */}
-        <div>
-          <h3>
-            Party:{" "}
-            <NavLink to={`/${username}/parties/${character.party.id}`}>
-              {character.party.name}
-            </NavLink>{" "}
-            <br />
-            Campaign:{" "}
-            <NavLink to={`/${username}/campaigns/${character.campaign.id}`}>
-              {character.campaign.name}
-            </NavLink>
-          </h3>
-        </div>
-        {/* TODO make the notes field editable and add ability to save note */}
-        {/* requires adding a column to the Character table */}
+        <br />
         <div>
           <h2>Notes</h2>
-          <p>lorum lopsum ipsum </p>
+          <p>{character.notes ? character.notes : "No Notes!"}</p>
         </div>
       </div>
       {/* TODO create the character perks game data and render depending on character class */}
