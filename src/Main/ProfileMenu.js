@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { Dropdown, Placeholder } from "semantic-ui-react";
+import { Dropdown, Placeholder, Image } from "semantic-ui-react";
 
 import { userActions } from "../_actions/userActions";
 
@@ -17,9 +17,11 @@ function ProfileMenu(props) {
   const trigger = (
     <>
       {usernameUppercased}&nbsp;&nbsp;&nbsp;&nbsp;
-      <Placeholder style={{ height: 25, width: 25 }}>
-        <Placeholder.Image />
-      </Placeholder>
+      <Image
+        src={process.env.PUBLIC_URL + props.user.avatar}
+        alt="avatar"
+        style={{ height: 25, width: 25 }}
+      />
     </>
   );
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Menu, Placeholder } from "semantic-ui-react";
+import { Menu, Label, Icon, Image } from "semantic-ui-react";
 import "./ProfilePage.css";
 
 import { userActions } from "../../_actions/userActions";
@@ -13,29 +13,32 @@ function ProfilePage(props) {
 
   return (
     <div className="profile__page">
-      <Placeholder style={{ height: 300, width: 300 }}>
-        <Placeholder.Image />
-      </Placeholder>
-      {props.loggedIn && <h3>{usernameUppercased}</h3>}
-      <Menu widths={3} fluid stackable>
-        <Menu.Item
-          link
-          name="Campaigns"
-          as={NavLink}
-          to={`/${username}/campaigns`}
-        />
-        <Menu.Item
-          link
-          name="Parties"
-          as={NavLink}
-          to={`/${username}/parties`}
-        />
-        <Menu.Item
-          link
-          name="Characters"
-          as={NavLink}
-          to={`/${username}/characters`}
-        />
+      {props.loggedIn && (
+        <h1>
+          <Image
+            src={process.env.PUBLIC_URL + props.user.avatar}
+            alt="avatar"
+            inline
+          />
+          {usernameUppercased}
+        </h1>
+      )}
+      <Menu vertical>
+        <Menu.Item link as={NavLink} to={`/${username}/campaigns`}>
+          <Label>{props.user.campaigns.length}</Label>
+          <Icon name="map outline" />
+          Campaigns
+        </Menu.Item>
+        <Menu.Item link as={NavLink} to={`/${username}/parties`}>
+          <Label>{props.user.parties.length}</Label>
+          <Icon name="users" />
+          Parties
+        </Menu.Item>
+        <Menu.Item link as={NavLink} to={`/${username}/characters`}>
+          <Label>{props.user.characters.length}</Label>
+          <Icon name="user circle" />
+          Characters
+        </Menu.Item>
       </Menu>
     </div>
   );
