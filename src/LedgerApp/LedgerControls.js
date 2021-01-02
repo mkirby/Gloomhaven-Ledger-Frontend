@@ -19,17 +19,19 @@ function LedgerControls(props) {
             <Dropdown
               disabled={!props.user}
               placeholder="Select Campaign"
+              search
               selection
               options={props.user ? renderCampaignOptions(props.user) : []}
               value={campaign_id}
               onChange={handleCampaignChange}
-              noResultsMessage="Start a New Campaign"
+              noResultsMessage="No User Campaigns"
             />
           </Menu.Item>
           <Menu.Item>
             <Dropdown
               disabled={campaign_id === ""}
               placeholder="Select Party"
+              search
               selection
               options={
                 campaign_id === ""
@@ -38,6 +40,7 @@ function LedgerControls(props) {
               }
               value={party_id}
               onChange={handlePartyChange}
+              noResultsMessage="No Campaign Parties"
             />
           </Menu.Item>
         </Menu.Menu>
