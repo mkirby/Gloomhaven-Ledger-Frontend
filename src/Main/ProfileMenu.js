@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { Dropdown, Placeholder, Image } from "semantic-ui-react";
+import { Dropdown, Image } from "semantic-ui-react";
 
 import { userActions } from "../_actions/userActions";
 
