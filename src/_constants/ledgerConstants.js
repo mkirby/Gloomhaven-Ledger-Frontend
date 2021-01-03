@@ -1,0 +1,5 @@
+export const ledgerConstants = {
+  CHANGE_PAGE: "CHANGE_PAGE",
+  CHANGE_CAMPAIGN: "CHANGE_CAMPAIGN",
+  CHANGE_PARTY: "CHANGE_PARTY",
+};

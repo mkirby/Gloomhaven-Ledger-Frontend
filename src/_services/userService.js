@@ -53,7 +53,6 @@ function getById(id) {
 }
 
 function getProfile() {
-  console.log("getProfile is being called");
   const requestOptions = {
     method: "GET",
     headers: authHeader(),
@@ -62,7 +61,6 @@ function getProfile() {
   return fetch(`${apiUrl}/profile/`, requestOptions)
     .then(handleResponse)
     .then((data) => {
-      console.log("and is returning data");
       localStorage.setItem("user", JSON.stringify(data.user));
       localStorage.setItem("token", data.jwt);
       return data;

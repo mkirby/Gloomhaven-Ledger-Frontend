@@ -3,13 +3,30 @@ import { connect } from "react-redux";
 import { Menu, Dropdown } from "semantic-ui-react";
 import "./LedgerControls.css";
 
-function LedgerControls(props) {
-  const [activePage, handlePageChange] = useState("");
-  const [campaign_id, updateCampaignId] = useState("");
-  const [party_id, updatePartyId] = useState("");
+import { ledgerAction } from "../_actions/ledgerActions";
 
-  const handleCampaignChange = (e, { value }) => updateCampaignId(value);
-  const handlePartyChange = (e, { value }) => updatePartyId(value);
+function LedgerControls(props) {
+  // get the current ledger details from Redux store
+  const ledger = props.ledger;
+  const currentCampaign = ledger.campaign ? ledger.campaign : "";
+  const currentParty = ledger.party ? ledger.party : "";
+  const currentPage = ledger.page ? ledger.page : "";
+
+  // these variables control the active effect on the menu items
+  const [activeItem, handleItemChange] = useState(currentPage);
+  // as well as the conditional disabling and default setting of the campaign and party dropdowns
+  const [campaign_id, updateCampaignId] = useState(currentCampaign);
+  const [party_id, updatePartyId] = useState(currentParty);
+  // handleCampaignChange and handlePartyChange update menu dropdowns
+  // but also call a ledgerAction to update Redux store
+  const handleCampaignChange = (e, { value }) => {
+    updateCampaignId(value);
+    props.changeCampaign(value, props.ledger);
+  };
+  const handlePartyChange = (e, { value }) => {
+    updatePartyId(value);
+    props.changeParty(value, props.ledger);
+  };
 
   return (
     <div className="ledger__controls">
@@ -47,26 +64,38 @@ function LedgerControls(props) {
         <Menu.Menu position="right" style={{ paddingRight: "16.2857px" }}>
           <Menu.Item
             name="World"
-            active={activePage === "World"}
-            onClick={() => handlePageChange("World")}
+            active={activeItem === "World"}
+            onClick={() => {
+              handleItemChange("World");
+              props.changePage("World", props.ledger);
+            }}
             icon="map outline"
           />
           <Menu.Item
             name="City"
-            active={activePage === "City"}
-            onClick={() => handlePageChange("City")}
+            active={activeItem === "City"}
+            onClick={() => {
+              handleItemChange("City");
+              props.changePage("City", props.ledger);
+            }}
             icon="building outline"
           />
           <Menu.Item
             name="Party"
-            active={activePage === "Party"}
-            onClick={() => handlePageChange("Party")}
+            active={activeItem === "Party"}
+            onClick={() => {
+              handleItemChange("Party");
+              props.changePage("Party", props.ledger);
+            }}
             icon="users"
           />
           <Menu.Item
             name="Records"
-            active={activePage === "Records"}
-            onClick={() => handlePageChange("Records")}
+            active={activeItem === "Records"}
+            onClick={() => {
+              handleItemChange("Records");
+              props.changePage("Records", props.ledger);
+            }}
             icon="book"
           />
         </Menu.Menu>
@@ -100,11 +129,14 @@ function renderPartyOptions(user, campaign_id) {
 
 function mapStateToProps(state) {
   const { user } = state.authentication;
-  return { user };
+  const { ledger } = state;
+  return { user, ledger };
 }
 
 const actionCreators = {
-  // import action creators as needed
+  changePage: ledgerAction.changePage,
+  changeCampaign: ledgerAction.changeCampaign,
+  changeParty: ledgerAction.changeParty,
 };
 
 export default connect(mapStateToProps, actionCreators)(LedgerControls);
