@@ -1,9 +1,12 @@
 import React from "react";
+import WorldMap from "./WorldMap";
+import "./LedgerContainer.css";
 
 function LedgerContainer() {
   return (
     <div className="ledger__container">
-      <h3>Component: LedgerContainer.js</h3>
+      {/* need to conditionally render content based on menu selection of ledger app */}
+      <WorldMap />
     </div>
   );
 }

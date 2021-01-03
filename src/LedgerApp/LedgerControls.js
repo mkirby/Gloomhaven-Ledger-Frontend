@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Menu, Dropdown } from "semantic-ui-react";
+import "./LedgerControls.css";
 
 function LedgerControls(props) {
-  const [activeItem, handleItemClick] = useState("");
+  const [activePage, handlePageChange] = useState("");
   const [campaign_id, updateCampaignId] = useState("");
   const [party_id, updatePartyId] = useState("");
 
@@ -12,7 +13,7 @@ function LedgerControls(props) {
 
   return (
     <div className="ledger__controls">
-      <Menu attached stackable size="tiny">
+      <Menu attached stackable size="tiny" borderless>
         <Menu.Menu position="left">
           <Menu.Item>
             <Dropdown
@@ -43,29 +44,29 @@ function LedgerControls(props) {
             />
           </Menu.Item>
         </Menu.Menu>
-        <Menu.Menu position="right">
+        <Menu.Menu position="right" style={{ paddingRight: "16.2857px" }}>
           <Menu.Item
             name="World"
-            active={activeItem === "World"}
-            onClick={() => handleItemClick("World")}
+            active={activePage === "World"}
+            onClick={() => handlePageChange("World")}
             icon="map outline"
           />
           <Menu.Item
             name="City"
-            active={activeItem === "City"}
-            onClick={() => handleItemClick("City")}
+            active={activePage === "City"}
+            onClick={() => handlePageChange("City")}
             icon="building outline"
           />
           <Menu.Item
             name="Party"
-            active={activeItem === "Party"}
-            onClick={() => handleItemClick("Party")}
+            active={activePage === "Party"}
+            onClick={() => handlePageChange("Party")}
             icon="users"
           />
           <Menu.Item
             name="Records"
-            active={activeItem === "Records"}
-            onClick={() => handleItemClick("Records")}
+            active={activePage === "Records"}
+            onClick={() => handlePageChange("Records")}
             icon="book"
           />
         </Menu.Menu>

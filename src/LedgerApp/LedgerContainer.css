@@ -1,0 +1,5 @@
+.ledger__container {
+  grid-area: ledger-container;
+  height: 100%;
+  width: 100%;
+}

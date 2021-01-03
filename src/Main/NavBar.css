@@ -1,19 +1,14 @@
 .navbar {
   grid-area: navbar;
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "nav-logo nav-image";
   width: 100%;
 }
 
-.navbar__title {
-  grid-area: nav-logo;
-  padding-left: 3%;
-  margin: auto 0;
+.navbar .ui.menu {
+  background: #d4964e;
 }
 
-.navbar__menu {
-  grid-area: nav-image;
+.navbar .ui.attached.menu:not(.tabular) {
+  border: none;
 }
 
 header {

@@ -10,19 +10,15 @@ function NavBar(props) {
   const [activeItem, handleItemClick] = useState("");
 
   return (
-    <header className="navbar" style={{ height: "100%" }}>
-      <div className="navbar__title">
-        <NavLink to="/">
-          <h1 className="heading">Gloomhaven Ledger</h1>
-        </NavLink>
-      </div>
-
-      <Menu
-        secondary
-        size="large"
-        className="navbar__menu"
-        style={{ margin: "auto 0" }}
-      >
+    <header className="navbar">
+      <Menu size="large" attached borderless>
+        <Menu.Menu>
+          <Menu.Item>
+            <NavLink to="/">
+              <h2 className="heading">Gloomhaven Ledger</h2>
+            </NavLink>
+          </Menu.Item>
+        </Menu.Menu>
         {!props.loggedIn && (
           <Menu.Menu position="right">
             <Menu.Item
@@ -48,7 +44,7 @@ function NavBar(props) {
         )}
 
         {props.loggedIn && (
-          <Menu.Menu position="right">
+          <Menu.Menu position="right" style={{ paddingRight: "12.8571px" }}>
             <ProfileMenu />
           </Menu.Menu>
         )}

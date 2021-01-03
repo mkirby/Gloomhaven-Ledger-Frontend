@@ -1,0 +1,36 @@
+.world {
+  height: 100%;
+  display: flex;
+  padding: 20px;
+}
+
+.world__map {
+  position: relative;
+  width: 40%;
+}
+
+.world__map:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.TransformComponent-module_container__3NwNd {
+  border-radius: 10px;
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.world__scenarios {
+  width: 60%;
+  padding: 10px;
+}
+
+.world__map__img {
+  height: 100%;
+  width: 100%;
+}
