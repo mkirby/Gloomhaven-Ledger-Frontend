@@ -9,6 +9,7 @@
 
 - https://github.com/jossmac/react-toast-notifications
 - https://github.com/felixge/node-dateformat
+- https://www.npmjs.com/package/react-zoom-pan-pinch
 
 ### Acknowledgements
 
