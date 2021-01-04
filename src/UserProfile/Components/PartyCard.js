@@ -7,11 +7,16 @@ import "./PartyCard.css";
 import { partyAction } from "../../_actions/partyActions";
 import EditModal from "../Modals/EditModal";
 import CharacterPopup from "../Popups/CharacterPopup";
+import scenarios from "../../LedgerApp/World/scenarios.json";
 
 function PartyCard(props) {
   const { party } = props;
   const { username } = props.user;
   const { id } = props.party;
+
+  // TODO replace random scenario with actual current scenario once implemented
+  const randomScenario =
+    scenarios[Math.floor(Math.random() * scenarios.length)];
 
   return (
     <div className="index-card party-card">
@@ -27,7 +32,8 @@ function PartyCard(props) {
             {party.campaign.name}
           </NavLink>
           <br />
-          Current Location: (Coming Soon)
+          {/* TODO replace random scenario with actual current scenario */}
+          Scenario: <em>{randomScenario.name}</em>
         </b>
       </p>
       <Menu widths={3} fluid size="mini">
