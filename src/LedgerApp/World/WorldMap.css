@@ -3,6 +3,7 @@
   .world__map {
     position: relative;
     width: 40%;
+    /* min-width: 400px; */
   }
 }
 
