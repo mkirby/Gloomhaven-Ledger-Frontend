@@ -1,5 +1,5 @@
 import React from "react";
-import WorldMap from "./WorldMap";
+import WorldPage from "./World/WorldPage";
 import "./LedgerContainer.css";
 import { connect } from "react-redux";
 
@@ -10,7 +10,7 @@ function LedgerContainer(props) {
 
 function renderLedgerPage(page) {
   if (page === "World") {
-    return <WorldMap />;
+    return <WorldPage />;
   } else if (page === "City") {
     return <h1>City</h1>;
   } else if (page === "Party") {

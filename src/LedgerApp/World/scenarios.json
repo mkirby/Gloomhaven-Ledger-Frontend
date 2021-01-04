@@ -1,0 +1,477 @@
+[
+  {
+    "id": 1,
+    "coords": "G-18",
+    "name": "Black Barrow"
+  },
+  {
+    "id": 2,
+    "coords": "G-11",
+    "name": "Black Lair"
+  },
+  {
+    "id": 3,
+    "coords": "G-3",
+    "name": "Inox Encampment"
+  },
+  {
+    "id": 4,
+    "coords": "E-11",
+    "name": "Crypt of the Damned"
+  },
+  {
+    "id": 5,
+    "coords": "D-6",
+    "name": "Ruinous Crypt"
+  },
+  {
+    "id": 6,
+    "coords": "F-18",
+    "name": "Decaying Crypt"
+  },
+  {
+    "id": 7,
+    "coords": "C-12",
+    "name": "Vibrant Grotto"
+  },
+  {
+    "id": 8,
+    "coords": "C-18",
+    "name": "Gloomhaven Warehouse"
+  },
+  {
+    "id": 9,
+    "coords": "L-2",
+    "name": "Diamond Mine"
+  },
+  {
+    "id": 10,
+    "coords": "C-7",
+    "name": "Plane of Elemental Power"
+  },
+  {
+    "id": 11,
+    "coords": "B-16",
+    "name": "Gloomhaven Square A"
+  },
+  {
+    "id": 12,
+    "coords": "B-16",
+    "name": "Gloomhaven Square B"
+  },
+  {
+    "id": 13,
+    "coords": "N-3",
+    "name": "Temple of the Seer"
+  },
+  {
+    "id": 14,
+    "coords": "C-18",
+    "name": "Frozen Hollow"
+  },
+  {
+    "id": 15,
+    "coords": "B-11",
+    "name": "Shrine of Strength"
+  },
+  {
+    "id": 16,
+    "coords": "B-6",
+    "name": "Mountain Pass"
+  },
+  {
+    "id": 17,
+    "coords": "K-17",
+    "name": "Lost Island"
+  },
+  {
+    "id": 18,
+    "coords": "C-14",
+    "name": "Abandoned Sewers"
+  },
+  {
+    "id": 19,
+    "coords": "M-7",
+    "name": "Forgotten Crypt"
+  },
+  {
+    "id": 20,
+    "coords": "H-13",
+    "name": "Necromancer's Sanctum"
+  },
+  {
+    "id": 21,
+    "coords": "C-7",
+    "name": "Infernal Throne"
+  },
+  {
+    "id": 22,
+    "coords": "K-8",
+    "name": "Temple of the Elements"
+  },
+  {
+    "id": 23,
+    "coords": "C-15",
+    "name": "Deep Ruins"
+  },
+  {
+    "id": 24,
+    "coords": "C-6",
+    "name": "Echo Chamber"
+  },
+  {
+    "id": 25,
+    "coords": "A-5",
+    "name": "Icecrag Ascent"
+  },
+  {
+    "id": 26,
+    "coords": "D-15",
+    "name": "Ancient Cistern"
+  },
+  {
+    "id": 27,
+    "coords": "E-6",
+    "name": "Ruinous Rift"
+  },
+  {
+    "id": 28,
+    "coords": "E-4",
+    "name": "Outer Ritual Chamber"
+  },
+  {
+    "id": 29,
+    "coords": "E-3",
+    "name": "Sanctuary of Gloom"
+  },
+  {
+    "id": 30,
+    "coords": "N-15",
+    "name": "Shrine of the Depths"
+  },
+  {
+    "id": 31,
+    "coords": "A-16",
+    "name": "Plane of Night"
+  },
+  {
+    "id": 32,
+    "coords": "L-11",
+    "name": "Decrepit Wood"
+  },
+  {
+    "id": 33,
+    "coords": "A-7",
+    "name": "Savvas Armory"
+  },
+  {
+    "id": 34,
+    "coords": "A-4",
+    "name": "Scorched Summit"
+  },
+  {
+    "id": 35,
+    "coords": "A-14",
+    "name": "Gloomhaven Battlements A"
+  },
+  {
+    "id": 36,
+    "coords": "B-14",
+    "name": "Gloomhaven Battlements B"
+  },
+  {
+    "id": 37,
+    "coords": "G-18",
+    "name": "Doom Trench"
+  },
+  {
+    "id": 38,
+    "coords": "G-2",
+    "name": "Slave Pens"
+  },
+  {
+    "id": 39,
+    "coords": "B-11",
+    "name": "Treacherous Divide"
+  },
+  {
+    "id": 40,
+    "coords": "F-12",
+    "name": "Anchient Defense Network"
+  },
+  {
+    "id": 41,
+    "coords": "F-13",
+    "name": "Timeworn Tomb"
+  },
+  {
+    "id": 42,
+    "coords": "C-5",
+    "name": "Realm of the Voice"
+  },
+  {
+    "id": 43,
+    "coords": "D-4",
+    "name": "Drake Nest"
+  },
+  {
+    "id": 44,
+    "coords": "F-3",
+    "name": "Tribal Assault"
+  },
+  {
+    "id": 45,
+    "coords": "M-9",
+    "name": "Rebel Swamp"
+  },
+  {
+    "id": 46,
+    "coords": "A-11",
+    "name": "Nightmare Peak"
+  },
+  {
+    "id": 47,
+    "coords": "H-18",
+    "name": "Lair of the Unseeing Eye"
+  },
+  {
+    "id": 48,
+    "coords": "E-1",
+    "name": "Shadow Weald"
+  },
+  {
+    "id": 49,
+    "coords": "N-7",
+    "name": "Rebel's Stand"
+  },
+  {
+    "id": 50,
+    "coords": "C-17",
+    "name": "Ghost Fortress"
+  },
+  {
+    "id": 51,
+    "coords": "A-15",
+    "name": "The Void"
+  },
+  {
+    "id": 52,
+    "coords": "D-14",
+    "name": "Noxious Cellar"
+  },
+  {
+    "id": 53,
+    "coords": "F-11",
+    "name": "Crypt Basement"
+  },
+  {
+    "id": 54,
+    "coords": "D-8",
+    "name": "Palace of Ice"
+  },
+  {
+    "id": 55,
+    "coords": "G-5",
+    "name": "Foggy Thicket"
+  },
+  {
+    "id": 56,
+    "coords": "G-4",
+    "name": "Bandits Wood"
+  },
+  {
+    "id": 57,
+    "coords": "D-14",
+    "name": "Investigation"
+  },
+  {
+    "id": 58,
+    "coords": "E-15",
+    "name": "Bloody Shack"
+  },
+  {
+    "id": 59,
+    "coords": "F-1",
+    "name": "Forgotten Grove"
+  },
+  {
+    "id": 60,
+    "coords": "B-15",
+    "name": "Alchemy Lab"
+  },
+  {
+    "id": 61,
+    "coords": "N-11",
+    "name": "Fading Lighthouse"
+  },
+  {
+    "id": 62,
+    "coords": "O-11",
+    "name": "Pit of Souls"
+  },
+  {
+    "id": 63,
+    "coords": "M-1",
+    "name": "Magma Pit"
+  },
+  {
+    "id": 64,
+    "coords": "K-16",
+    "name": "Underwater Lagoon"
+  },
+  {
+    "id": 65,
+    "coords": "L-5",
+    "name": "Sulfur Mine"
+  },
+  {
+    "id": 66,
+    "coords": "G-14",
+    "name": "Clockwork Cove"
+  },
+  {
+    "id": 67,
+    "coords": "K-2",
+    "name": "Archane Library"
+  },
+  {
+    "id": 68,
+    "coords": "N-8",
+    "name": "Toxic Moor"
+  },
+  {
+    "id": 69,
+    "coords": "F-8",
+    "name": "Well of the Unfortunate"
+  },
+  {
+    "id": 70,
+    "coords": "J-17",
+    "name": "Chained Isle"
+  },
+  {
+    "id": 71,
+    "coords": "K-5",
+    "name": "Windswept Highlands"
+  },
+  {
+    "id": 72,
+    "coords": "H-12",
+    "name": "Oozing Grove"
+  },
+  {
+    "id": 73,
+    "coords": "N-5",
+    "name": "Rockslide Ridge"
+  },
+  {
+    "id": 74,
+    "coords": "I-14",
+    "name": "Merchant Ship"
+  },
+  {
+    "id": 75,
+    "coords": "G-12",
+    "name": "Overgrown Graveyard"
+  },
+  {
+    "id": 76,
+    "coords": "L-3",
+    "name": "Harrower Hive"
+  },
+  {
+    "id": 77,
+    "coords": "B-17",
+    "name": "Vault of Secrets"
+  },
+  {
+    "id": 78,
+    "coords": "B-14",
+    "name": "Sacrifice Pit"
+  },
+  {
+    "id": 79,
+    "coords": "K-12",
+    "name": "Lost Temple"
+  },
+  {
+    "id": 80,
+    "coords": "K-1",
+    "name": "Vigil Keep"
+  },
+  {
+    "id": 81,
+    "coords": "D-2",
+    "name": "Temple of the Eclipse"
+  },
+  {
+    "id": 82,
+    "coords": "M-6",
+    "name": "Burning Mountain"
+  },
+  {
+    "id": 83,
+    "coords": "C-15",
+    "name": "Shadows Within"
+  },
+  {
+    "id": 84,
+    "coords": "D-12",
+    "name": "Crystalline Cave"
+  },
+  {
+    "id": 85,
+    "coords": "M-3",
+    "name": "Sun Temple"
+  },
+  {
+    "id": 86,
+    "coords": "D-15",
+    "name": "Harried Village"
+  },
+  {
+    "id": 87,
+    "coords": "I-9",
+    "name": "Corrupted Cove"
+  },
+  {
+    "id": 88,
+    "coords": "D-16",
+    "name": "Plane of Water"
+  },
+  {
+    "id": 89,
+    "coords": "C-17",
+    "name": "Syndicate Hideout"
+  },
+  {
+    "id": 90,
+    "coords": "J-7",
+    "name": "Demonic Rift"
+  },
+  {
+    "id": 91,
+    "coords": "E-2",
+    "name": "Wild Melee"
+  },
+  {
+    "id": 92,
+    "coords": "C-14",
+    "name": "Back Alley Brawl"
+  },
+  {
+    "id": 93,
+    "coords": "N-17",
+    "name": "Sunken Vessel"
+  },
+  {
+    "id": 94,
+    "coords": "F-12",
+    "name": "Vermling Nest"
+  },
+  {
+    "id": 95,
+    "coords": "G-12",
+    "name": "Payment Due"
+  }
+]
