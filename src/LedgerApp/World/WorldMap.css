@@ -1,6 +1,17 @@
-.world__map {
-  position: relative;
-  width: 40%;
+/* ANCHOR larger screens */
+@media (min-width: 768px) {
+  .world__map {
+    position: relative;
+    width: 40%;
+  }
+}
+
+/* ANCHOR smallish screens */
+@media (max-width: 768px) {
+  .world__map {
+    position: relative;
+    width: 100%;
+  }
 }
 
 .world__map:before {

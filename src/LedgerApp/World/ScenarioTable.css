@@ -1,4 +1,15 @@
-.world__scenarios {
-  width: 60%;
-  padding: 10px;
+/* ANCHOR larger screens */
+@media (min-width: 768px) {
+  .world__scenarios {
+    width: 60%;
+    padding: 10px;
+  }
+}
+
+/* ANCHOR smallish screens */
+@media (max-width: 768px) {
+  .world__scenarios {
+    width: 100%;
+    padding: 10px;
+  }
 }

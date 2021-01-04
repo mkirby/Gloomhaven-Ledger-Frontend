@@ -47,7 +47,14 @@ function ScenarioTable() {
   return (
     <div className="world__scenarios">
       <h1>Scenarios</h1>
-      <Table striped collapsing size="small" compact="very" color="orange">
+      <Table
+        striped
+        collapsing
+        unstackable
+        size="small"
+        compact="very"
+        color="orange"
+      >
         <Table.Header>
           <Table.Row textAlign="center">
             <Table.HeaderCell>Id</Table.HeaderCell>
