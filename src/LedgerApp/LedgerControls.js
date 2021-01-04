@@ -118,13 +118,15 @@ function renderPartyOptions(user, campaign_id) {
   const campaign = user.campaigns.find(
     (campaign) => campaign.id === campaign_id
   );
-  return campaign.parties.map((party) => {
-    return {
-      key: party.id,
-      text: party.name,
-      value: party.id,
-    };
-  });
+  if (campaign) {
+    return campaign.parties.map((party) => {
+      return {
+        key: party.id,
+        text: party.name,
+        value: party.id,
+      };
+    });
+  }
 }
 
 function mapStateToProps(state) {
