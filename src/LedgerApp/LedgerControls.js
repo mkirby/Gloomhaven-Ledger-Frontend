@@ -17,6 +17,10 @@ function LedgerControls(props) {
   // as well as the conditional disabling and default setting of the campaign and party dropdowns
   const [campaign_id, updateCampaignId] = useState(currentCampaign);
   const [party_id, updatePartyId] = useState(currentParty);
+
+  // console.log({ ledger, currentCampaign, currentParty, currentPage });
+  // console.log({ activeItem, campaign_id, party_id });
+
   // handleCampaignChange and handlePartyChange update menu dropdowns
   // but also call a ledgerAction to update Redux store
   const handleCampaignChange = (e, { value }) => {

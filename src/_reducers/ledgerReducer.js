@@ -2,7 +2,9 @@ import { ledgerConstants } from "../_constants/ledgerConstants";
 
 // pull ledger details from local storage once they are in there for initial state
 let ledgerState = JSON.parse(localStorage.getItem("ledger"));
-const initialState = ledgerState ? { ...ledgerState } : {};
+const initialState = ledgerState
+  ? { ...ledgerState }
+  : { page: "World", campaign: "", party: "" };
 
 export function ledger(state = initialState, action) {
   switch (action.type) {
