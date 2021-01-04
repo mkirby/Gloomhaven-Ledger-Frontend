@@ -5,7 +5,7 @@
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 - [Semantic UI React](https://github.com/Semantic-Org/Semantic-UI-React)
 
-### Dependencies, Modules, etc
+### Packages
 
 - https://github.com/jossmac/react-toast-notifications
 - https://github.com/felixge/node-dateformat
