@@ -4,15 +4,18 @@
     { "checkboxes": 1, "text": "Replace one [-1] card with one [+1] card" },
     { "checkboxes": 2, "text": "Add two [+1] cards" },
     { "checkboxes": 1, "text": "Add one [+3] card" },
-    { "checkboxes": 2, "text": "Add three [flip] PUSH [push]1 cards" },
-    { "checkboxes": 1, "text": "Add two [flip] PIERCE [pierce]3 cards" },
-    { "checkboxes": 2, "text": "Add one [flip] STUN [stun] card" },
+    { "checkboxes": 2, "text": "Add three [rolling] PUSH [push] 1 cards" },
+    { "checkboxes": 1, "text": "Add two [rolling] PIERCE [pierce] 3 cards" },
+    { "checkboxes": 2, "text": "Add one [rolling] STUN [stun] card" },
     {
       "checkboxes": 1,
-      "text": "Add one [flip] DISARM [disarm] card and one [flip] MUDDLE [muddle] card"
+      "text": "Add one [rolling] DISARM [disarm] card and one [rolling] MUDDLE [muddle] card"
     },
-    { "checkboxes": 2, "text": "Add one [flip] ADD TARGET [add-target] card" },
-    { "checkboxes": 1, "text": "Add one [+1] Shield [shield]1, Self card" },
+    {
+      "checkboxes": 2,
+      "text": "Add one [rolling] ADD TARGET [add-target] card"
+    },
+    { "checkboxes": 1, "text": "Add one [+1] Shield [shield] 1, Self card" },
     {
       "checkboxes": 1,
       "text": "Ignore negative item effects and add one [+1] card"
@@ -23,8 +26,8 @@
     { "checkboxes": 1, "text": "Replace one [-2] card with one [+0] card" },
     { "checkboxes": 1, "text": "Add two [+1] cards" },
     { "checkboxes": 1, "text": "Add one [+3] card" },
-    { "checkboxes": 1, "text": "Add two [flip] [fire] cards" },
-    { "checkboxes": 1, "text": "Add three [flip] MUDDLE [muddle] cards" },
+    { "checkboxes": 1, "text": "Add two [rolling] [fire] cards" },
+    { "checkboxes": 1, "text": "Add three [rolling] MUDDLE [muddle] cards" },
     { "checkboxes": 2, "text": "Add one [+1] WOUND [wound] card" },
     { "checkboxes": 2, "text": "Add one [+1] IMMOBILIZE [immobilize] card" },
     { "checkboxes": 2, "text": "Add one [+1] Heal [heal] 2 card" },
@@ -43,11 +46,11 @@
     { "checkboxes": 2, "text": "Add one [+2] [ice] card" },
     {
       "checkboxes": 1,
-      "text": "Add one [flip] [earth] and one [flip] [air] card"
+      "text": "Add one [rolling] [earth] and one [rolling] [air] card"
     },
     {
       "checkboxes": 1,
-      "text": "Add one [flip] [light] and one [flip] [dark] card"
+      "text": "Add one [rolling] [light] and one [rolling] [dark] card"
     }
   ],
   "Scoundrel": [
@@ -56,11 +59,11 @@
     { "checkboxes": 1, "text": "Replace one [-2] card with one [+0] card" },
     { "checkboxes": 1, "text": "Replace one [-1] card with one [+1] card" },
     { "checkboxes": 2, "text": "Replace one [+0] card with one [+2] card" },
-    { "checkboxes": 2, "text": "Add two [flip] [+1] cards" },
-    { "checkboxes": 1, "text": "Add two [flip] PIERCE [pierce]3 cards" },
-    { "checkboxes": 2, "text": "Add two [flip] POISON [poison] cards" },
-    { "checkboxes": 1, "text": "Add two [flip] MUDDLE [muddle] cards" },
-    { "checkboxes": 1, "text": "Add one [flip] INVISIBLE [invisible] card" },
+    { "checkboxes": 2, "text": "Add two [rolling] [+1] cards" },
+    { "checkboxes": 1, "text": "Add two [rolling] PIERCE [pierce] 3 cards" },
+    { "checkboxes": 2, "text": "Add two [rolling] POISON [poison] cards" },
+    { "checkboxes": 1, "text": "Add two [rolling] MUDDLE [muddle] cards" },
+    { "checkboxes": 1, "text": "Add one [rolling] INVISIBLE [invisible] card" },
     { "checkboxes": 1, "text": "Ignore negative scenario effects" }
   ],
   "Cragheart": [
@@ -69,9 +72,9 @@
     { "checkboxes": 1, "text": "Add one [-2] and two [+2] cards" },
     { "checkboxes": 2, "text": "Add one [+1] IMMOBILIZE [immobilize] card" },
     { "checkboxes": 2, "text": "Add one [+2] MUDDLE [muddle] card" },
-    { "checkboxes": 1, "text": "Add two [flip] PUSH [push]2 cards" },
-    { "checkboxes": 2, "text": "Add two [flip] [earth] cards" },
-    { "checkboxes": 1, "text": "Add two [flip] [air] cards" },
+    { "checkboxes": 1, "text": "Add two [rolling] PUSH [push] 2 cards" },
+    { "checkboxes": 2, "text": "Add two [rolling] [earth] cards" },
+    { "checkboxes": 1, "text": "Add two [rolling] [air] cards" },
     { "checkboxes": 1, "text": "Ignore negative item effects" },
     { "checkboxes": 1, "text": "Ignore negative scenario effects" }
   ],
@@ -81,14 +84,17 @@
     { "checkboxes": 1, "text": "Replace two [+1] cards with two [+2] cards" },
     { "checkboxes": 1, "text": "Replace one [-2] card with one [+0] card" },
     { "checkboxes": 2, "text": "Add one [+2] [ice] card" },
-    { "checkboxes": 2, "text": "Add two [flip] [+1] cards" },
-    { "checkboxes": 1, "text": "Add three [flip] PULL [pull]1 cards" },
-    { "checkboxes": 1, "text": "Add three [flip] MUDDLE [muddle] cards" },
-    { "checkboxes": 1, "text": "Add two [flip] IMMOBILIZE [immobilize] cards" },
-    { "checkboxes": 1, "text": "Add one [flip] STUN [stun] card" },
+    { "checkboxes": 2, "text": "Add two [rolling] [+1] cards" },
+    { "checkboxes": 1, "text": "Add three [rolling] PULL [pull] 1 cards" },
+    { "checkboxes": 1, "text": "Add three [rolling] MUDDLE [muddle] cards" },
     {
       "checkboxes": 1,
-      "text": "Add one [flip] DISARM [disarm] card and one [flip] MUDDLE [muddle] card"
+      "text": "Add two [rolling] IMMOBILIZE [immobilize] cards"
+    },
+    { "checkboxes": 1, "text": "Add one [rolling] STUN [stun] card" },
+    {
+      "checkboxes": 1,
+      "text": "Add one [rolling] DISARM [disarm] card and one [rolling] MUDDLE [muddle] card"
     },
     { "checkboxes": 1, "text": "Ignore negative scenario effects" }
   ]
