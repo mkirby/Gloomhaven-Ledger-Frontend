@@ -23,7 +23,7 @@ function CharacterPerks(props) {
   let renderedPerks = characterClassPerks.map((perk, index) => {
     return (
       <List.Item key={index}>
-        {renderCheckboxes(perk[0])} {perk[1]}
+        {renderCheckboxes(perk.checkboxes)} {perk.text}
       </List.Item>
     );
   });
