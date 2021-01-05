@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Menu, Image, Header } from "semantic-ui-react";
 import CharacterCheckmarks from "../Components/CharacterCheckmarks";
+import CharacterPerks from "../Components/CharacterPerks";
 import "./CharacterPage.css";
 
 function CharacterPage(props) {
@@ -74,12 +75,14 @@ function CharacterPage(props) {
       {/* TODO create the character perks game data and render depending on character class */}
       <div className="character-page__perks">
         <h2>Perks</h2>
-        <p>(Stretch Goal)</p>
+        <CharacterPerks
+          character_class={character.character_class.name_hidden}
+        />
       </div>
       {/* TODO create the game items (and store, etc) and render purchased items here */}
       <div className="character-page__items">
         <h2>Items</h2>
-        <p>(Stretch Goal)</p>
+        <p>(Item Cards Coming Soon)</p>
       </div>
       {/* TODO update character model when checking and unchecking checks */}
       <div className="character-page__alt-stats">
