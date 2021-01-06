@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Menu } from "semantic-ui-react";
+import { Menu, Label, Image, Segment, Icon } from "semantic-ui-react";
 import { characterAction } from "../../_actions/characterActions";
 import "./CharacterCard.css";
 
@@ -14,9 +14,17 @@ function CharacterCard(props) {
   const partyId = props.character.party.id;
   const campaignId = props.character.campaign.id;
   return (
-    <div className="index-card character-card">
+    <Segment
+      className="index-card character-card"
+      style={{ margin: "0 10px 10px 0" }}
+    >
+      {/* {character.active && (
+        <Label as="a" color="red" corner="right">
+          <Icon name="power" />
+        </Label>
+      )} */}
       <div className="character-card-image">
-        <img
+        <Image
           src={character.character_class.img_portrait}
           alt={character.character_class.fullname}
         />
@@ -66,7 +74,7 @@ function CharacterCard(props) {
           />
         </Menu>
       </div>
-    </div>
+    </Segment>
   );
 }
 

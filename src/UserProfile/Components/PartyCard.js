@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Menu } from "semantic-ui-react";
+import { Menu, Segment } from "semantic-ui-react";
 import "./PartyCard.css";
 
 import { partyAction } from "../../_actions/partyActions";
@@ -19,7 +19,10 @@ function PartyCard(props) {
     scenarios[Math.floor(Math.random() * scenarios.length)];
 
   return (
-    <div className="index-card party-card">
+    <Segment
+      className="index-card party-card"
+      style={{ margin: "0 10px 10px 0" }}
+    >
       <h3>{party.name}</h3>
       <div className="party-card__character-images">
         {renderCharacterImages(party.characters)}
@@ -52,7 +55,7 @@ function PartyCard(props) {
           }}
         />
       </Menu>
-    </div>
+    </Segment>
   );
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import dateFormat from "dateformat";
-import { Menu } from "semantic-ui-react";
+import { Menu, Segment } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -14,7 +14,10 @@ function CampaignCard(props) {
   const isOwner = campaign.owner.id === props.user.id;
 
   return (
-    <div className="index-card campaign-card">
+    <Segment
+      className="index-card campaign-card"
+      style={{ margin: "0 10px 10px 0" }}
+    >
       <h3>{campaign.name}</h3>
       <p>Campaign Started: {dateFormat(campaign.created_at, "m/d/yy")}</p>
       <p>Role: {isOwner ? "Owner" : "Player"}</p>
@@ -46,7 +49,7 @@ function CampaignCard(props) {
           />
         </Menu>
       )}
-    </div>
+    </Segment>
   );
 }
 
