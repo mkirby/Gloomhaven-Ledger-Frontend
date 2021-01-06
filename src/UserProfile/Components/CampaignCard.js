@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import dateFormat from "dateformat";
-import { Menu, Segment } from "semantic-ui-react";
+import { Menu, Segment, Confirm } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -12,12 +12,20 @@ function CampaignCard(props) {
   const { username } = props.user;
   const { id } = campaign;
   const isOwner = campaign.owner.id === props.user.id;
+  const [open, openConfirm] = useState(false);
 
   return (
     <Segment
       className="index-card campaign-card"
       style={{ margin: "0 10px 10px 0" }}
     >
+      <Confirm
+        open={open}
+        cancelButton="Cancel"
+        confirmButton="Delete"
+        onCancel={() => openConfirm(false)}
+        onConfirm={() => props.delete(campaign)}
+      />
       <h3>{campaign.name}</h3>
       <p>Campaign Started: {dateFormat(campaign.created_at, "m/d/yy")}</p>
       <p>Role: {isOwner ? "Owner" : "Player"}</p>
@@ -34,7 +42,8 @@ function CampaignCard(props) {
             link
             name="Delete"
             onClick={() => {
-              props.delete(campaign);
+              openConfirm(true);
+              // props.delete(campaign);
             }}
           />
         </Menu>

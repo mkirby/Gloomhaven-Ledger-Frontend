@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Menu, Label, Image, Segment, Icon } from "semantic-ui-react";
+import { Menu, Label, Image, Segment, Icon, Confirm } from "semantic-ui-react";
 import { characterAction } from "../../_actions/characterActions";
 import "./CharacterCard.css";
 
@@ -13,11 +13,19 @@ function CharacterCard(props) {
   const characterId = props.character.id;
   const partyId = props.character.party.id;
   const campaignId = props.character.campaign.id;
+  const [open, openConfirm] = useState(false);
   return (
     <Segment
       className="index-card character-card"
       style={{ margin: "0 10px 10px 0" }}
     >
+      <Confirm
+        open={open}
+        cancelButton="Cancel"
+        confirmButton="Delete"
+        onCancel={() => openConfirm(false)}
+        onConfirm={() => props.delete(character)}
+      />
       {/* {character.active && (
         <Label as="a" color="red" corner="right">
           <Icon name="power" />
@@ -69,7 +77,8 @@ function CharacterCard(props) {
             link
             name="Delete"
             onClick={() => {
-              props.delete(character);
+              openConfirm(true);
+              // props.delete(character);
             }}
           />
         </Menu>

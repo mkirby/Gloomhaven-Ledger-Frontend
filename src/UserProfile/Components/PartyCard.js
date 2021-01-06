@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Menu, Segment } from "semantic-ui-react";
+import { Menu, Segment, Confirm } from "semantic-ui-react";
 import "./PartyCard.css";
 
 import { partyAction } from "../../_actions/partyActions";
@@ -13,6 +13,7 @@ function PartyCard(props) {
   const { party } = props;
   const { username } = props.user;
   const { id } = props.party;
+  const [open, openConfirm] = useState(false);
 
   // TODO replace random scenario with actual current scenario once implemented
   const randomScenario =
@@ -23,6 +24,13 @@ function PartyCard(props) {
       className="index-card party-card"
       style={{ margin: "0 10px 10px 0" }}
     >
+      <Confirm
+        open={open}
+        cancelButton="Cancel"
+        confirmButton="Delete"
+        onCancel={() => openConfirm(false)}
+        onConfirm={() => props.delete(party)}
+      />
       <h3>{party.name}</h3>
       <div className="party-card__character-images">
         {renderCharacterImages(party.characters)}
@@ -51,7 +59,8 @@ function PartyCard(props) {
           link
           name="Delete"
           onClick={() => {
-            props.delete(party);
+            openConfirm(true);
+            // props.delete(party);
           }}
         />
       </Menu>
