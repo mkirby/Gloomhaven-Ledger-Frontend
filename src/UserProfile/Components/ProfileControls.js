@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { Button } from "semantic-ui-react";
+import { Button, Confirm } from "semantic-ui-react";
 import "./ProfileControls.css";
 
 import CreateModal from "../Modals/CreateModal";
@@ -11,6 +11,11 @@ import { partyAction } from "../../_actions/partyActions";
 import { characterAction } from "../../_actions/characterActions";
 
 class ProfileControls extends React.Component {
+  state = { open: false };
+
+  showConfirm = () => this.setState({ open: true });
+  handleConfirm = () => this.setState({ open: false });
+
   render() {
     const { user } = this.props;
     const { username } = user;
@@ -77,12 +82,22 @@ class ProfileControls extends React.Component {
         <EditModal model="campaign" trigger="button" campaign={campaign} />
         <Button
           onClick={() => {
-            this.props.deleteCampaign(campaign);
-            this.props.history.push(`/${user.username}/campaigns`);
+            this.showConfirm(true);
           }}
         >
           Delete Campaign
         </Button>
+        <Confirm
+          open={this.state.open}
+          cancelButton="Cancel"
+          confirmButton="Delete"
+          onCancel={this.handleConfirm}
+          onConfirm={() => {
+            this.props.deleteCampaign(campaign);
+            this.props.history.push(`/${user.username}/campaigns`);
+            this.handleConfirm();
+          }}
+        />
       </>
     );
   };
@@ -103,12 +118,22 @@ class ProfileControls extends React.Component {
         <EditModal model="party" trigger="button" party={party} />
         <Button
           onClick={() => {
-            this.props.deleteParty(party);
-            this.props.history.push(`/${user.username}/parties`);
+            this.showConfirm(true);
           }}
         >
           Delete Party
         </Button>
+        <Confirm
+          open={this.state.open}
+          cancelButton="Cancel"
+          confirmButton="Delete"
+          onCancel={this.handleConfirm}
+          onConfirm={() => {
+            this.props.deleteParty(party);
+            this.props.history.push(`/${user.username}/parties`);
+            this.handleConfirm();
+          }}
+        />
       </>
     );
   };
@@ -130,12 +155,22 @@ class ProfileControls extends React.Component {
         <EditModal model="character" trigger="button" character={character} />
         <Button
           onClick={() => {
-            this.props.deleteCharacter(character);
-            this.props.history.push(`/${user.username}/characters`);
+            this.showConfirm(true);
           }}
         >
           Delete Character
         </Button>
+        <Confirm
+          open={this.state.open}
+          cancelButton="Cancel"
+          confirmButton="Delete"
+          onCancel={this.handleConfirm}
+          onConfirm={() => {
+            this.props.deleteCharacter(character);
+            this.props.history.push(`/${user.username}/characters`);
+            this.handleConfirm();
+          }}
+        />
       </>
     );
   };
