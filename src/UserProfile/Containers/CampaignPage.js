@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Button, Placeholder } from "semantic-ui-react";
+import { Button, Placeholder, Image } from "semantic-ui-react";
 import "./CampaignPage.css";
 
 import CharacterCard from "../Components/CharacterCard";
@@ -66,9 +66,11 @@ function renderCampaignPlayers(players) {
     return (
       <div key={player.id} className="campaign-player-div">
         <div className="campaign-player-image">
-          <Placeholder style={{ height: 50, width: 50 }}>
-            <Placeholder.Image circular="true" />
-          </Placeholder>
+          <Image
+            style={{ height: 40, width: 40 }}
+            src={process.env.PUBLIC_URL + player.avatar}
+            alt={"avatar icon"}
+          />
         </div>
         <div className="campaign-player-username">
           <h3>
