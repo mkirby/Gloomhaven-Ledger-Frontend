@@ -11,7 +11,7 @@ import App from "./App";
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <ToastProvider>
+      <ToastProvider placement="top-center">
         <App />
       </ToastProvider>
     </BrowserRouter>

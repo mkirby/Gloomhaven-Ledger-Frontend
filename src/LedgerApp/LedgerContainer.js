@@ -12,11 +12,26 @@ function renderLedgerPage(page) {
   if (page === "World") {
     return <WorldPage />;
   } else if (page === "City") {
-    return <h1>City</h1>;
+    return (
+      <div className="ledger-page">
+        <h1>City</h1>
+        <p>Coming Soon!</p>
+      </div>
+    );
   } else if (page === "Party") {
-    return <h1>Party</h1>;
+    return (
+      <div className="ledger-page">
+        <h1>Party</h1>
+        <p>Coming Soon!</p>
+      </div>
+    );
   } else if (page === "Records") {
-    return <h1>Records</h1>;
+    return (
+      <div className="ledger-page">
+        <h1>Records</h1>
+        <p>Coming Soon!</p>
+      </div>
+    );
   }
 }
 

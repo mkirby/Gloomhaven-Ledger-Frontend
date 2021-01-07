@@ -9,6 +9,7 @@ import { alertActions } from "./_actions/alertActions";
 import NavBar from "./Main/NavBar";
 import FooterContainer from "./Main/FooterContainer";
 import LoginContainer from "./Main/Login/LoginContainer";
+import SignupContainer from "./Main/SignUp/SignupContainer";
 import ProfileContainer from "./UserProfile/Containers/ProfileContainer";
 import { Message, Icon } from "semantic-ui-react";
 import ToastNotification from "./Main/ToastNotification";
@@ -34,13 +35,7 @@ class App extends React.Component {
             <ToastNotification alert={alert} />
             <Switch>
               <Route exact path="/" component={LedgerApp} />
-              <Route
-                exact
-                path="/signup"
-                render={() => {
-                  return <h3>Component: SignupContainer.js</h3>;
-                }}
-              />
+              <Route exact path="/signup" component={SignupContainer} />
               <Route exact path="/login" component={LoginContainer} />
               {this.props.loggedIn && (
                 <Route

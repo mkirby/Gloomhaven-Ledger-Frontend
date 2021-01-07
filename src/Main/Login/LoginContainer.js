@@ -1,18 +1,20 @@
 import React from "react";
-import { Placeholder } from "semantic-ui-react";
+import { Image } from "semantic-ui-react";
 import LoginForm from "./LoginForm";
-import "./LoginContainer.css";
+import "./AuthContainer.css";
 
 function LoginContainer() {
   return (
-    <div className="login">
-      <div className="login__image">
-        <Placeholder style={{ width: "100%", height: "100%" }}>
-          <Placeholder.Image />
-        </Placeholder>
+    <div className="auth">
+      <div className="auth__image">
+        <Image
+          src={process.env.PUBLIC_URL + "/images/box-art/Gloomhaven.jpg"}
+          alt={"Gloomhaven box art"}
+          rounded
+        />
       </div>
-      <div className="login__form">
-        <h3>Component: LoginContainer.js</h3>
+      <div className="auth__form">
+        <h1>Login</h1>
         <LoginForm />
       </div>
     </div>
