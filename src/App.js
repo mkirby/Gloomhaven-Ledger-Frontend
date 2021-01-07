@@ -11,7 +11,6 @@ import FooterContainer from "./Main/FooterContainer";
 import LoginContainer from "./Main/Login/LoginContainer";
 import SignupContainer from "./Main/SignUp/SignupContainer";
 import ProfileContainer from "./UserProfile/Containers/ProfileContainer";
-import { Message, Icon } from "semantic-ui-react";
 import ToastNotification from "./Main/ToastNotification";
 import LedgerApp from "./LedgerApp/LedgerApp";
 
@@ -25,7 +24,7 @@ class App extends React.Component {
 
   render() {
     const { alert } = this.props;
-    console.log("Redux Store: ", this.props.state);
+    // console.log("Redux Store: ", this.props.state);
     return (
       <div className="app">
         <Router history={history}>
