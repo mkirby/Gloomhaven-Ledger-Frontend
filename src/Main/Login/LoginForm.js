@@ -72,35 +72,37 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <Form style={{ width: "400px" }} warning>
-        <Form.Field>
-          <label>Username</label>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={this.state.username}
-            onChange={(e) => this.updateUsername(e.target.value)}
-          />
-        </Form.Field>
+      <Form style={{ width: "500px" }} warning>
+        <Form.Group widths="equal">
+          <Form.Field>
+            <label>Username</label>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={this.state.username}
+              onChange={(e) => this.updateUsername(e.target.value)}
+            />
+          </Form.Field>
 
-        <Form.Field>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={(e) => this.updatePassword(e.target.value)}
-          />
-        </Form.Field>
+          <Form.Field>
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={(e) => this.updatePassword(e.target.value)}
+            />
+          </Form.Field>
+        </Form.Group>
 
         <Button type="submit" onClick={this.handleSubmit} content="Login" />
         <Link to="/signup">
           <Button content="Sign Up" />
         </Link>
 
-        <Message warning>
+        <Message warning size="mini">
           <Message.Header>Login Reminders</Message.Header>
           <Message.List>
             <Message.Item>

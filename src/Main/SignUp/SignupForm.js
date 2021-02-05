@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, Message, Dropdown } from "semantic-ui-react";
+import { Button, Form, Message, Dropdown, Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 
 import { userActions } from "../../_actions/userActions";
@@ -92,28 +92,30 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <Form style={{ width: "400px" }} warning>
-        <Form.Field>
-          <label>Username</label>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={this.state.username}
-            onChange={(e) => this.updateUsername(e.target.value)}
-          />
-        </Form.Field>
+      <Form style={{ width: "500px" }} warning error>
+        <Form.Group widths="equal">
+          <Form.Field>
+            <label>Username</label>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={this.state.username}
+              onChange={(e) => this.updateUsername(e.target.value)}
+            />
+          </Form.Field>
 
-        <Form.Field>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={(e) => this.updatePassword(e.target.value)}
-          />
-        </Form.Field>
+          <Form.Field>
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={this.state.password}
+              onChange={(e) => this.updatePassword(e.target.value)}
+            />
+          </Form.Field>
+        </Form.Group>
 
         <Form.Field>
           <label>Avatar</label>
@@ -138,7 +140,7 @@ class SignupForm extends React.Component {
           <Button content="Login" />
         </Link>
 
-        <Message warning>
+        <Message warning size="mini">
           <Message.Header>Registration Reminders</Message.Header>
           <Message.List>
             <Message.Item>
@@ -154,6 +156,19 @@ class SignupForm extends React.Component {
               Password must contain at least one special character: !@#$%^&*
             </Message.Item>
           </Message.List>
+        </Message>
+
+        <Message error icon size="mini">
+          <Icon name="warning" />
+          <Message.Content>
+            Please note that this web application started as a capstone project
+            from my time learning at Flatiron's software engineering immersive
+            and while I'm confident in my user authentication{" "}
+            <strong>
+              you should NOT enter any personal details you wouldn't want
+              revealed by an unforseen security flaw.
+            </strong>
+          </Message.Content>
         </Message>
       </Form>
     );
