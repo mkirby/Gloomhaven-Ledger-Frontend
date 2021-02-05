@@ -3,6 +3,7 @@ import { Button, Form, Message, Dropdown } from "semantic-ui-react";
 import { connect } from "react-redux";
 
 import { userActions } from "../../_actions/userActions";
+import { Link } from "react-router-dom";
 
 class SignupForm extends React.Component {
   state = {
@@ -130,9 +131,12 @@ class SignupForm extends React.Component {
         <Button
           type="submit"
           onClick={this.handleSubmit}
-          content="Register"
+          content="Sign Up"
           disabled={!this.state.formValid}
         />
+        <Link to="/login">
+          <Button content="Login" />
+        </Link>
 
         <Message warning>
           <Message.Header>Registration Reminders</Message.Header>
