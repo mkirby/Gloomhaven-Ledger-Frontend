@@ -1,6 +1,7 @@
 import React from "react";
 import { Image } from "semantic-ui-react";
 import "../Login/AuthContainer.css";
+import SignupForm from "./SignupForm";
 
 function SignupContainer() {
   return (
@@ -14,7 +15,7 @@ function SignupContainer() {
       </div>
       <div className="auth__form">
         <h1>Signup</h1>
-        <p> Signup Coming Soon</p>
+        <SignupForm />
       </div>
     </div>
   );
