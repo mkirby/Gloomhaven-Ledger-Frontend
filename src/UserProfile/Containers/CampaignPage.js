@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Button, Placeholder, Image } from "semantic-ui-react";
+import { Button, Image } from "semantic-ui-react";
 import "./CampaignPage.css";
 
 import CharacterCard from "../Components/CharacterCard";

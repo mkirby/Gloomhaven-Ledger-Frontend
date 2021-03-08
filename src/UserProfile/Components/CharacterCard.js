@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { Menu, Label, Image, Segment, Icon, Confirm } from "semantic-ui-react";
+import { Menu, Image, Segment, Confirm } from "semantic-ui-react";
 import { characterAction } from "../../_actions/characterActions";
 import "./CharacterCard.css";
 
