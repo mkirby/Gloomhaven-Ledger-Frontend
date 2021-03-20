@@ -10,6 +10,17 @@ function renderScenarioRows(scenarios, scenarioPage) {
   let startingIndex = scenarioPage * 15 - 15;
   let endingIndex = scenarioPage * 15 - 1;
 
+  // if index is the last index in the array and it's not equal to ending index
+  // find trhe difference and make that many blank rows
+
+  // console.log("starting index: ", startingIndex, "ending index: ", endingIndex);
+  // console.log(
+  //   "final index",
+  //   scenarios.length - 1,
+  //   "rows to add: ",
+  //   endingIndex - (scenarios.length - 1)
+  // );
+
   return scenarios.map((scenario, index) => {
     let [unlocked, toggleUnlocked] = useState(false);
     let [completed, toggleCompleted] = useState(false);
@@ -17,7 +28,7 @@ function renderScenarioRows(scenarios, scenarioPage) {
     if (index >= startingIndex && index <= endingIndex) {
       return (
         <Table.Row key={scenario.id} positive={completed}>
-          <Table.Cell>{scenario.id}.</Table.Cell>
+          <Table.Cell textAlign="center">{scenario.id}.</Table.Cell>
           <Table.Cell>{scenario.coords}</Table.Cell>
           <Table.Cell>
             {/*
@@ -73,14 +84,7 @@ function ScenarioTable() {
 
   return (
     <div className="world__scenarios">
-      <Table
-        striped
-        collapsing
-        unstackable
-        size="small"
-        compact="very"
-        color="orange"
-      >
+      <Table striped unstackable size="small" compact="very" color="orange">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell colSpan="5" textAlign="center">
@@ -88,28 +92,40 @@ function ScenarioTable() {
             </Table.HeaderCell>
           </Table.Row>
           <Table.Row textAlign="center">
-            <Table.HeaderCell>Id</Table.HeaderCell>
-            <Table.HeaderCell>
+            <Table.HeaderCell width="2">Id</Table.HeaderCell>
+            <Table.HeaderCell width="2">
               <Icon name="location arrow" />
             </Table.HeaderCell>
-            <Table.HeaderCell>
+            <Table.HeaderCell width="1">
               <Icon name="unlock" />
             </Table.HeaderCell>
-            <Table.HeaderCell>
+            <Table.HeaderCell width="1">
               <Icon name="check" />
             </Table.HeaderCell>
             <Table.HeaderCell>Name</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
+
         <Table.Body>{renderScenarioRows(scenarios, scenarioPage)}</Table.Body>
+
         <Table.Footer>
           <Table.Row textAlign="center">
             <Table.HeaderCell colSpan="5">
               <Menu pagination>
-                <Menu.Item as="a" icon onClick={() => changePage(-1)}>
+                <Menu.Item
+                  as="a"
+                  icon
+                  onClick={() => changePage(-1)}
+                  disabled={scenarioPage === 1}
+                >
                   <Icon name="chevron left" />
                 </Menu.Item>
-                <Menu.Item as="a" icon onClick={() => changePage(1)}>
+                <Menu.Item
+                  as="a"
+                  icon
+                  onClick={() => changePage(1)}
+                  disabled={scenarioPage === maxScenarioPage}
+                >
                   <Icon name="chevron right" />
                 </Menu.Item>
               </Menu>

@@ -2,7 +2,7 @@
 @media (min-width: 768px) {
   .world__scenarios {
     width: 15%;
-    min-width: 375px;
+    min-width: 400px;
     padding: 10px;
   }
 }
@@ -11,11 +11,7 @@
 @media (max-width: 768px) {
   .world__scenarios {
     width: 50%;
-    min-width: 375px;
+    min-width: 400px;
     padding: 10px;
   }
 }
-
-/* .world__scenarios {
-  border: 2px solid red;
-} */
