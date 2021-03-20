@@ -113,6 +113,9 @@ function ScenarioTable() {
                   <Icon name="chevron right" />
                 </Menu.Item>
               </Menu>
+              <br />
+              <br />
+              <Checkbox label="Forgotten Circles" />
             </Table.HeaderCell>
           </Table.Row>
         </Table.Footer>
