@@ -5,7 +5,8 @@
     "name": "Black Barrow",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": [2, 3]
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "name": "Black Lair",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "name": "Inox Encampment",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": [4, 5]
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "name": "Crypt of the Damned",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "name": "Ruinous Crypt",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "name": "Decaying Crypt",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "name": "Vibrant Grotto",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "name": "Gloomhaven Warehouse",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "name": "Diamond Mine",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "name": "Plane of Elemental Power",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "name": "Gloomhaven Square A",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "name": "Gloomhaven Square B",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "name": "Temple of the Seer",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "name": "Frozen Hollow",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@
     "name": "Shrine of Strength",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@
     "name": "Mountain Pass",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@
     "name": "Lost Island",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@
     "name": "Abandoned Sewers",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@
     "name": "Forgotten Crypt",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 20,
@@ -157,7 +176,8 @@
     "name": "Necromancer's Sanctum",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 21,
@@ -165,7 +185,8 @@
     "name": "Infernal Throne",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 22,
@@ -173,7 +194,8 @@
     "name": "Temple of the Elements",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 23,
@@ -181,7 +203,8 @@
     "name": "Deep Ruins",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 24,
@@ -189,7 +212,8 @@
     "name": "Echo Chamber",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 25,
@@ -197,7 +221,8 @@
     "name": "Icecrag Ascent",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 26,
@@ -205,7 +230,8 @@
     "name": "Ancient Cistern",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 27,
@@ -213,7 +239,8 @@
     "name": "Ruinous Rift",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 28,
@@ -221,7 +248,8 @@
     "name": "Outer Ritual Chamber",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 29,
@@ -229,7 +257,8 @@
     "name": "Sanctuary of Gloom",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 30,
@@ -237,7 +266,8 @@
     "name": "Shrine of the Depths",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 31,
@@ -245,7 +275,8 @@
     "name": "Plane of Night",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 32,
@@ -253,7 +284,8 @@
     "name": "Decrepit Wood",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 33,
@@ -261,7 +293,8 @@
     "name": "Savvas Armory",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 34,
@@ -269,7 +302,8 @@
     "name": "Scorched Summit",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 35,
@@ -277,7 +311,8 @@
     "name": "Gloomhaven Battlements A",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 36,
@@ -285,7 +320,8 @@
     "name": "Gloomhaven Battlements B",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 37,
@@ -293,7 +329,8 @@
     "name": "Doom Trench",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 38,
@@ -301,7 +338,8 @@
     "name": "Slave Pens",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 39,
@@ -309,7 +347,8 @@
     "name": "Treacherous Divide",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 40,
@@ -317,7 +356,8 @@
     "name": "Anchient Defense Network",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 41,
@@ -325,7 +365,8 @@
     "name": "Timeworn Tomb",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 42,
@@ -333,7 +374,8 @@
     "name": "Realm of the Voice",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 43,
@@ -341,7 +383,8 @@
     "name": "Drake Nest",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 44,
@@ -349,7 +392,8 @@
     "name": "Tribal Assault",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 45,
@@ -357,7 +401,8 @@
     "name": "Rebel Swamp",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 46,
@@ -365,7 +410,8 @@
     "name": "Nightmare Peak",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 47,
@@ -373,7 +419,8 @@
     "name": "Lair of the Unseeing Eye",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 48,
@@ -381,7 +428,8 @@
     "name": "Shadow Weald",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 49,
@@ -389,7 +437,8 @@
     "name": "Rebel's Stand",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 50,
@@ -397,7 +446,8 @@
     "name": "Ghost Fortress",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 51,
@@ -405,7 +455,8 @@
     "name": "The Void",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 52,
@@ -413,7 +464,8 @@
     "name": "Noxious Cellar",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 53,
@@ -421,7 +473,8 @@
     "name": "Crypt Basement",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 54,
@@ -429,7 +482,8 @@
     "name": "Palace of Ice",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 55,
@@ -437,7 +491,8 @@
     "name": "Foggy Thicket",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 56,
@@ -445,7 +500,8 @@
     "name": "Bandits Wood",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 57,
@@ -453,7 +509,8 @@
     "name": "Investigation",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 58,
@@ -461,7 +518,8 @@
     "name": "Bloody Shack",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 59,
@@ -469,7 +527,8 @@
     "name": "Forgotten Grove",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 60,
@@ -477,7 +536,8 @@
     "name": "Alchemy Lab",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 61,
@@ -485,7 +545,8 @@
     "name": "Fading Lighthouse",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 62,
@@ -493,7 +554,8 @@
     "name": "Pit of Souls",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 63,
@@ -501,7 +563,8 @@
     "name": "Magma Pit",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 64,
@@ -509,7 +572,8 @@
     "name": "Underwater Lagoon",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 65,
@@ -517,7 +581,8 @@
     "name": "Sulfur Mine",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 66,
@@ -525,7 +590,8 @@
     "name": "Clockwork Cove",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 67,
@@ -533,7 +599,8 @@
     "name": "Archane Library",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 68,
@@ -541,7 +608,8 @@
     "name": "Toxic Moor",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 69,
@@ -549,7 +617,8 @@
     "name": "Well of the Unfortunate",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 70,
@@ -557,7 +626,8 @@
     "name": "Chained Isle",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 71,
@@ -565,7 +635,8 @@
     "name": "Windswept Highlands",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 72,
@@ -573,7 +644,8 @@
     "name": "Oozing Grove",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 73,
@@ -581,7 +653,8 @@
     "name": "Rockslide Ridge",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 74,
@@ -589,7 +662,8 @@
     "name": "Merchant Ship",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 75,
@@ -597,7 +671,8 @@
     "name": "Overgrown Graveyard",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 76,
@@ -605,7 +680,8 @@
     "name": "Harrower Hive",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 77,
@@ -613,7 +689,8 @@
     "name": "Vault of Secrets",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 78,
@@ -621,7 +698,8 @@
     "name": "Sacrifice Pit",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 79,
@@ -629,7 +707,8 @@
     "name": "Lost Temple",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 80,
@@ -637,7 +716,8 @@
     "name": "Vigil Keep",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 81,
@@ -645,7 +725,8 @@
     "name": "Temple of the Eclipse",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 82,
@@ -653,7 +734,8 @@
     "name": "Burning Mountain",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 83,
@@ -661,7 +743,8 @@
     "name": "Shadows Within",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 84,
@@ -669,7 +752,8 @@
     "name": "Crystalline Cave",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 85,
@@ -677,7 +761,8 @@
     "name": "Sun Temple",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 86,
@@ -685,7 +770,8 @@
     "name": "Harried Village",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 87,
@@ -693,7 +779,8 @@
     "name": "Corrupted Cove",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 88,
@@ -701,7 +788,8 @@
     "name": "Plane of Water",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 89,
@@ -709,7 +797,8 @@
     "name": "Syndicate Hideout",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 90,
@@ -717,7 +806,8 @@
     "name": "Demonic Rift",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 91,
@@ -725,7 +815,8 @@
     "name": "Wild Melee",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 92,
@@ -733,7 +824,8 @@
     "name": "Back Alley Brawl",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 93,
@@ -741,7 +833,8 @@
     "name": "Sunken Vessel",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 94,
@@ -749,7 +842,8 @@
     "name": "Vermling Nest",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   },
   {
     "id": 95,
@@ -757,6 +851,7 @@
     "name": "Payment Due",
     "unlocked": false,
     "completed": false,
-    "scenarios_unlocked": []
+    "unlocks_when_completed": [],
+    "locks_when_completed": []
   }
 ]
